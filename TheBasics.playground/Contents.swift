@@ -5,8 +5,12 @@
 let maximumLogintAttempt = 10
 var currentLoginAttemt = 0
 
+currentLoginAttemt = 32
+
 //multiple variables in a line
 var a = 0.0, b = 24, c = "ebu"
+
+var myFloat: Float = 3.14
 
 //Type annotaion means that you declare the type of the variable and you expected to have that type
 var message: String
@@ -64,11 +68,17 @@ let overOneMillion = 1_000_000_000_1
 //let negativeInt: UInt8 = -5
 //let maxInt: UInt8 = UInt8.max + 1
 
+let result = a + Double(b)
+
 let twoThousand: UInt16 = 2_000
 let one: UInt8 = 1
+var myNumber = UInt16(one)
 let twoThousandAndOne = twoThousand + UInt16(one)
 
 //Typealias means that you give a name to the existing type
+typealias ebu = Int
+var myVariable: ebu
+myVariable = 324
 typealias AudioSample = UInt16
 
 var maxAudio = AudioSample.max
@@ -87,12 +97,20 @@ if turnipsAreDelicious{
 // tuple of type (int, string)
 let http404Error = (404,"Not Found")
 
+
+func send() -> (errorcode: Int, errorMessage: String){
+    return (404,"message")
+}
+
+let myTuple = send()
+
 // we can access the tuples values by defining like that
 let (statusCode, statustMessage) = http404Error
 print("Status Code: \(statusCode)")
 print("Status Message: \(statustMessage) ")
 
 //if you just need to one variable just define the other with _
+
 let (justCode, _) = http404Error
 print("just code: \(justCode)")
 
@@ -112,11 +130,29 @@ serverResponseCall = nil
 //if you wont define the variable it will be automatically nill
 var someAnswer: String?
 
+if let a = someAnswer{
+ print(a)
+}
+
+for i in 1...6{
+    if i == 5{
+        someAnswer
+    }
+    guard let a = someAnswer else{
+        continue
+    }
+}
+
+
+var xyz = someAnswer ?? "fasd"
+
 // checking nil with if
 if convertedNumber != nil {
     print("not nil")
     print("forcely usage we sure that not nil \(convertedNumber!)")
 }
+
+
 
 // Optional binding
 if let actualNumber = Int(possibleNumber){
@@ -140,7 +176,18 @@ if let firstNumber = Int("4") {
 let possibleString: String? = "An optional string."
 let forcedString: String = possibleString! // requires an exclamation point
 
-let assumedString: String! = "An implicitly unwrapped optional string."
+var assumedString: String!
+var grade = 0
+
+if grade > 80 {
+    assumedString = "aa"
+} else if grade > 60 {
+    assumedString = "bb"
+} else {
+    assumedString = "ff"
+}
+
+
 let implicitString: String = assumedString // no need for an exclamation point
 
 let optionalString = assumedString //this is ? optional string assumed string not forced to unwrapped
@@ -156,12 +203,11 @@ if let notNilAssumedString = assumedString{
 
 //throwing error with function
 func canThrowError() throws {
-    
 }
 
 do {
     try canThrowError()
-} catch  {
+} catch   {
     // catch the error
 }
 
@@ -180,7 +226,7 @@ func makeASandwich() throws {
 
 // debugging with assertions
 let age = -3
-//assert(age >= 0, "A person can not be have age less than zero")
+assert(age >= 0, "A person can not be have age less than zero")
 //assert(age >= 0)
 
 if age > 10 {
