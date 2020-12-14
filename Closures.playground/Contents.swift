@@ -1,5 +1,5 @@
 
-
+import Foundation
 //Closures
 let names = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
 
@@ -31,17 +31,25 @@ reversedNames = names.sorted(by: >)
 
 //trailing closures
 
-func someFunctionTakesClosures(closuer: () -> Void){
+func someFunctionTakesClosures(closuer: (Int, String) -> String){
     
 }
+var xy : (() -> String)?
 
-someFunctionTakesClosures(closuer: {
-    
-})
+var yz : (Int, String) -> String
 
-someFunctionTakesClosures {
-    
+var ab =  { () -> String in
+    return "ebubekir"
 }
+xy = ab
+//someFunctionTakesClosures(closuer: ab)
+//someFunctionTakesClosures(closuer: {
+//
+//})
+//
+//someFunctionTakesClosures {
+//
+//}
 
 
 let digitNames = [
@@ -85,12 +93,16 @@ alsoIncrementByTen()
 
 var completionHandlers = [() -> Void]()
 
-func someFunctionWithEscapingClosure(completionHandler: @escaping () -> Void) {
-    completionHandlers.append(completionHandler)
+func someFunctionWithEscapingClosure(completionHandler: (() -> Void)? ) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                                    completionHandler?()
+        
+    })
+//    completionHandlers.append(completionHandler)
 }
 
 
-func someFunctionWithNonescapingClosure(closure: () -> Void) {
+func someFunctionWithNonescapingClosure(closure:  () -> Void) {
     closure()
 }
 
@@ -144,6 +156,9 @@ serve(customer: { customersInLine.remove(at: 0) } )
 func serve(customer customerProvider: @autoclosure () -> String) {
     print("Now serving \(customerProvider())!")
 }
+
+
+var abc = customersInLine.remove(at: 0)
 serve(customer: customersInLine.remove(at: 0))
 
 var customerProviders: [() -> String] = []
@@ -153,7 +168,40 @@ func collectCustomerProviders(_ customerProvider: @autoclosure @escaping () -> S
 collectCustomerProviders(customersInLine.remove(at: 0))
 collectCustomerProviders(customersInLine.remove(at: 0))
 
-print("Collected \(customerProviders.count) closures.")
-for customerProvider in customerProviders {
-    print("Now serving \(customerProvider())!")
+//print("Collected \(customerProviders.count) closures.")
+//for customerProvider in customerProviders {
+//    print("Now serving \(customerProvider())!")
+//}
+
+func myClosure(succes: ([String]) -> Bool, fail: () -> Error){
+    
 }
+
+//myClosure { (names) -> Bool in
+//    print(names[0])
+//    return true
+//} fail: { () -> Error in
+//
+//}
+
+func passedStudent(success: (([String]) -> Void)?, fail: @escaping (Error) -> Void){
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        var random = Int.random(in: 1...100)
+        if random % 2 == 0 {
+            success?(["Bryan", "Hasan", "Ebu"])
+        } else {
+            //var error = Error(
+            fail(NSError(domain: " ", code: 404, userInfo: [NSLocalizedDescriptionKey: "Not found"]))
+        }
+    }
+}
+
+passedStudent (success: { (names) in
+    print(names.first)
+}, fail: { (error) in
+    print(error.localizedDescription)
+})
+
+passedStudent(success: nil, fail: { (error) in
+    print(error.localizedDescription)
+})
