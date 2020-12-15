@@ -1,12 +1,33 @@
 
 //Definition of struct and class
+
 struct SomeStruct{
+    var number: Int
+}
+var mySturct = SomeStruct(number: 5)
+var myStruct2 = mySturct
+myStruct2.number = 10
+
+print(mySturct.number)
+print(myStruct2.number)
+
+struct Person {
+    var name: String
     
+    mutating func change(name: String){
+        self.name = name
+    }
+    
+    mutating func changeName(_ name: String){
+        self.name = name
+    }
 }
 
-class SomeClass{
-    
-}
+var person1 = Person(name: "Ebubekir")
+person1.change(name: "ebu")
+person1.changeName("ebubekir")
+
+let person2 = Person(name: "Hasan")
 
 struct Resolution{
     var width = 0

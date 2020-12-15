@@ -20,6 +20,28 @@ print("six times three is \(threeTimesTable[6])")
 var numberOfLegs = ["spider": 8, "ant": 6, "cat": 4]
 numberOfLegs["birds"] = 2
 
+
+class Person{
+    var myName: String
+    
+    init(name: String) {
+        myName = name
+    }
+    subscript(name: String) -> String{
+        get{
+            return "Hello " + name
+        }
+        set{
+            myName = newValue
+        }
+    }
+}
+
+var name = Person(name: "ebu")
+print(name["ebu"])
+name["ebu"] = "something else"
+print(name["ebu"])
+
 //Multiple parameters in subscript
 struct Matrix{
     let rows: Int, columns: Int

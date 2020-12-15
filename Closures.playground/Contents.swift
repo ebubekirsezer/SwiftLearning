@@ -205,3 +205,11 @@ passedStudent (success: { (names) in
 passedStudent(success: nil, fail: { (error) in
     print(error.localizedDescription)
 })
+
+func controlString(control: ((String) -> String)?){
+    
+}
+
+controlString { (names) -> String in
+    return "ebu"
+}

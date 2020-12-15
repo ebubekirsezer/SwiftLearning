@@ -19,8 +19,17 @@ class DataImporter{
     var fileName = "data.txt"
 }
 
+class Person{
+    var name: String
+    init(name: String) {
+        self.name = name
+    }
+}
+
+var ebu = Person(name: "ebubekir")
+
 class DataManager{
-    lazy var importer = DataImporter()
+    lazy var importer: DataImporter? = DataImporter()
     var data = [String]()
 }
 
@@ -29,7 +38,7 @@ manager.data.append("Some data")
 manager.data.append("Some more data")
 
 //importer property only created when its accessed
-print(manager.importer.fileName)
+print(manager.importer?.fileName)
 
 // Computed Properties
 
@@ -40,6 +49,27 @@ struct Point{
 struct Size{
     var width = 0.0, height = 0.0
 }
+
+struct Person2{
+    var name: String
+    var welcomeToYou: String{
+//        get{
+//            return "Welcome" + name
+//        }
+//        set{
+//            name = newValue
+//        }
+        willSet{
+            print("before")
+        }
+        didSet{
+            print("after")
+        }
+    }
+}
+
+var ebubekir = Person2(name: "ebu", welcomeToYou: "ebubekir")
+ebubekir.welcomeToYou = "ebu"
 
 struct Rect{
     var origin = Point()
@@ -59,6 +89,7 @@ struct Rect{
 
 var square = Rect(origin: Point(x: 0.0, y: 0.0), size: Size(width: 10.0, height: 10.0))
 let initialSquareCenter = square.center
+print(initialSquareCenter)
 square.center = Point(x: 15.0, y: 15.0)
 print("square origin is now \(square.origin.x), \(square.origin.y)")
 
@@ -122,26 +153,43 @@ class StepCounter{
     }
 }
 
+struct Class{
+    var studentCount: Int{
+        willSet{
+            
+        }
+        didSet{
+            
+        }
+    }
+}
+
 let stepCounter = StepCounter()
 stepCounter.totalSteps = 200
 
 stepCounter.totalSteps = 360
 stepCounter.totalSteps = 896
 
+
 // Property Wrapper
 @propertyWrapper
 struct TwelveOrLess{
     private var number: Int
+    var projectedValue: Int = 0
     init() {
         self.number = 0
     }
     var wrappedValue : Int{
         get {return number}
-        set { number = min(newValue, 12)}
+        set {
+            number = min(newValue, 12)
+            self.projectedValue = newValue
+        }
     }
 }
 
 struct SmallRectangle{
+    
     @TwelveOrLess var height: Int
     @TwelveOrLess var width: Int
 }
@@ -150,8 +198,9 @@ var rectangle = SmallRectangle()
 print(rectangle.height)
 
 rectangle.height = 24
-print(rectangle.height)
+print(rectangle.$height)
 
+print
 struct SmallRectangle2{
     private var _height = TwelveOrLess()
     private var _width = TwelveOrLess()
