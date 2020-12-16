@@ -369,7 +369,7 @@ class SomeClass {
 class SomeSubClass: SomeClass{
     // you do not need to override required inits
     required init() {
-        
+    
     }
 }
 
@@ -388,6 +388,7 @@ struct Chessboard {
         }
         return temporaryBoard
     }()
+        
     func squareIsBlackAt(row: Int, column: Int) -> Bool {
         return boardColors[(row * 8) + column]
     }

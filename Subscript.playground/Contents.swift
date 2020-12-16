@@ -5,6 +5,27 @@
 // subscript methods can be read-write or read-only unlike the normal methods
 
 //read-only subscript implementation
+import Foundation
+
+struct Measurment{
+    var meter: Double
+
+    subscript(index: String) -> Double {
+        print(index)
+        switch index{
+            case "meter":
+                return meter
+            case "km":
+                return meter / 1_000
+            default:
+                return 0
+        }
+    }
+}
+
+let threeKm = Measurment(meter: 5)
+print(threeKm["km"])
+
 struct TimesTable{
     let multiplier: Int
     subscript(index: Int) -> Int{

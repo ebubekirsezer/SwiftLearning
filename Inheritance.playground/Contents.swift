@@ -2,6 +2,7 @@
 
 // Inheritance
 
+
 class Vehicle{
     var currentSpeed = 0.0
     var description: String{
@@ -9,8 +10,31 @@ class Vehicle{
     }
     
     func makeNoise(){
+        print("zzz")
+    }
+}
+
+class EngineVehicle : Vehicle{
+    func spendFuel(){
         
     }
+    
+    override final var description : String{
+        print("drive safe")
+        return "drive safe"
+    }
+    override func makeNoise() {
+        super.makeNoise()
+    }
+}
+
+class Car : EngineVehicle{
+//    override var description : String{
+//        print("dont drive fast")
+//        return "dont drive fast"
+//
+//    }
+    
 }
 
 let someVehicle = Vehicle()
