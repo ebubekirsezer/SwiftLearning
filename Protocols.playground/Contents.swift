@@ -1,6 +1,8 @@
 
 // Protocols are the blue print of the sturctures or classes
 
+import Foundation
+
 protocol SomeProtocol {
     var mustBeSettable: Int { get set }
     var noNeedToBeSettable: Int { get }
@@ -367,3 +369,134 @@ func beginConcert(in location: Location & Named) {
 let seattle = City(name: "Seattle", latitude: 47.6, longitude: -122.3)
 beginConcert(in: seattle)
 
+
+protocol HasArea {
+    var area: Double {get}
+}
+
+class Circle: HasArea {
+    let pi = 3.1415927
+    var radius: Double
+    var area: Double { return pi * radius * radius }
+    init(radius: Double) {
+        self.radius = radius
+    }
+}
+
+class Country: HasArea {
+    var area: Double
+    init(area: Double) {
+        self.area = area
+    }
+}
+
+class Animal2 {
+    var legs: Int
+    init(legs: Int) {
+        self.legs = legs
+    }
+}
+
+let objects: [AnyObject] = [
+    Circle(radius: 2.0),
+    Country(area: 243_610),
+    Animal2(legs: 4)
+]
+
+for object in objects {
+    
+    if let objectWithArea = object as? HasArea {
+        print("Area \(objectWithArea.area)")
+    } else {
+        print("No area")
+    }
+}
+
+// Optional Protocol Requirements
+@objc protocol CounterDataSource{
+    @objc optional func incremental(forCount count: Int) -> Int
+    @objc optional var fixedIncrement: Int { get }
+}
+
+class Counter {
+    var count = 0
+    var dataSource: CounterDataSource?
+    func increment(){
+        if let amount = dataSource?.incremental?(forCount: count) {
+            count += amount
+        } else if let amount = dataSource?.fixedIncrement {
+            count += amount
+        }
+    }
+}
+
+class ThreeSource: NSObject, CounterDataSource {
+    let fixedIncrement = 3
+}
+
+var counter = Counter()
+counter.dataSource = ThreeSource()
+
+for _ in 1...4 {
+    counter.increment()
+    print(counter.count)
+}
+
+
+class TowardsZeroSource: NSObject, CounterDataSource {
+    func incremental(forCount count: Int) -> Int {
+        if count == 0 {
+            return 0
+        } else if count < 0 {
+            return 1
+        } else {
+            return -1
+        }
+    }
+}
+
+counter.count = -4
+counter.dataSource = TowardsZeroSource()
+
+for _ in 1...5 {
+    counter.increment()
+    print(counter.count)
+}
+
+
+// Protocol Extension
+//extension RandomNumberGenerator {
+//    func randomBool() -> Bool {
+//        return random() > 0.5
+//
+//    }
+//}
+//
+//let generator2 = LinearCongruentialGenerator()
+//print("random number \(generator2.random())")
+//print("random bool: \(generator2.randomBool())")
+
+
+extension PrettyTextRepresentable {
+    var prettyTextualDescription: String {
+        return textualDescription
+    }
+}
+
+
+extension Collection where Element: Equatable {
+    func allEqual() -> Bool {
+        for element in self {
+            if element != self.first {
+                return false
+            }
+        }
+        return true
+    }
+}
+
+let equalNumbers = [100, 100, 100, 100, 100]
+let differentNumbers = [100, 100, 200, 100, 200]
+
+print(equalNumbers.allEqual())
+print(differentNumbers.allEqual())

@@ -140,3 +140,33 @@ if let roomCount = john.residence?.numberOfRooms{
 } else {
     print("Unable")
 }
+
+
+class Vehicle {
+    var car : Car?
+    var numberOfTyres: Int = 4
+}
+
+class Player {
+    var vehicle: Vehicle?
+}
+
+class Car{
+    var modelName: String?
+}
+
+var ebubekir = Player()
+print(ebubekir.vehicle?.numberOfTyres)
+ebubekir.vehicle = Vehicle()
+
+if let numberOfTyre = ebubekir.vehicle?.numberOfTyres{
+    print(numberOfTyre)
+}
+
+ebubekir.vehicle?.car = Car()
+ebubekir.vehicle?.car?.modelName = "mercedes"
+if let carName = ebubekir.vehicle?.car?.modelName{
+    print("car name: \(carName)")
+} else {
+    print("unavle to reach car name")
+}
