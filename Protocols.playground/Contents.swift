@@ -3,10 +3,49 @@
 
 import Foundation
 
+protocol Name: class{
+    func upperCase() -> String
+    var name: String { get set }
+}
+
+
+class Person3: NSObject, Name{
+    func upperCase() -> String {
+        return "Ebubekir"
+    }
+    var name: String = ""
+    weak var delegate: Name?
+    var people: Person3
+    override init() {
+        self.people = Person3()
+    }
+    
+    
+}
+
+
+class People: Name{
+    func upperCase() -> String {
+        return " "
+    }
+    var name: String = " "
+    
+    var person: Person3?
+    func createPerson() {
+        var ebu = Person3()
+        self.person = ebu
+        ebu.delegate = self
+    }
+    
+    init() {
+        
+    }
+
+}
+
 protocol SomeProtocol {
     var mustBeSettable: Int { get set }
     var noNeedToBeSettable: Int { get }
-    
 }
 
 protocol AnotherProtocol{
@@ -417,6 +456,8 @@ for object in objects {
     @objc optional func incremental(forCount count: Int) -> Int
     @objc optional var fixedIncrement: Int { get }
 }
+
+
 
 class Counter {
     var count = 0

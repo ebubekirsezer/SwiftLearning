@@ -1,6 +1,27 @@
 
 //Nested Types
 
+struct Player {
+    
+    enum Kind{
+        case Football
+        case Basketball
+    }
+    
+    var kind: Kind
+}
+
+var ebubekir = Player(kind: .Basketball)
+var players: [Player] = [ebubekir]
+for player in players{
+    switch player.kind {
+    case .Basketball:
+        print("basketball")
+    case .Football:
+        print("football")
+    }
+}
+
 struct BlackjackCard {
     
     //Nested Suit

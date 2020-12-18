@@ -112,16 +112,19 @@ let stringIndex = findIndex(of: "Andrea", in: ["Mike", "Malcolm", "Andrea"])
 // Associated Types
 protocol Container {
     //associatedtype Item: Equatable
-    associatedtype Item
-    mutating func append(_ item: Item)
+    associatedtype Ebu
+    mutating func append(_ item: Ebu)
     var count: Int { get }
-    subscript(i: Int) -> Item { get }
+    subscript(i: Int) -> Ebu { get }
 }
 
 struct IntStack: Container {
     
     typealias Item = Int
     var items = [Int]()
+    
+    
+    
     mutating func push(_ item: Int){
         items.append(item)
     }
