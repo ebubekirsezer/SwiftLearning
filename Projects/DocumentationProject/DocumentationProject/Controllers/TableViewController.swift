@@ -9,8 +9,9 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    let dataSource: [String] = ["İstanbul", "Edirne", "Kocaeli", "Ankara", "Konya", "Sivas", "Malatya", "Erzurum", "Elazıg","Malatya", "Erzurum", "Elazıg"]
-    
+    let dataSource: [[String]] = [["İstanbul", "Edirne", "Kocaeli"], ["Ankara", "Konya", "Sivas"], ["Malatya", "Erzurum", "Elazıg","Malatya", "Erzurum", "Elazıg"]]
+    //automatic dimension
+    // scroll view delegate
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -24,7 +25,7 @@ class TableViewController: UITableViewController {
         var cell = UITableViewCell()
         
         if let countryCell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? TableViewCell{
-            countryCell.configure(with: dataSource[indexPath.row])
+            countryCell.configure(with: dataSource.[indexPath.row])
             
             cell = countryCell
         }
