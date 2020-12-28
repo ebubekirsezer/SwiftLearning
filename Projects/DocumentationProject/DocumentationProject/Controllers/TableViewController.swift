@@ -24,11 +24,11 @@ class TableViewController: UITableViewController {
     
         var cell = UITableViewCell()
         
-        if let countryCell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? TableViewCell{
-            countryCell.configure(with: dataSource.[indexPath.row])
-            
-            cell = countryCell
-        }
+//        if let countryCell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? TableViewCell{
+////            countryCell.configure(with: dataSource[indexPath.row])
+////
+////            cell = countryCell
+//        }
         
         return cell
     }

@@ -27,7 +27,7 @@ class ProfileViewController: UIViewController {
         //view.addSubview(vibrancyEffectView)
         
         
-        //ui backgroun corner, subview, cirle view, transform, bazier path, draw image with code
+        //uiview backgroun corner, subview, cirle view, transform, bazier path, draw image with code
         /*
          gesture
          lazy loadinh,
