@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B8D82ACB259B33EE00F13CEC /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D82AC9259B33EE00F13CEC /* LoadingCell.swift */; };
+		B8D82ACC259B33EE00F13CEC /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8D82ACA259B33EE00F13CEC /* LoadingCell.xib */; };
+		B8D82ACF259B3F9A00F13CEC /* CustomCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D82ACE259B3F9A00F13CEC /* CustomCollectionViewController.swift */; };
+		B8D82AD3259B43BA00F13CEC /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D82AD1259B43BA00F13CEC /* ProductCell.swift */; };
+		B8D82AD4259B43BA00F13CEC /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8D82AD2259B43BA00F13CEC /* ProductCell.xib */; };
+		B8D82AD7259B464000F13CEC /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D82AD6259B464000F13CEC /* Product.swift */; };
+		B8D82ADB259B655F00F13CEC /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D82AD9259B655F00F13CEC /* CityCell.swift */; };
+		B8D82ADC259B656000F13CEC /* CityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8D82ADA259B655F00F13CEC /* CityCell.xib */; };
 		B8F16F512597A05000BCEB9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F16F502597A05000BCEB9D /* AppDelegate.swift */; };
 		B8F16F532597A05000BCEB9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F16F522597A05000BCEB9D /* SceneDelegate.swift */; };
 		B8F16F552597A05000BCEB9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F16F542597A05000BCEB9D /* ViewController.swift */; };
@@ -32,6 +40,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B8D82AC9259B33EE00F13CEC /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
+		B8D82ACA259B33EE00F13CEC /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
+		B8D82ACE259B3F9A00F13CEC /* CustomCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewController.swift; sourceTree = "<group>"; };
+		B8D82AD1259B43BA00F13CEC /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		B8D82AD2259B43BA00F13CEC /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
+		B8D82AD6259B464000F13CEC /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		B8D82AD9259B655F00F13CEC /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
+		B8D82ADA259B655F00F13CEC /* CityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCell.xib; sourceTree = "<group>"; };
 		B8F16F4D2597A05000BCEB9D /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F16F502597A05000BCEB9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8F16F522597A05000BCEB9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +123,7 @@
 				B8F16F662597A23400BCEB9D /* Region.swift */,
 				B8F16F6A2597A24400BCEB9D /* City.swift */,
 				B8F16F732597A7B100BCEB9D /* CitySource.swift */,
+				B8D82AD6259B464000F13CEC /* Product.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -134,6 +151,7 @@
 				B8F16FA525991B9900BCEB9D /* CustomStackViewController.swift */,
 				B8F16FA82599C51F00BCEB9D /* CustomImageViewController.swift */,
 				B8F16FAB259A1FE900BCEB9D /* CustomTableViewController.swift */,
+				B8D82ACE259B3F9A00F13CEC /* CustomCollectionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -143,6 +161,12 @@
 			children = (
 				B8F16F7B2597B25600BCEB9D /* ImageTableViewCell.swift */,
 				B8F16F7C2597B25600BCEB9D /* ImageTableViewCell.xib */,
+				B8D82AC9259B33EE00F13CEC /* LoadingCell.swift */,
+				B8D82ACA259B33EE00F13CEC /* LoadingCell.xib */,
+				B8D82AD1259B43BA00F13CEC /* ProductCell.swift */,
+				B8D82AD2259B43BA00F13CEC /* ProductCell.xib */,
+				B8D82AD9259B655F00F13CEC /* CityCell.swift */,
+				B8D82ADA259B655F00F13CEC /* CityCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -205,8 +229,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8F16F5D2597A05200BCEB9D /* LaunchScreen.storyboard in Resources */,
+				B8D82ADC259B656000F13CEC /* CityCell.xib in Resources */,
 				B8F16F7E2597B25600BCEB9D /* ImageTableViewCell.xib in Resources */,
 				B8F16F5A2597A05200BCEB9D /* Assets.xcassets in Resources */,
+				B8D82AD4259B43BA00F13CEC /* ProductCell.xib in Resources */,
+				B8D82ACC259B33EE00F13CEC /* LoadingCell.xib in Resources */,
 				B8F16F582597A05000BCEB9D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,19 +250,24 @@
 				B8F16F8B2598A41400BCEB9D /* TriangleView.swift in Sources */,
 				B8F16FA92599C51F00BCEB9D /* CustomImageViewController.swift in Sources */,
 				B8F16F882598A15E00BCEB9D /* BezierPathViewController.swift in Sources */,
+				B8D82AD7259B464000F13CEC /* Product.swift in Sources */,
 				B8F16F6B2597A24400BCEB9D /* City.swift in Sources */,
 				B8F16F7D2597B25600BCEB9D /* ImageTableViewCell.swift in Sources */,
+				B8D82ADB259B655F00F13CEC /* CityCell.swift in Sources */,
 				B8F16FA02599122A00BCEB9D /* CircleView.swift in Sources */,
 				B8F16F852597D3AD00BCEB9D /* CustomizedUIViewController.swift in Sources */,
 				B8F16F512597A05000BCEB9D /* AppDelegate.swift in Sources */,
 				B8F16F532597A05000BCEB9D /* SceneDelegate.swift in Sources */,
 				B8F16FA625991B9A00BCEB9D /* CustomStackViewController.swift in Sources */,
+				B8D82AD3259B43BA00F13CEC /* ProductCell.swift in Sources */,
 				B8F16F672597A23400BCEB9D /* Region.swift in Sources */,
 				B8F16F822597D24E00BCEB9D /* CustomViewController.swift in Sources */,
 				B8F16F772597AE7300BCEB9D /* SectionlyTableViewController.swift in Sources */,
 				B8F16F9D259910B200BCEB9D /* CustomCircleViewController.swift in Sources */,
 				B8F16FAC259A1FE900BCEB9D /* CustomTableViewController.swift in Sources */,
+				B8D82ACF259B3F9A00F13CEC /* CustomCollectionViewController.swift in Sources */,
 				B8F16F712597A46F00BCEB9D /* HomeViewController.swift in Sources */,
+				B8D82ACB259B33EE00F13CEC /* LoadingCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

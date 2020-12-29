@@ -8,6 +8,7 @@
 import UIKit
 
 class CitySource {
+    
     static let westCities: [City] = [
         City(cityImage: #imageLiteral(resourceName: "istanbul"), cityName: "Istanbul"),
         City(cityImage: #imageLiteral(resourceName: "edirne"), cityName: "Edirne"),
