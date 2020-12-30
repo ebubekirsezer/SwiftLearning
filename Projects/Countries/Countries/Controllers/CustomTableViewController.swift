@@ -56,7 +56,6 @@ class CustomTableViewController: UITableViewController {
     
     //use willdisplay
     
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return filteredData.count
@@ -67,9 +66,7 @@ class CustomTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         var cell = UITableViewCell()
-        
         if indexPath.section == 0 {
             if let countryCell = tableView.dequeueReusableCell(withIdentifier: "Cell"){
                 countryCell.textLabel?.text = filteredData[indexPath.row]
@@ -81,9 +78,6 @@ class CustomTableViewController: UITableViewController {
                 cell = indicatorCell
             }
         }
-        
-
-    
         return cell
     }
     
@@ -92,7 +86,6 @@ class CustomTableViewController: UITableViewController {
         let contentHeight = scrollView.contentSize.height
         
         if offsetY > contentHeight - scrollView.frame.height {
-            
             if !fetchingMore {
                 beginBatchFetch()
             }

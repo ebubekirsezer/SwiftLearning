@@ -30,12 +30,6 @@ class SectionlyTableViewController: UITableViewController {
         filteredData = dataSource
     }
     
-    /*
-     
-     
-     
-     */
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return dataSource.count
     }

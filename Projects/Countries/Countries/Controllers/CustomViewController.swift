@@ -65,4 +65,8 @@ class CustomViewController: UIViewController {
     @IBAction func goToCustomStackView(_ sender: UIButton) {
         goToAny(viewController: CustomStackViewController(), from: "Main")
     }
+    
+    @IBAction func goToCustomTextField(_ sender: CustomUIButton) {
+        goToAny(viewController: CustomTextFieldViewController(), from: "Main")
+    }
 }

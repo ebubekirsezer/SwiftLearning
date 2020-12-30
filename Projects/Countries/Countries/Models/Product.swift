@@ -10,4 +10,5 @@ import UIKit
 struct Product {
     let productImage: UIImage
     let productName: String
+    var isLiked: Bool
 }

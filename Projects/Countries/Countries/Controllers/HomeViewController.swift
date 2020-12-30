@@ -29,6 +29,10 @@ class HomeViewController: UIViewController {
     @IBAction func goToTableViewWithSearch(_ sender: UIButton) {
         goToAny(viewController: CustomTableViewController(), from: "Main")
     }
+    
+    @IBAction func goToHorizontalCollectionView(_ sender: CustomUIButton) {
+        goToAny(viewController: CustomHorizontalCollectionViewController(), from: "Main")
+    }
 }
 
 extension UIViewController {
