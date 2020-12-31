@@ -9,11 +9,14 @@ import UIKit
 
 class ProductDetailViewController: UIViewController {
     
+    @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet weak var productName: UILabel!
     var product: Product? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(product?.productName)
+        productImage.image = product?.productImage
+        productName.text = product?.productName
     }
 }
