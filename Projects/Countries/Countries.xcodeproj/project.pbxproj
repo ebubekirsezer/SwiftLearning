@@ -9,14 +9,13 @@
 /* Begin PBXBuildFile section */
 		B82AE270259DBC070049981C /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82AE26F259DBC070049981C /* Order.swift */; };
 		B82AE273259DC1090049981C /* OrderSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82AE272259DC1090049981C /* OrderSource.swift */; };
-		B82AE276259DC37A0049981C /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82AE275259DC37A0049981C /* RadioButtonView.swift */; };
 		B82AE27A259DD7CA0049981C /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82AE278259DD7CA0049981C /* HeaderCell.swift */; };
 		B82AE27B259DD7CA0049981C /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B82AE279259DD7CA0049981C /* HeaderCell.xib */; };
 		B82AE280259E0CFE0049981C /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82AE27F259E0CFE0049981C /* Animator.swift */; };
+		B82AE28825A25D910049981C /* OrderlyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82AE28725A25D910049981C /* OrderlyTableViewController.swift */; };
 		B88E4834259DA6E600BE50DE /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88E4833259DA6E600BE50DE /* OrderListViewController.swift */; };
 		B88E4838259DB15E00BE50DE /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88E4836259DB15D00BE50DE /* OrderCell.swift */; };
 		B88E4839259DB15E00BE50DE /* OrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B88E4837259DB15D00BE50DE /* OrderCell.xib */; };
-		B88E483C259DB28F00BE50DE /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88E483B259DB28F00BE50DE /* RadioButton.swift */; };
 		B8A700DC259C74E3009D8804 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A700DB259C74E3009D8804 /* ProductDetailViewController.swift */; };
 		B8A700E1259C8162009D8804 /* CustomUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A700E0259C8162009D8804 /* CustomUIView.swift */; };
 		B8A700E4259C8E83009D8804 /* CustomUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A700E3259C8E83009D8804 /* CustomUIButton.swift */; };
@@ -26,6 +25,9 @@
 		B8A700F1259CA21A009D8804 /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A700EF259CA21A009D8804 /* StoryCell.swift */; };
 		B8A700F2259CA21A009D8804 /* StoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8A700F0259CA21A009D8804 /* StoryCell.xib */; };
 		B8A700F5259CA27D009D8804 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A700F4259CA27D009D8804 /* CardView.swift */; };
+		B8BA0DC925A300110022E4DE /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA0DC825A300110022E4DE /* RadioButtonView.swift */; };
+		B8BA0DCC25A31D260022E4DE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA0DCB25A31D260022E4DE /* MapViewController.swift */; };
+		B8C42D7225A3321200996BAD /* OrderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C42D7125A3321200996BAD /* OrderType.swift */; };
 		B8D82ACB259B33EE00F13CEC /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D82AC9259B33EE00F13CEC /* LoadingCell.swift */; };
 		B8D82ACC259B33EE00F13CEC /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8D82ACA259B33EE00F13CEC /* LoadingCell.xib */; };
 		B8D82ACF259B3F9A00F13CEC /* CustomCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D82ACE259B3F9A00F13CEC /* CustomCollectionViewController.swift */; };
@@ -61,14 +63,13 @@
 /* Begin PBXFileReference section */
 		B82AE26F259DBC070049981C /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		B82AE272259DC1090049981C /* OrderSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSource.swift; sourceTree = "<group>"; };
-		B82AE275259DC37A0049981C /* RadioButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonView.swift; sourceTree = "<group>"; };
 		B82AE278259DD7CA0049981C /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		B82AE279259DD7CA0049981C /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
 		B82AE27F259E0CFE0049981C /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		B82AE28725A25D910049981C /* OrderlyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderlyTableViewController.swift; sourceTree = "<group>"; };
 		B88E4833259DA6E600BE50DE /* OrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
 		B88E4836259DB15D00BE50DE /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		B88E4837259DB15D00BE50DE /* OrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderCell.xib; sourceTree = "<group>"; };
-		B88E483B259DB28F00BE50DE /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		B8A700DB259C74E3009D8804 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		B8A700E0259C8162009D8804 /* CustomUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIView.swift; sourceTree = "<group>"; };
 		B8A700E3259C8E83009D8804 /* CustomUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIButton.swift; sourceTree = "<group>"; };
@@ -78,6 +79,9 @@
 		B8A700EF259CA21A009D8804 /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
 		B8A700F0259CA21A009D8804 /* StoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryCell.xib; sourceTree = "<group>"; };
 		B8A700F4259CA27D009D8804 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		B8BA0DC825A300110022E4DE /* RadioButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonView.swift; sourceTree = "<group>"; };
+		B8BA0DCB25A31D260022E4DE /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		B8C42D7125A3321200996BAD /* OrderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderType.swift; sourceTree = "<group>"; };
 		B8D82AC9259B33EE00F13CEC /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
 		B8D82ACA259B33EE00F13CEC /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		B8D82ACE259B3F9A00F13CEC /* CustomCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewController.swift; sourceTree = "<group>"; };
@@ -137,10 +141,17 @@
 				B8A700E0259C8162009D8804 /* CustomUIView.swift */,
 				B8A700E3259C8E83009D8804 /* CustomUIButton.swift */,
 				B8A700F4259CA27D009D8804 /* CardView.swift */,
-				B88E483B259DB28F00BE50DE /* RadioButton.swift */,
-				B82AE275259DC37A0049981C /* RadioButtonView.swift */,
+				B8BA0DC825A300110022E4DE /* RadioButtonView.swift */,
 			);
 			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		B8C42D7025A331FE00996BAD /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				B8C42D7125A3321200996BAD /* OrderType.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		B8F16F442597A05000BCEB9D = {
@@ -162,6 +173,7 @@
 		B8F16F4F2597A05000BCEB9D /* Countries */ = {
 			isa = PBXGroup;
 			children = (
+				B8C42D7025A331FE00996BAD /* Enums */,
 				B82AE27E259E0CEA0049981C /* Animations */,
 				B8A700DF259C8136009D8804 /* Custom Views */,
 				B8F16F7A2597B23800BCEB9D /* Cells */,
@@ -219,6 +231,8 @@
 				B8A700E6259C9082009D8804 /* CustomTextFieldViewController.swift */,
 				B8A700E9259CA00C009D8804 /* CustomHorizontalCollectionViewController.swift */,
 				B88E4833259DA6E600BE50DE /* OrderListViewController.swift */,
+				B82AE28725A25D910049981C /* OrderlyTableViewController.swift */,
+				B8BA0DCB25A31D260022E4DE /* MapViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -324,6 +338,7 @@
 				B8F16F552597A05000BCEB9D /* ViewController.swift in Sources */,
 				B88E4838259DB15E00BE50DE /* OrderCell.swift in Sources */,
 				B8F16F742597A7B100BCEB9D /* CitySource.swift in Sources */,
+				B8BA0DC925A300110022E4DE /* RadioButtonView.swift in Sources */,
 				B8F16F8B2598A41400BCEB9D /* TriangleView.swift in Sources */,
 				B8F16FA92599C51F00BCEB9D /* CustomImageViewController.swift in Sources */,
 				B8F16F882598A15E00BCEB9D /* BezierPathViewController.swift in Sources */,
@@ -343,15 +358,17 @@
 				B8D82AD3259B43BA00F13CEC /* ProductCell.swift in Sources */,
 				B8A700E1259C8162009D8804 /* CustomUIView.swift in Sources */,
 				B8F16F672597A23400BCEB9D /* Region.swift in Sources */,
+				B8BA0DCC25A31D260022E4DE /* MapViewController.swift in Sources */,
+				B82AE28825A25D910049981C /* OrderlyTableViewController.swift in Sources */,
 				B8A700E4259C8E83009D8804 /* CustomUIButton.swift in Sources */,
 				B8A700ED259CA17E009D8804 /* ProductSource.swift in Sources */,
 				B8F16F822597D24E00BCEB9D /* CustomViewController.swift in Sources */,
 				B8F16F772597AE7300BCEB9D /* SectionlyTableViewController.swift in Sources */,
 				B8F16F9D259910B200BCEB9D /* CustomCircleViewController.swift in Sources */,
 				B8F16FAC259A1FE900BCEB9D /* CustomTableViewController.swift in Sources */,
+				B8C42D7225A3321200996BAD /* OrderType.swift in Sources */,
 				B82AE27A259DD7CA0049981C /* HeaderCell.swift in Sources */,
 				B82AE270259DBC070049981C /* Order.swift in Sources */,
-				B88E483C259DB28F00BE50DE /* RadioButton.swift in Sources */,
 				B8A700E7259C9082009D8804 /* CustomTextFieldViewController.swift in Sources */,
 				B8D82ACF259B3F9A00F13CEC /* CustomCollectionViewController.swift in Sources */,
 				B82AE280259E0CFE0049981C /* Animator.swift in Sources */,
@@ -359,7 +376,6 @@
 				B8F16F712597A46F00BCEB9D /* HomeViewController.swift in Sources */,
 				B8D82ACB259B33EE00F13CEC /* LoadingCell.swift in Sources */,
 				B8A700F1259CA21A009D8804 /* StoryCell.swift in Sources */,
-				B82AE276259DC37A0049981C /* RadioButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

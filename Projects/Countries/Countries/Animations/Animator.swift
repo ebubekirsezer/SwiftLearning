@@ -9,26 +9,29 @@ import UIKit
 
 final class Animator: NSObject, UIViewControllerAnimatedTransitioning {
     
-    static let duration: TimeInterval = 1.25
+    static let duration: TimeInterval = 0.75
     
     private let type: PresentationType
     private let customCollectionViewController: CustomCollectionViewController
     private let productDetailViewController: ProductDetailViewController
     private var selectedCellImageViewSnapshot: UIView
     private let cellImageViewRect: CGRect
-    private let cellLabelRect: CGRect
+    //private let cellLabelRect: CGRect
     
     init?(type: PresentationType, customCollectionViewController: CustomCollectionViewController, productDetailViewController: ProductDetailViewController, selectedCellImageViewSnapshot: UIView) {
+        
         self.type = type
         self.customCollectionViewController = customCollectionViewController
         self.productDetailViewController = productDetailViewController
         self.selectedCellImageViewSnapshot = selectedCellImageViewSnapshot
+
         
         guard let window = customCollectionViewController.view.window ?? productDetailViewController.view.window,
               let selectedCell = customCollectionViewController.selectedCell
         else { return nil }
+    
+        //self.cellLabelRect = selectedCell.productName.convert(selectedCell.productName.bounds, to: window)
         
-        self.cellLabelRect = selectedCell.productName.convert(selectedCell.productName.bounds, to: window)
         self.cellImageViewRect = selectedCell.productImage.convert(selectedCell.productImage.bounds, to: window)
     }
     
@@ -38,26 +41,29 @@ final class Animator: NSObject, UIViewControllerAnimatedTransitioning {
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let containerView = transitionContext.containerView
-        
+
         guard let toView = productDetailViewController.view
         else {
             transitionContext.completeTransition(false)
             return
         }
-        containerView.addSubview(toView)
         
-        //let closeButtonSnapshot = productDetailViewController.closeButton.snapshotView(afterScreenUpdates: true)
+        containerView.addSubview(toView)
+        //transitionContext.completeTransition(true)
+        
         guard let selectedCell = customCollectionViewController.selectedCell,
               let window = customCollectionViewController.view.window ?? productDetailViewController.view.window,
               let cellImageSnapshot = selectedCell.productImage.snapshotView(afterScreenUpdates: true),
               let controllerImageSnapshot = productDetailViewController.productImage.snapshotView(afterScreenUpdates: true),
-              let cellLabelSnapshot = selectedCell.productName.snapshotView(afterScreenUpdates: true)
+              //let cellLabelSnapshot = selectedCell.productName.snapshotView(afterScreenUpdates: true),
+              let closeButtonSnapshot = productDetailViewController.backButton.snapshotView(afterScreenUpdates: true)
         else {
             transitionContext.completeTransition(true)
             return
         }
         
         let isPresenting = type.isPresenting
+        
         let backgroundView: UIView
         let fadeView = UIView(frame: containerView.bounds)
         fadeView.backgroundColor = productDetailViewController.view.backgroundColor
@@ -75,11 +81,11 @@ final class Animator: NSObject, UIViewControllerAnimatedTransitioning {
         
         toView.alpha = 0
         
-        [backgroundView, selectedCellImageViewSnapshot, controllerImageSnapshot, cellLabelSnapshot].forEach { containerView.addSubview($0) }
+        [backgroundView, selectedCellImageViewSnapshot, controllerImageSnapshot, closeButtonSnapshot].forEach { containerView.addSubview($0) }
         
         let controllerImageViewRect = productDetailViewController.productImage.convert(productDetailViewController.productImage.bounds, to: window)
-        let controllerLabelRect = productDetailViewController.productName.convert(productDetailViewController.productName.bounds, to: window)
-        //let closeButtonRect = productDetailViewController.closeButton.convert(secondViewController.closeButton.bounds, to: window)
+        //let controllerLabelRect = productDetailViewController.productName.convert(productDetailViewController.productName.bounds, to: window)
+        let closeButtonRect = productDetailViewController.backButton.convert(productDetailViewController.backButton.bounds, to: window)
 
         [selectedCellImageViewSnapshot, controllerImageSnapshot].forEach {
             $0.frame = isPresenting ? cellImageViewRect : controllerImageViewRect
@@ -88,11 +94,12 @@ final class Animator: NSObject, UIViewControllerAnimatedTransitioning {
         }
         
         controllerImageSnapshot.alpha = isPresenting ? 0 : 1
-        selectedCellImageViewSnapshot.alpha = isPresenting ? 1 : 0
-        cellLabelSnapshot.frame = isPresenting ? cellLabelRect : controllerLabelRect
         
-        //closeButtonSnapshot.frame = closeButtonRect
-        //closeButtonSnapshot.alpha = isPresenting ? 0 : 1
+        selectedCellImageViewSnapshot.alpha = isPresenting ? 1 : 0
+       // cellLabelSnapshot.frame = isPresenting ? cellLabelRect : controllerLabelRect
+        
+        closeButtonSnapshot.frame = closeButtonRect
+        closeButtonSnapshot.alpha = isPresenting ? 0 : 1
         
         UIView.animateKeyframes(withDuration: Self.duration, delay: 0, options: .calculationModeCubic) {
             
@@ -102,7 +109,7 @@ final class Animator: NSObject, UIViewControllerAnimatedTransitioning {
                 
                 fadeView.alpha = isPresenting ? 1 : 0
                 
-                cellLabelSnapshot.frame = isPresenting ? controllerLabelRect : self.cellLabelRect
+                //cellLabelSnapshot.frame = isPresenting ? controllerLabelRect : self.cellLabelRect
                 
                 [controllerImageSnapshot, self.selectedCellImageViewSnapshot].forEach {
                             $0.layer.cornerRadius = isPresenting ? 0 : 12
@@ -114,13 +121,13 @@ final class Animator: NSObject, UIViewControllerAnimatedTransitioning {
                 self.selectedCellImageViewSnapshot.alpha = isPresenting ? 0 : 1
                 controllerImageSnapshot.alpha = isPresenting ? 1 : 0
             }
-            
         } completion: { _ in
+            
             self.selectedCellImageViewSnapshot.removeFromSuperview()
             controllerImageSnapshot.removeFromSuperview()
             backgroundView.removeFromSuperview()
-            cellLabelSnapshot.removeFromSuperview()
-            //closeButtonSnapshot.removeFromSuperview()
+           // cellLabelSnapshot.removeFromSuperview()
+            closeButtonSnapshot.removeFromSuperview()
 
             toView.alpha = 1
             transitionContext.completeTransition(true)

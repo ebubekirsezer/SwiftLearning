@@ -9,7 +9,7 @@ import UIKit
 
 class ProductSource {
     
-    static let products = [
+    static var products = [
         Product(productImage: #imageLiteral(resourceName: "istanbul"), productName: "Asus Laptop", isLiked: false),
         Product(productImage: #imageLiteral(resourceName: "erzurum"), productName: "Acer Laptop", isLiked: false),
         Product(productImage: #imageLiteral(resourceName: "edirne"), productName: "Apple Laptop", isLiked: false),

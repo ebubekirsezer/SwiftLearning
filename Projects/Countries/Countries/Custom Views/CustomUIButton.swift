@@ -28,5 +28,4 @@ class CustomUIButton: UIButton {
             layer.borderColor = borderColor.cgColor
         }
     }
-    
 }

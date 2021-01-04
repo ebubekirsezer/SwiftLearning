@@ -17,31 +17,33 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vxd-1p-Q90">
-                        <rect key="frame" x="16" y="8" width="109" height="28"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vxd-1p-Q90">
+                        <rect key="frame" x="16" y="8" width="41.5" height="28"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4w-rP-pV0" customClass="RadioButtonView" customModule="Countries" customModuleProvider="target">
-                        <rect key="frame" x="207.5" y="8" width="96.5" height="28"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rlo-qX-Ssq" customClass="RadioButtonView" customModule="Countries" customModuleProvider="target">
+                        <rect key="frame" x="282" y="8" width="30" height="28"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="rXT-xR-868"/>
+                        </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="b4w-rP-pV0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="1Rw-NL-hfa"/>
-                    <constraint firstAttribute="bottom" secondItem="b4w-rP-pV0" secondAttribute="bottom" constant="8" id="Ewf-zl-DFw"/>
                     <constraint firstAttribute="bottom" secondItem="Vxd-1p-Q90" secondAttribute="bottom" constant="8" id="KZR-nQ-2A3"/>
+                    <constraint firstItem="Rlo-qX-Ssq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="MRv-gS-ey1"/>
                     <constraint firstItem="Vxd-1p-Q90" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="UkM-ZR-McL"/>
-                    <constraint firstItem="b4w-rP-pV0" firstAttribute="leading" secondItem="Vxd-1p-Q90" secondAttribute="trailing" constant="150" id="V1a-7I-ew7"/>
-                    <constraint firstAttribute="trailing" secondItem="b4w-rP-pV0" secondAttribute="trailing" constant="16" id="hMM-2c-Of7"/>
+                    <constraint firstAttribute="trailing" secondItem="Rlo-qX-Ssq" secondAttribute="trailing" constant="8" id="Vfb-DW-fh3"/>
+                    <constraint firstAttribute="bottom" secondItem="Rlo-qX-Ssq" secondAttribute="bottom" constant="8" id="g70-iQ-sOm"/>
                     <constraint firstItem="Vxd-1p-Q90" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="yey-QH-dfj"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="orderName" destination="Vxd-1p-Q90" id="qAG-4x-eBA"/>
-                <outlet property="radioButtonView" destination="b4w-rP-pV0" id="JEb-kq-MS5"/>
+                <outlet property="radioButtonView" destination="Rlo-qX-Ssq" id="HuP-yo-V7n"/>
             </connections>
             <point key="canvasLocation" x="15.942028985507248" y="87.723214285714278"/>
         </tableViewCell>

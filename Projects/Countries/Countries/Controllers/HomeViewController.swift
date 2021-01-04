@@ -33,6 +33,10 @@ class HomeViewController: UIViewController {
     @IBAction func goToHorizontalCollectionView(_ sender: CustomUIButton) {
         goToAny(viewController: CustomHorizontalCollectionViewController(), from: "Main")
     }
+    
+    @IBAction func goToOrderlyTableView(_ sender: CustomUIButton) {
+        goToAny(viewController: OrderlyTableViewController(), from: "Main")
+    }
 }
 
 extension UIViewController {

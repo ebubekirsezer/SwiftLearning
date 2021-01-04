@@ -17,12 +17,13 @@ class CustomCollectionViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var constraintHeightForHeaderView: NSLayoutConstraint!
     
-    let products: [Product] = ProductSource.products
+    var products: [Product] = ProductSource.products
     var filteredProducts: [Product] = []
     var showingTopViews = false
     var selectedCell: ProductCell?
     var selectedCellImageViewSnapshot: UIView?
     var animator: Animator?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,9 @@ class CustomCollectionViewController: UIViewController {
         
         //Hiding Navigation Bar
         //self.navigationController?.hidesBarsOnSwipe = true
+        
+        let notificationCenter: NotificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(updateProductList), name: .updateProductList, object: nil)
         
         filteredProducts = products
         
@@ -47,6 +51,12 @@ class CustomCollectionViewController: UIViewController {
         orderListVC.modalPresentationStyle = .overFullScreen
         orderListVC.modalTransitionStyle = .crossDissolve
         self.present(orderListVC, animated: false, completion: nil)
+    }
+    
+    @objc func updateProductList(){
+        products = ProductSource.products
+        filteredProducts = products
+        productListView.reloadData()
     }
     
     func updateUI(){
@@ -64,6 +74,15 @@ class CustomCollectionViewController: UIViewController {
     func registerCellToCollectionView(){
         let productCell = UINib(nibName: "ProductCell", bundle: nil)
         productListView.register(productCell, forCellWithReuseIdentifier: "ProductCell")
+    }
+    
+    func presentProductDetailVC(with product: Product){
+        let productDetailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProductDetailViewController") as! ProductDetailViewController
+
+        productDetailVC.transitioningDelegate = self
+        productDetailVC.modalPresentationStyle = .fullScreen
+        productDetailVC.product = product
+        present(productDetailVC, animated: true)
     }
 }
 
@@ -83,24 +102,12 @@ extension CustomCollectionViewController: UICollectionViewDataSource, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         selectedCell = collectionView.cellForItem(at: indexPath) as? ProductCell
         selectedCellImageViewSnapshot = selectedCell?.productImage.snapshotView(afterScreenUpdates: false)
-        
-
-        let product = filteredProducts[indexPath.row]
-        presentProductDetail(product: product)
+            
+        presentProductDetailVC(with: filteredProducts[indexPath.row])
     }
     
-    func presentProductDetail(product: Product){
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let productDetailVC = storyboard.instantiateViewController(identifier: "ProductDetailViewController") as! ProductDetailViewController
-        
-        productDetailVC.transitioningDelegate = self
-        productDetailVC.modalPresentationStyle = .fullScreen
-        productDetailVC.product = product
-        present(productDetailVC, animated: true)
-    }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         //print(scrollView.contentSize.height) 1800
@@ -123,19 +130,19 @@ extension CustomCollectionViewController: UICollectionViewDataSource, UICollecti
 //Mark: UICollectionViewDelegateFlowLayout
 extension CustomCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.size.width / 2, height: 300)
+        return CGSize(width: (collectionView.bounds.size.width / 2) - 8, height: 300)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return 8
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        return UIEdgeInsets(top: 0, left: 0, bottom: 8, right: 0)
     }
 }
 
@@ -161,23 +168,27 @@ extension CustomCollectionViewController: UISearchBarDelegate {
 }
 
 extension CustomCollectionViewController: UIViewControllerTransitioningDelegate {
-    
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        guard let customCollectionVC = presenting as? CustomCollectionViewController,
-              let productDetailVC = presented as? ProductDetailViewController,
+        guard let customCollectionViewController = presenting as? CustomCollectionViewController,
+              let productDetailViewController = presented as? ProductDetailViewController,
               let selectedCellImageViewSnapshot = selectedCellImageViewSnapshot
-        else { return nil }
-        
-        animator = Animator(type: .present, customCollectionViewController: customCollectionVC, productDetailViewController: productDetailVC, selectedCellImageViewSnapshot: selectedCellImageViewSnapshot)
+              else { return nil }
+
+        animator = Animator(type: .present, customCollectionViewController: customCollectionViewController, productDetailViewController: productDetailViewController, selectedCellImageViewSnapshot: selectedCellImageViewSnapshot)
         return animator
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        guard let productDetailVC = dismissed as? ProductDetailViewController,
-              let selectedCellImageViewSnapshot = selectedCellImageViewSnapshot
-        else { return nil }
+        guard let productDetailViewController = dismissed as? ProductDetailViewController,
+            let selectedCellImageViewSnapshot = selectedCellImageViewSnapshot
+            else { return nil }
         
-        animator = Animator(type: .dismiss, customCollectionViewController: self, productDetailViewController: productDetailVC, selectedCellImageViewSnapshot: selectedCellImageViewSnapshot)
+        animator = Animator(type: .dismiss, customCollectionViewController: self, productDetailViewController: productDetailViewController, selectedCellImageViewSnapshot: selectedCellImageViewSnapshot)
         return animator
     }
 }
+
+extension Notification.Name {
+    static let updateProductList = Notification.Name(rawValue: "UpdateProductListNotification")
+}
+

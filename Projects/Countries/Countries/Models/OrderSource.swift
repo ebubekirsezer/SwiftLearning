@@ -9,10 +9,10 @@ import Foundation
 
 class OrderSource {
     static let orderLists: [Order] = [
-        Order(orderType: "A-Z", isSelected: false),
-        Order(orderType: "Z-A", isSelected: false),
-        Order(orderType: "Fiyat Artan", isSelected: false),
-        Order(orderType: "Fiyat Azalan", isSelected: false),
-        Order(orderType: "En Çok Satanlar", isSelected: false),
+        Order(orderType: "A-Z", isSelected: false, orderKind: .AtoZ),
+        Order(orderType: "Z-A", isSelected: false, orderKind: .ZtoA),
+        Order(orderType: "Fiyat Artan", isSelected: false, orderKind: .Original),
+        Order(orderType: "Fiyat Azalan", isSelected: false, orderKind: .Original),
+        Order(orderType: "En Çok Satanlar", isSelected: false, orderKind: .Original),
     ]
 }

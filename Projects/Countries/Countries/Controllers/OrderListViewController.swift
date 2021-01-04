@@ -63,6 +63,17 @@ extension OrderListViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var order = orderTypes[indexPath.row]
+        order.isSelected = !order.isSelected
+        let cell = tableView.cellForRow(at: indexPath) as! OrderCell
+        if let radioButtonView = cell.radioButtonView {
+            radioButtonView.onRadioButtonTap(radioButtonView.radioButton)
+            orderProductList(by: order)
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let headerCell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell") as! HeaderCell
@@ -74,5 +85,18 @@ extension OrderListViewController: UITableViewDataSource, UITableViewDelegate {
         return 48
     }
     
-    
+    func orderProductList(by order: Order){
+        let originalProductList = ProductSource.products
+        switch order.orderKind {
+        case .AtoZ:
+            ProductSource.products = ProductSource.products.sorted(by: { $0.productName < $1.productName})
+            NotificationCenter.default.post(name: .updateProductList, object: nil)
+        case .ZtoA:
+            ProductSource.products = ProductSource.products.sorted(by: { $0.productName > $1.productName})
+            NotificationCenter.default.post(name: .updateProductList, object: nil)
+        case .Original:
+            ProductSource.products = originalProductList
+            NotificationCenter.default.post(name: .updateProductList, object: nil)
+        }
+    }
 }

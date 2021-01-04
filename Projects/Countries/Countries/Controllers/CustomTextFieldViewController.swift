@@ -39,7 +39,7 @@ class CustomTextFieldViewController: UIViewController {
 extension CustomTextFieldViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if let range = string.rangeOfCharacter(from: NSCharacterSet.letters){
+        if let _ = string.rangeOfCharacter(from: NSCharacterSet.letters){
             return true
         } else {
             return false

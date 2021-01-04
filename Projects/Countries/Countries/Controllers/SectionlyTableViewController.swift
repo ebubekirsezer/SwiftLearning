@@ -18,6 +18,7 @@ class SectionlyTableViewController: UITableViewController {
     ]
     
     var filteredData: [Region] = []
+    var sectionTitles: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,11 @@ class SectionlyTableViewController: UITableViewController {
         searchBar.delegate = self
         
         filteredData = dataSource
+        
+        for section in dataSource{
+            sectionTitles.append(String(section.regionName.prefix(1)))
+        }
+        
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -38,35 +44,19 @@ class SectionlyTableViewController: UITableViewController {
         
         let region = dataSource[section]
         return region.cities.count
-        //if section % 2 == 0 {
-//            return 1
-//        } else {
-//            let index = section / 2
-//            return filteredData[index].cities.count
-//        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         var cell = UITableViewCell()
         
-//        if indexPath.section % 2 == 0 {
-//            let index = indexPath.section / 2
-//            cell.textLabel?.text = filteredData[index].regionName
-//            cell.textLabel?.font = UIFont(name: "TimesNewRomanPSMT", size: 36.0)
-//        } else {
-            if let cellItem = tableView.dequeueReusableCell(withIdentifier: "ImageTableViewCell", for: indexPath) as? ImageTableViewCell {
-                //print(indexPath)
-                //let index = (indexPath.section - 1) / 2
-                //print(index)
-                //let data = filteredData[index].cities[indexPath.row]
-                let region = dataSource[indexPath.section]
-                let city = region.cities[indexPath.row]
-                cellItem.configure(cityName: city.cityName, image: city.cityImage)
-                cell = cellItem
-           }
-//        }
-//
+        if let cellItem = tableView.dequeueReusableCell(withIdentifier: "ImageTableViewCell", for: indexPath) as? ImageTableViewCell {
+            let region = dataSource[indexPath.section]
+            let city = region.cities[indexPath.row]
+            cellItem.configure(cityName: city.cityName, image: city.cityImage)
+            cell = cellItem
+        }
+
         cell.selectionStyle = .none
         return cell
     }
@@ -81,6 +71,10 @@ class SectionlyTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 48
+    }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return sectionTitles
     }
     
     private func registerTableViewCells() {
@@ -100,20 +94,11 @@ extension SectionlyTableViewController: UISearchBarDelegate {
         if searchText == "" {
             filteredData = dataSource
         } else {
-            for (regionIndex, region) in dataSource.enumerated() {
-                for (cityIndex, city) in region.cities.enumerated() {
+            for (_, region) in dataSource.enumerated() {
+                for (_, city) in region.cities.enumerated() {
                     
                     if city.cityName.lowercased().contains(searchText.lowercased()){
                         
-                        for (index, data) in filteredData.enumerated() {
-                            if data.regionName == region.regionName{
-                                filteredData[index].cities.append(city)
-                            } else {
-                                var newRegion = Region(regionName: region.regionName, cities: [city])
-                                filteredData.append(newRegion)
-                            }
-                            
-                        }
                     }
                 }
             }

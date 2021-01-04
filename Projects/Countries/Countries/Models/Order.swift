@@ -9,5 +9,6 @@ import Foundation
 
 struct Order {
     let orderType: String
-    let isSelected: Bool
+    var isSelected: Bool
+    let orderKind: OrderType
 }

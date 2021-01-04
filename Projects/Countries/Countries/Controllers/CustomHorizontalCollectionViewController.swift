@@ -12,8 +12,7 @@ class CustomHorizontalCollectionViewController: UIViewController {
     
     @IBOutlet weak var storiesCollectionView: UICollectionView!
 
-    let products: [Product] = ProductSource.products
-    
+    var products: [Product] = ProductSource.products
     override func viewDidLoad() {
         super.viewDidLoad()
         
