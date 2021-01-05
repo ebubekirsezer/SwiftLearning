@@ -39,13 +39,13 @@ class ProductCell: UICollectionViewCell {
     }
     
     @IBAction func likePressed(_ sender: UIButton) {
-        if let realProduct = product {
+        if var realProduct = product {
             if realProduct.isLiked {
                 likeButton.setImage(#imageLiteral(resourceName: "emptyLike"), for: .normal)
-                product!.isLiked = false
+                realProduct.isLiked = false
             } else {
                 likeButton.setImage(#imageLiteral(resourceName: "like"), for: .normal)
-                product!.isLiked = true
+                realProduct.isLiked = true
             }
         }
     }

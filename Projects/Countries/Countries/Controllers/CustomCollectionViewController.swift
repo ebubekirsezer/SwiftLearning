@@ -9,14 +9,20 @@ import UIKit
 
 class CustomCollectionViewController: UIViewController {
     
-    @IBOutlet weak var filterView: UIView!
-    @IBOutlet weak var buttonOrderList: UIButton!
-    @IBOutlet weak var buttonFilterList: UIButton!
-    @IBOutlet weak var productListView: UICollectionView!
-    @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var constraintHeightForHeaderView: NSLayoutConstraint!
+    @IBOutlet private weak var filterView: UIView!
+    @IBOutlet private weak var buttonOrderList: UIButton!
+    @IBOutlet private weak var buttonFilterList: UIButton!
+    @IBOutlet private weak var productListView: UICollectionView! {
+        didSet{
+            productListView.delegate = self
+            productListView.dataSource = self
+        }
+    }
+    @IBOutlet private weak var headerView: UIView!
+    @IBOutlet private weak var searchBar: UISearchBar!
+    @IBOutlet private weak var constraintHeightForHeaderView: NSLayoutConstraint!
     
+    //Private check
     var products: [Product] = ProductSource.products
     var filteredProducts: [Product] = []
     var showingTopViews = false
@@ -28,8 +34,8 @@ class CustomCollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        productListView.delegate = self
-        productListView.dataSource = self
+        //productListView.delegate = self
+        //productListView.dataSource = self
         searchBar.delegate = self
         
         //Hiding Navigation Bar
@@ -78,12 +84,13 @@ class CustomCollectionViewController: UIViewController {
     
     func presentProductDetailVC(with product: Product){
         let productDetailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProductDetailViewController") as! ProductDetailViewController
-
+                
         productDetailVC.transitioningDelegate = self
         productDetailVC.modalPresentationStyle = .fullScreen
         productDetailVC.product = product
         present(productDetailVC, animated: true)
     }
+    // public private
 }
 
 extension CustomCollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -113,6 +120,7 @@ extension CustomCollectionViewController: UICollectionViewDataSource, UICollecti
         //print(scrollView.contentSize.height) 1800
         let offsetY = scrollView.contentOffset.y
         if offsetY > 150 {
+            //Change priority
             self.constraintHeightForHeaderView.constant = 0
             UIView.animate(withDuration: 0.4) {
                 self.view.layoutIfNeeded()
@@ -130,7 +138,9 @@ extension CustomCollectionViewController: UICollectionViewDataSource, UICollecti
 //Mark: UICollectionViewDelegateFlowLayout
 extension CustomCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.bounds.size.width / 2) - 8, height: 300)
+        //collection line size
+        // named 2
+        return CGSize(width: (collectionView.bounds.size.width / 2) -  8, height: 300)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -153,13 +163,11 @@ extension CustomCollectionViewController: UISearchBarDelegate {
         
         filteredProducts = []
         
-        if searchText == ""{
+        if searchText.isEmpty {
             filteredProducts = products
         } else {
-            for product in products {
-                if product.productName.lowercased().contains(searchText.lowercased()) {
-                    filteredProducts.append(product)
-                }
+            filteredProducts = products.filter {
+                $0.productName.lowercased().contains(searchText.lowercased())
             }
         }
         
@@ -174,6 +182,7 @@ extension CustomCollectionViewController: UIViewControllerTransitioningDelegate 
               let selectedCellImageViewSnapshot = selectedCellImageViewSnapshot
               else { return nil }
 
+        //global animator will remove
         animator = Animator(type: .present, customCollectionViewController: customCollectionViewController, productDetailViewController: productDetailViewController, selectedCellImageViewSnapshot: selectedCellImageViewSnapshot)
         return animator
     }

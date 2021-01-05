@@ -70,6 +70,7 @@ extension OrderListViewController: UITableViewDataSource, UITableViewDelegate {
         if let radioButtonView = cell.radioButtonView {
             radioButtonView.onRadioButtonTap(radioButtonView.radioButton)
             orderProductList(by: order)
+            //Use closure instead notification center
             self.dismiss(animated: true, completion: nil)
         }
     }

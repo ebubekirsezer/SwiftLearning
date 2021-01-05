@@ -33,6 +33,11 @@ class OrderlyTableViewController: UIViewController {
             }
         }
         
+        orderlyTableView.refreshControl = UIRefreshControl()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.orderlyTableView.refreshControl?.endRefreshing()
+        }
+        
         carSectionTitles = [String](carsDictionary.keys)
         carSectionTitles = carSectionTitles.sorted(by: { $0 < $1 })
         print("Car Section titles: \(carSectionTitles)")
