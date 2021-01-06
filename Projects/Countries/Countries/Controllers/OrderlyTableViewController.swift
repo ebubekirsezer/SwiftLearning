@@ -9,18 +9,25 @@ import UIKit
 
 class OrderlyTableViewController: UIViewController {
     
-    @IBOutlet weak var orderlyTableView: UITableView!
+    @IBOutlet private weak var orderlyTableView: UITableView! {
+        didSet{
+            orderlyTableView.delegate = self
+            orderlyTableView.dataSource = self
+        }
+    }
     
-    var carsDictionary: [String: [String]] = [:]
-    var carSectionTitles: [String] = []
-    var cars: [String] = []
+    private var carsDictionary: [String: [String]] = [:]
+    private  var carSectionTitles: [String] = []
+    private var cars: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        orderlyTableView.delegate = self
-        orderlyTableView.dataSource = self
-        
+        installCarsInfo()
+        installRefreshControl()
+    }
+    
+    private func installCarsInfo(){
         cars = ["Audi", "Aston Martin","BMW", "Bugatti", "Bentley","Chevrolet", "Cadillac","Dodge","Ferrari", "Ford","Honda","Jaguar","Lamborghini","Mercedes", "Mazda","Nissan","Porsche","Rolls Royce","Toyota","Volkswagen"]
         
         for car in cars{
@@ -33,17 +40,19 @@ class OrderlyTableViewController: UIViewController {
             }
         }
         
+        carSectionTitles = [String](carsDictionary.keys)
+        carSectionTitles = carSectionTitles.sorted(by: { $0 < $1 })
+    }
+    
+    private func installRefreshControl(){
         orderlyTableView.refreshControl = UIRefreshControl()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.orderlyTableView.refreshControl?.endRefreshing()
         }
-        
-        carSectionTitles = [String](carsDictionary.keys)
-        carSectionTitles = carSectionTitles.sorted(by: { $0 < $1 })
-        print("Car Section titles: \(carSectionTitles)")
     }
 }
 
+//MARK: - UITableView Delegate and DataSource
 extension OrderlyTableViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,7 +69,6 @@ extension OrderlyTableViewController: UITableViewDelegate, UITableViewDataSource
             if let carValues = carsDictionary[carKey] {
                 cell.textLabel?.text = carValues[indexPath.row]
             }
-
         return cell
     }
     

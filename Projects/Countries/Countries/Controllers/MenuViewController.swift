@@ -9,14 +9,15 @@ import UIKit
 
 class MenuViewController: UITableViewController {
     
-    var menuItems: [String] = ["Sectionly View", "Search View", "Horizontal View", "Orderly View"]
+    private var menuItems: [String] = ["Sectionly View", "Search View", "Horizontal View", "Orderly View"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.backgroundColor = UIColor.systemPink
-        self.tableView.separatorColor = .clear
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MenuCell")
+        installTableViewUI()
+        regiterCellToTableView()
     }
+    
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -46,7 +47,16 @@ class MenuViewController: UITableViewController {
         switchPage(with: menuItems[indexPath.row])
     }
     
-    func switchPage(with name: String){
+    private func installTableViewUI(){
+        self.tableView.backgroundColor = UIColor.systemPink
+        self.tableView.separatorColor = .clear
+    }
+    
+    private func regiterCellToTableView(){
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MenuCell")
+    }
+    
+    private func switchPage(with name: String){
         switch name {
         case "Sectionly View":
             goToAny(viewController: SectionlyTableViewController(), from: "Main")

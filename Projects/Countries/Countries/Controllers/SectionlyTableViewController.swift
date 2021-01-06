@@ -9,31 +9,21 @@ import UIKit
 
 class SectionlyTableViewController: UITableViewController {
     
-    @IBOutlet weak var searchBar: UISearchBar!
-    
-    let dataSource: [Region] = [
+    private let dataSource: [Region] = [
         Region(regionName: "Marmara", cities: CitySource.westCities),
         Region(regionName: "Anadolu", cities: CitySource.anatoliaCities),
         Region(regionName: "Doğu Anadolu", cities: CitySource.eastCities),
     ]
     
-    var filteredData: [Region] = []
-    var sectionTitles: [String] = []
+    private var filteredData: [Region] = []
+    private var sectionTitles: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.separatorColor = UIColor.clear
         
-        self.registerTableViewCells()
-        
-        searchBar.delegate = self
-        
-        filteredData = dataSource
-        
-        for section in dataSource{
-            sectionTitles.append(String(section.regionName.prefix(1)))
-        }
-        
+        registerTableViewCells()
+        fillData()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -41,13 +31,11 @@ class SectionlyTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         let region = dataSource[section]
         return region.cities.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         var cell = UITableViewCell()
         
         if let cellItem = tableView.dequeueReusableCell(withIdentifier: "ImageTableViewCell", for: indexPath) as? ImageTableViewCell {
@@ -83,28 +71,9 @@ class SectionlyTableViewController: UITableViewController {
         let viewCell = UINib(nibName: "ImageTableViewCell", bundle: nil)
         self.tableView.register(viewCell, forCellReuseIdentifier: "ImageTableViewCell")
     }
-}
-
-extension SectionlyTableViewController: UISearchBarDelegate {
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        filteredData = []
-        
-        if searchText == "" {
-            filteredData = dataSource
-        } else {
-            for (_, region) in dataSource.enumerated() {
-                for (_, city) in region.cities.enumerated() {
-                    
-                    if city.cityName.lowercased().contains(searchText.lowercased()){
-                        
-                    }
-                }
-            }
-            
-            
-            self.tableView.reloadData()
-        }
+    private func fillData(){
+        filteredData = dataSource
+        let _ = dataSource.map { sectionTitles.append(String($0.regionName.prefix(1))) }
     }
 }

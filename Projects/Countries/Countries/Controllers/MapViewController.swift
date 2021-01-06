@@ -10,12 +10,15 @@ import MapKit
 
 class MapViewController: UIViewController {
     
-    var mapView = MKMapView()
-    let locationManager = CLLocationManager()
+    private var mapView = MKMapView()
+    private let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        installMapView()
+    }
+    
+    private func installMapView(){
         mapView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         self.view.addSubview(mapView)
         
@@ -56,6 +59,7 @@ class MapViewController: UIViewController {
     }
 }
 
+//MARK: - MKMapViewDelegate
 extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay)
@@ -65,7 +69,7 @@ extension MapViewController: MKMapViewDelegate {
     }
 }
 
-
+//MARK: - Custom Pin
 class CustomPin: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
     var title: String?

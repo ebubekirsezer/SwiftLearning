@@ -9,16 +9,22 @@ import UIKit
 
 class CustomTextFieldViewController: UIViewController {
     
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet private weak var textField: UITextField! {
+        didSet{
+            textField.delegate = self
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        textField.delegate = self
         keyboardUIUpdates()
     }
     
-    func keyboardUIUpdates(){
+    @objc private func resetTheTextField(){
+        textField.text = ""
+    }
+    
+    private func keyboardUIUpdates(){
         let bar = UIToolbar()
         let reset = UIBarButtonItem(title: "Temizle", style: .plain, target: self, action: #selector(resetTheTextField))
         bar.items = [reset]
@@ -28,14 +34,9 @@ class CustomTextFieldViewController: UIViewController {
         textField.keyboardAppearance = .light
         textField.clearButtonMode = .whileEditing
     }
-    
-    @objc func resetTheTextField(){
-        textField.text = ""
-    }
 }
 
-
-
+//MARK: - UITextField Delegate
 extension CustomTextFieldViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

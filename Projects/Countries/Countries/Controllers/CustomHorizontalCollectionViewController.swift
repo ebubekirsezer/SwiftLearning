@@ -9,26 +9,28 @@ import UIKit
 
 class CustomHorizontalCollectionViewController: UIViewController {
     
-    
-    @IBOutlet weak var storiesCollectionView: UICollectionView!
+    @IBOutlet private weak var storiesCollectionView: UICollectionView! {
+        didSet{
+            storiesCollectionView.delegate = self
+            storiesCollectionView.dataSource = self
+        }
+    }
 
-    var products: [Product] = ProductSource.products
+    private let products: [Product] = ProductSource.products
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        storiesCollectionView.delegate = self
-        storiesCollectionView.dataSource = self
         
         registerCellToCollectionView()
     }
     
-    func registerCellToCollectionView(){
+    private func registerCellToCollectionView(){
         let storyCell = UINib(nibName: "StoryCell", bundle: nil)
         storiesCollectionView.register(storyCell, forCellWithReuseIdentifier: "StoryCell")
     }
 }
 
-
+//MARK: - UICollectionView DataSource and Delegate
 extension CustomHorizontalCollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate {
    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -36,7 +38,6 @@ extension CustomHorizontalCollectionViewController: UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StoryCell", for: indexPath) as! StoryCell
         let product = products[indexPath.row]
         cell.configure(product: product)
@@ -45,8 +46,8 @@ extension CustomHorizontalCollectionViewController: UICollectionViewDataSource, 
     }
 }
 
+//MARK: - UICollectionView Flow Layout
 extension CustomHorizontalCollectionViewController: UICollectionViewDelegateFlowLayout {
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 150 , height: 150)
     }

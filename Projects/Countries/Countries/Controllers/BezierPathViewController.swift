@@ -13,13 +13,12 @@ class BezierPathViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = "Bezier Path"
-        
+        addBezierViews()
+    }
+    
+    private func addBezierViews(){
         let triangleView = TriangleView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
-        
         triangleView.backgroundColor = .white
         self.view.addSubview(triangleView)
-        
-        
-
     }
 }

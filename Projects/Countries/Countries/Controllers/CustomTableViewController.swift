@@ -9,9 +9,13 @@ import UIKit
 
 class CustomTableViewController: UITableViewController {
     
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet private weak var searchBar: UISearchBar!{
+        didSet{
+            searchBar.delegate = self
+        }
+    }
     
-    var data = [
+    private let data = [
         "Apples",
         "Oranges",
         "Pears",
@@ -33,21 +37,20 @@ class CustomTableViewController: UITableViewController {
         "Lemon",
         "Mandarin",
         "Mango",
-        "Pineapple"]
-    
-    var filteredData: [String] = []
-    
-    var fetchingMore = false
+        "Pineapple"
+    ]
+    private var filteredData: [String] = []
+    private var fetchingMore = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        searchBar.delegate = self
-        
+        filteredData = data
+        registerCellToTableView()
+    }
+    
+    private func registerCellToTableView(){
         let loadingNib = UINib(nibName: "LoadingCell", bundle: nil)
         tableView.register(loadingNib, forCellReuseIdentifier: "loadingCell")
-        
-        filteredData = data
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -55,7 +58,6 @@ class CustomTableViewController: UITableViewController {
     }
     
     //use willdisplay
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return filteredData.count
@@ -92,11 +94,8 @@ class CustomTableViewController: UITableViewController {
         }
     }
     
-    
-    
-    func beginBatchFetch(){
+    private func beginBatchFetch(){
         fetchingMore = true
-        print("begin fetch")
         tableView.reloadSections(IndexSet(integer: 1), with: .none)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             let newItems = ["Ebubekir 1", "Ebubekir 2", "Ebubekir 3", "Ebubekir 4", "Ebubekir 5"]
@@ -106,23 +105,17 @@ class CustomTableViewController: UITableViewController {
         }
     }
 }
+
 extension CustomTableViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
         filteredData = []
         
-        if searchText == "" {
+        if searchText.isEmpty {
             filteredData = data
         } else {
-            for fruit in data {
-                
-                if fruit.lowercased().contains(searchText.lowercased()){
-                    filteredData.append(fruit)
-                }
-            }
+            let _ = data.map { if $0.lowercased().contains(searchText.lowercased()) { filteredData.append($0) } }
         }
-        
         self.tableView.reloadData()
     }
 }

@@ -9,28 +9,32 @@ import UIKit
 
 class OrderListViewController: UIViewController {
     
+    @IBOutlet private weak var orderListTableView: UITableView! {
+        didSet{
+            orderListTableView.delegate = self
+            orderListTableView.dataSource = self
+        }
+    }
+    @IBOutlet private var fullView: UIView!
     
-    @IBOutlet weak var orderListTableView: UITableView!
-    @IBOutlet var fullView: UIView!
-    
-    let orderTypes: [Order] = OrderSource.orderLists
+    private let orderTypes: [Order] = OrderSource.orderLists
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        orderListTableView.dataSource = self
-        orderListTableView.delegate = self
         registerCellToTableView()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch: UITouch? = touches.first
         if touch?.view != orderListTableView {
-            self.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true) {
+                
+            }
         }
     }
     
-    func registerCellToTableView(){
+    private func registerCellToTableView(){
         let orderCell = UINib(nibName: "OrderCell", bundle: nil)
         orderListTableView.register(orderCell, forCellReuseIdentifier: "OrderCell")
         
@@ -58,7 +62,6 @@ extension OrderListViewController: UITableViewDataSource, UITableViewDelegate {
             orderCell.configure(order: order)
             cell = orderCell
         }
-        
         cell.selectionStyle = .none
         return cell
     }
@@ -71,7 +74,9 @@ extension OrderListViewController: UITableViewDataSource, UITableViewDelegate {
             radioButtonView.onRadioButtonTap(radioButtonView.radioButton)
             orderProductList(by: order)
             //Use closure instead notification center
-            self.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true) {
+                
+            }
         }
     }
     

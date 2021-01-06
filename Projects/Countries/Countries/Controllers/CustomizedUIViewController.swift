@@ -9,18 +9,27 @@ import UIKit
 
 class CustomizedUIViewController: UIViewController {
     
-    
-    @IBOutlet weak var customUIView: UIView!
-    @IBOutlet weak var transformButton: UIButton!
-    @IBOutlet weak var customLabel: UILabel!
+    @IBOutlet private weak var customUIView: UIView!
+    @IBOutlet private weak var customLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        customUIView.backgroundColor = UIColor.purple
-        customUIView.layer.cornerRadius = customUIView.bounds.height / 2
-        transformButton.layer.cornerRadius = transformButton.bounds.height / 2
-        
+        customizeUIView()
+        updateLabelAttributes()
+    }
+    
+    @IBAction private func changeTransform(_ sender: UIButton) {
+        customUIView.transform = CGAffineTransform(rotationAngle: (CGFloat.pi * 3) / 4)
+    }
+    
+    @objc private func makeTransform(sender: UITapGestureRecognizer){
+        if sender.state == .ended {
+            self.customUIView.transform = CGAffineTransform(rotationAngle: CGFloat.pi )
+        }
+    }
+    
+    private func customizeUIView(){
         let circleUIView = UIView(frame: CGRect(x: 50, y: 50, width: 50, height: 50))
         
         circleUIView.backgroundColor = UIColor.green
@@ -39,9 +48,10 @@ class CustomizedUIViewController: UIViewController {
         
         customUIView.addSubview(circleUIView)
         customUIView.addSubview(rectView)
-        
+    }
+    
+    private func updateLabelAttributes(){
         //Custom Label
-        
         customLabel.numberOfLines = 0
         let quote = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
         let font = UIFont.systemFont(ofSize: 18)
@@ -83,15 +93,5 @@ class CustomizedUIViewController: UIViewController {
         
         customLabel.attributedText = attributeQuote
         //customLabel.attributedText = firstString
-        
-    }
-    
-    @objc func makeTransform(sender: UITapGestureRecognizer){
-        if sender.state == .ended {
-            self.customUIView.transform = CGAffineTransform(rotationAngle: CGFloat.pi )
-        }
-    }
-    @IBAction func changeTransform(_ sender: UIButton) {
-        customUIView.transform = CGAffineTransform(rotationAngle: (CGFloat.pi * 3) / 4)
     }
 }

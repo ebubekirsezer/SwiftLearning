@@ -19,38 +19,31 @@ class CustomCollectionViewController: UIViewController {
         }
     }
     @IBOutlet private weak var headerView: UIView!
-    @IBOutlet private weak var searchBar: UISearchBar!
+    @IBOutlet private weak var searchBar: UISearchBar! {
+        didSet{
+            searchBar.delegate = self
+        }
+    }
     @IBOutlet private weak var constraintHeightForHeaderView: NSLayoutConstraint!
     
-    //Private check
-    var products: [Product] = ProductSource.products
-    var filteredProducts: [Product] = []
-    var showingTopViews = false
-    var selectedCell: ProductCell?
-    var selectedCellImageViewSnapshot: UIView?
-    var animator: Animator?
+    private var products: [Product] = ProductSource.products
+    private var filteredProducts: [Product] = []
+    private var showingTopViews = false
+    private var selectedCellImageViewSnapshot: UIView?
+    private var animator: Animator?
 
+    var selectedCell: ProductCell?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //productListView.delegate = self
-        //productListView.dataSource = self
-        searchBar.delegate = self
-        
-        //Hiding Navigation Bar
-        //self.navigationController?.hidesBarsOnSwipe = true
-        
-        let notificationCenter: NotificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(updateProductList), name: .updateProductList, object: nil)
-        
         filteredProducts = products
-        
+        installNotificationCenter()
         registerCellToCollectionView()
         updateUI()
     }
     
-    @IBAction func orderListPressed(_ sender: UIButton) {
+    @IBAction private func orderListPressed(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let orderListVC = storyboard.instantiateViewController(identifier: "OrderListViewController") as! OrderListViewController
         
@@ -59,13 +52,16 @@ class CustomCollectionViewController: UIViewController {
         self.present(orderListVC, animated: false, completion: nil)
     }
     
-    @objc func updateProductList(){
+    @objc private func updateProductList(){
         products = ProductSource.products
         filteredProducts = products
         productListView.reloadData()
     }
     
-    func updateUI(){
+    private func updateUI(){
+        //Hiding Navigation Bar
+        //self.navigationController?.hidesBarsOnSwipe = true
+        
         filterView.layer.cornerRadius = filterView.bounds.height / 4
         
         buttonOrderList.setImage(UIImage(systemName: "infinity"), for: .normal)
@@ -77,12 +73,12 @@ class CustomCollectionViewController: UIViewController {
         buttonFilterList.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: buttonFilterList.bounds.height)
     }
     
-    func registerCellToCollectionView(){
+    private func registerCellToCollectionView(){
         let productCell = UINib(nibName: "ProductCell", bundle: nil)
         productListView.register(productCell, forCellWithReuseIdentifier: "ProductCell")
     }
     
-    func presentProductDetailVC(with product: Product){
+    private func presentProductDetailVC(with product: Product){
         let productDetailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProductDetailViewController") as! ProductDetailViewController
                 
         productDetailVC.transitioningDelegate = self
@@ -90,7 +86,11 @@ class CustomCollectionViewController: UIViewController {
         productDetailVC.product = product
         present(productDetailVC, animated: true)
     }
-    // public private
+    
+    private func installNotificationCenter(){
+        let notificationCenter: NotificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(updateProductList), name: .updateProductList, object: nil)
+    }
 }
 
 extension CustomCollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -100,7 +100,6 @@ extension CustomCollectionViewController: UICollectionViewDataSource, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductCell
         let product = filteredProducts[indexPath.row]
         cell.configure(product: product)
@@ -138,9 +137,9 @@ extension CustomCollectionViewController: UICollectionViewDataSource, UICollecti
 //Mark: UICollectionViewDelegateFlowLayout
 extension CustomCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //collection line size
-        // named 2
-        return CGSize(width: (collectionView.bounds.size.width / 2) -  8, height: 300)
+        let columnSize: CGFloat = 2
+        let spacing = self.collectionView(collectionView, layout: collectionViewLayout, minimumLineSpacingForSectionAt: indexPath.row)
+        return CGSize(width: (collectionView.bounds.size.width / columnSize) - spacing, height: 300)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -156,25 +155,22 @@ extension CustomCollectionViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-// Mark: UISearchBar Delegate
+//MARK: - UISearchBar Delegate
 extension CustomCollectionViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
         filteredProducts = []
         
         if searchText.isEmpty {
             filteredProducts = products
         } else {
-            filteredProducts = products.filter {
-                $0.productName.lowercased().contains(searchText.lowercased())
-            }
+            filteredProducts = products.filter { $0.productName.lowercased().contains(searchText.lowercased()) }
         }
-        
         self.productListView.reloadData()
     }
 }
 
+//MARK: - UIViewControllerTransitioning Delegate
 extension CustomCollectionViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         guard let customCollectionViewController = presenting as? CustomCollectionViewController,
