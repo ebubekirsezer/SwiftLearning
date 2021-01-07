@@ -26,6 +26,8 @@
 		B8EB102E25A6F4C600946F9C /* EqualWidthsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB102D25A6F4C600946F9C /* EqualWidthsController.swift */; };
 		B8EB103125A6F6CB00946F9C /* DifferentWidthsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB103025A6F6CB00946F9C /* DifferentWidthsViewController.swift */; };
 		B8EB103425A6F90A00946F9C /* ComplexWidthsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB103325A6F90A00946F9C /* ComplexWidthsViewController.swift */; };
+		B8EB104825A7394E00946F9C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB104725A7394E00946F9C /* SettingsViewController.swift */; };
+		B8EB104B25A73D5500946F9C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB104A25A73D5500946F9C /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		B8EB102D25A6F4C600946F9C /* EqualWidthsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EqualWidthsController.swift; sourceTree = "<group>"; };
 		B8EB103025A6F6CB00946F9C /* DifferentWidthsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifferentWidthsViewController.swift; sourceTree = "<group>"; };
 		B8EB103325A6F90A00946F9C /* ComplexWidthsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexWidthsViewController.swift; sourceTree = "<group>"; };
+		B8EB104725A7394E00946F9C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B8EB104A25A73D5500946F9C /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,7 @@
 				B8EB102D25A6F4C600946F9C /* EqualWidthsController.swift */,
 				B8EB103025A6F6CB00946F9C /* DifferentWidthsViewController.swift */,
 				B8EB103325A6F90A00946F9C /* ComplexWidthsViewController.swift */,
+				B8EB104725A7394E00946F9C /* SettingsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 				B8C7AD8225A5C7BD0049E0B1 /* Post.swift */,
 				B8C7AD8625A5C7CE0049E0B1 /* Person.swift */,
 				B8C7AD8925A5C8980049E0B1 /* DataSource.swift */,
+				B8EB104A25A73D5500946F9C /* Settings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -226,7 +232,9 @@
 				B8EB102825A6EE0200946F9C /* NestedStackViewController.swift in Sources */,
 				B8C7AD9225A5CA840049E0B1 /* StoryViewCell.swift in Sources */,
 				B8C7AD8725A5C7CE0049E0B1 /* Person.swift in Sources */,
+				B8EB104825A7394E00946F9C /* SettingsViewController.swift in Sources */,
 				B86859FB25A6E80000B3F9D5 /* CustomizedImageView.swift in Sources */,
+				B8EB104B25A73D5500946F9C /* Settings.swift in Sources */,
 				B8C7AD6F25A5BE060049E0B1 /* ViewController.swift in Sources */,
 				B8C7AD6B25A5BE060049E0B1 /* AppDelegate.swift in Sources */,
 				B8C7AD6D25A5BE060049E0B1 /* SceneDelegate.swift in Sources */,
