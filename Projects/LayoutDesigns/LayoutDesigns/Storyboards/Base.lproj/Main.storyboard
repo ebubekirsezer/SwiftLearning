@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -37,51 +36,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mFG-Vy-9Ra">
-                                <rect key="frame" x="0.0" y="88" width="414" height="128"/>
-                                <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="omd-gz-zo5">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1XZ-Qy-RQp">
-                                            <size key="itemSize" width="128" height="128"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="lWd-Qk-shJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QY0-hg-uGo">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </collectionViewCellContentView>
-                                            </collectionViewCell>
-                                        </cells>
-                                    </collectionView>
-                                </subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Vo2-B6-Tbl">
+                                <rect key="frame" x="0.0" y="88" width="414" height="90"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="omd-gz-zo5" secondAttribute="trailing" id="29v-XB-5X1"/>
-                                    <constraint firstAttribute="height" constant="128" id="34k-Ij-9dP"/>
-                                    <constraint firstAttribute="bottom" secondItem="omd-gz-zo5" secondAttribute="bottom" id="hrJ-zI-Mu2"/>
-                                    <constraint firstItem="omd-gz-zo5" firstAttribute="top" secondItem="mFG-Vy-9Ra" secondAttribute="top" id="tbL-dU-e5o"/>
-                                    <constraint firstItem="omd-gz-zo5" firstAttribute="leading" secondItem="mFG-Vy-9Ra" secondAttribute="leading" id="wlu-t6-5AY"/>
+                                    <constraint firstAttribute="height" constant="90" id="Zut-zC-j2j"/>
                                 </constraints>
-                            </view>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1E5-SL-seG">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="L2J-UI-5FN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="mFG-Vy-9Ra" firstAttribute="leading" secondItem="L2J-UI-5FN" secondAttribute="leading" id="2XT-hd-FS8"/>
-                            <constraint firstItem="mFG-Vy-9Ra" firstAttribute="top" secondItem="L2J-UI-5FN" secondAttribute="top" id="95a-Ls-NKn"/>
-                            <constraint firstItem="L2J-UI-5FN" firstAttribute="trailing" secondItem="mFG-Vy-9Ra" secondAttribute="trailing" id="k9N-vZ-g3e"/>
+                            <constraint firstItem="L2J-UI-5FN" firstAttribute="trailing" secondItem="Vo2-B6-Tbl" secondAttribute="trailing" id="d40-kD-kEL"/>
+                            <constraint firstItem="Vo2-B6-Tbl" firstAttribute="leading" secondItem="L2J-UI-5FN" secondAttribute="leading" id="ipU-72-pY9"/>
+                            <constraint firstItem="Vo2-B6-Tbl" firstAttribute="top" secondItem="L2J-UI-5FN" secondAttribute="top" id="qwA-LP-4Zc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UYz-yP-ld5"/>
                     <connections>
-                        <outlet property="storyList" destination="omd-gz-zo5" id="VJY-gG-kcB"/>
+                        <outlet property="storyList" destination="Vo2-B6-Tbl" id="iPh-6V-uNz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WJN-c8-BP0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -131,11 +111,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="BG1-K5-5t3">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BG1-K5-5t3">
                                 <rect key="frame" x="8" y="96" width="398" height="709"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fN1-ZQ-QJr">
-                                        <rect key="frame" x="0.0" y="0.0" width="398" height="122"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="135.5"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="Nested Stack Views">
@@ -146,7 +126,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2c-mr-qBt">
-                                        <rect key="frame" x="0.0" y="147" width="398" height="121.5"/>
+                                        <rect key="frame" x="0.0" y="143.5" width="398" height="135.5"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Blue View">
@@ -157,7 +137,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zh7-A0-Qdx">
-                                        <rect key="frame" x="0.0" y="293.5" width="398" height="122"/>
+                                        <rect key="frame" x="0.0" y="287" width="398" height="135"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Equal Widths">
@@ -168,7 +148,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mw-wn-aYG">
-                                        <rect key="frame" x="0.0" y="440.5" width="398" height="121.5"/>
+                                        <rect key="frame" x="0.0" y="430" width="398" height="135.5"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Different Widths">
@@ -179,7 +159,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZL-9O-x9x">
-                                        <rect key="frame" x="0.0" y="587" width="398" height="122"/>
+                                        <rect key="frame" x="0.0" y="573.5" width="398" height="135.5"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Complex Widths">

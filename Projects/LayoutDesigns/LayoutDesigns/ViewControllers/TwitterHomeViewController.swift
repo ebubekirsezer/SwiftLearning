@@ -9,6 +9,7 @@ import UIKit
 
 class TwitterHomeViewController: UIViewController {
     
+    
     @IBOutlet private weak var storyList: UICollectionView! {
         didSet{
             storyList.delegate = self
@@ -37,10 +38,24 @@ extension TwitterHomeViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StoryViewCell", for: indexPath) as! StoryViewCell
         
-        //cell.configure(image: people[indexPath.row].profilePicture)
-        
+        let person = people[indexPath.row]
+        cell.configureWith(person: person)
         return cell
     }
     
+}
+
+extension TwitterHomeViewController: UICollectionViewDelegateFlowLayout {
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 90, height: 90)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
 }
