@@ -1,14 +1,14 @@
 //
-//  CustomImageView.swift
+//  CustomizedImageView.swift
 //  LayoutDesigns
 //
-//  Created by Ebubekir Sezer on 6.01.2021.
+//  Created by Ebubekir Sezer on 7.01.2021.
 //
 
 import UIKit
 
 @IBDesignable
-class CustomImageView: UIImageView {
+class CustomizedImageView: UIImageView {
     
     @IBInspectable
     var cornerRadius: CGFloat = 0 {

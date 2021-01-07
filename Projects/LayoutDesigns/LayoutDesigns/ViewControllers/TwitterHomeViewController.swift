@@ -37,7 +37,7 @@ extension TwitterHomeViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StoryViewCell", for: indexPath) as! StoryViewCell
         
-        cell.configure(image: people[indexPath.row].profilePicture)
+        //cell.configure(image: people[indexPath.row].profilePicture)
         
         return cell
     }

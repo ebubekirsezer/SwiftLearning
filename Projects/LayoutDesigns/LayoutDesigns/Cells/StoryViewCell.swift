@@ -8,16 +8,10 @@
 import UIKit
 
 class StoryViewCell: UICollectionViewCell {
-
-    @IBOutlet private weak var storyImage: CustomImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-    
-    func configure(image: UIImage){
-        storyImage.image = image
     }
 
 }

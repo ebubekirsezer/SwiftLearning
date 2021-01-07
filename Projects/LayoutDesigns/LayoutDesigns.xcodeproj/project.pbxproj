@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B86859FB25A6E80000B3F9D5 /* CustomizedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86859FA25A6E80000B3F9D5 /* CustomizedImageView.swift */; };
+		B86859FF25A6E90A00B3F9D5 /* NestedStackViews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B86859FE25A6E90A00B3F9D5 /* NestedStackViews.storyboard */; };
 		B8C7AD6B25A5BE060049E0B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C7AD6A25A5BE060049E0B1 /* AppDelegate.swift */; };
 		B8C7AD6D25A5BE060049E0B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C7AD6C25A5BE060049E0B1 /* SceneDelegate.swift */; };
 		B8C7AD6F25A5BE060049E0B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C7AD6E25A5BE060049E0B1 /* ViewController.swift */; };
@@ -19,10 +21,12 @@
 		B8C7AD8D25A5C9A30049E0B1 /* TwitterHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C7AD8C25A5C9A30049E0B1 /* TwitterHomeViewController.swift */; };
 		B8C7AD9225A5CA840049E0B1 /* StoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C7AD9025A5CA840049E0B1 /* StoryViewCell.swift */; };
 		B8C7AD9325A5CA840049E0B1 /* StoryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8C7AD9125A5CA840049E0B1 /* StoryViewCell.xib */; };
-		B8C7AD9825A5CB520049E0B1 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C7AD9725A5CB520049E0B1 /* CustomImageView.swift */; };
+		B8EB102825A6EE0200946F9C /* NestedStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB102725A6EE0200946F9C /* NestedStackViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B86859FA25A6E80000B3F9D5 /* CustomizedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedImageView.swift; sourceTree = "<group>"; };
+		B86859FE25A6E90A00B3F9D5 /* NestedStackViews.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NestedStackViews.storyboard; sourceTree = "<group>"; };
 		B8C7AD6725A5BE060049E0B1 /* LayoutDesigns.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LayoutDesigns.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8C7AD6A25A5BE060049E0B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8C7AD6C25A5BE060049E0B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +41,7 @@
 		B8C7AD8C25A5C9A30049E0B1 /* TwitterHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterHomeViewController.swift; sourceTree = "<group>"; };
 		B8C7AD9025A5CA840049E0B1 /* StoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewCell.swift; sourceTree = "<group>"; };
 		B8C7AD9125A5CA840049E0B1 /* StoryViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryViewCell.xib; sourceTree = "<group>"; };
-		B8C7AD9725A5CB520049E0B1 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		B8EB102725A6EE0200946F9C /* NestedStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedStackViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B86859F625A6E77400B3F9D5 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B8C7AD7025A5BE060049E0B1 /* Main.storyboard */,
+				B86859FE25A6E90A00B3F9D5 /* NestedStackViews.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		B86859F825A6E79C00B3F9D5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B8C7AD6E25A5BE060049E0B1 /* ViewController.swift */,
+				B8C7AD8C25A5C9A30049E0B1 /* TwitterHomeViewController.swift */,
+				B8EB102725A6EE0200946F9C /* NestedStackViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B86859F925A6E7A600B3F9D5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B86859FA25A6E80000B3F9D5 /* CustomizedImageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B8C7AD5E25A5BE060049E0B1 = {
 			isa = PBXGroup;
 			children = (
@@ -70,10 +101,10 @@
 		B8C7AD6925A5BE060049E0B1 /* LayoutDesigns */ = {
 			isa = PBXGroup;
 			children = (
-				B8C7AD9625A5CB3C0049E0B1 /* CustomViews */,
+				B86859F925A6E7A600B3F9D5 /* Views */,
+				B86859F825A6E79C00B3F9D5 /* ViewControllers */,
+				B86859F625A6E77400B3F9D5 /* Storyboards */,
 				B8C7AD8F25A5CA600049E0B1 /* Cells */,
-				B8C7AD8125A5C7940049E0B1 /* Controller */,
-				B8C7AD8025A5C78F0049E0B1 /* View */,
 				B8C7AD7F25A5C7890049E0B1 /* Models */,
 				B8C7AD6A25A5BE060049E0B1 /* AppDelegate.swift */,
 				B8C7AD6C25A5BE060049E0B1 /* SceneDelegate.swift */,
@@ -94,23 +125,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		B8C7AD8025A5C78F0049E0B1 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B8C7AD7025A5BE060049E0B1 /* Main.storyboard */,
-				B8C7AD8C25A5C9A30049E0B1 /* TwitterHomeViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		B8C7AD8125A5C7940049E0B1 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				B8C7AD6E25A5BE060049E0B1 /* ViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		B8C7AD8F25A5CA600049E0B1 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,14 +132,6 @@
 				B8C7AD9125A5CA840049E0B1 /* StoryViewCell.xib */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		B8C7AD9625A5CB3C0049E0B1 /* CustomViews */ = {
-			isa = PBXGroup;
-			children = (
-				B8C7AD9725A5CB520049E0B1 /* CustomImageView.swift */,
-			);
-			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +195,7 @@
 				B8C7AD7425A5BE0B0049E0B1 /* Assets.xcassets in Resources */,
 				B8C7AD9325A5CA840049E0B1 /* StoryViewCell.xib in Resources */,
 				B8C7AD7225A5BE060049E0B1 /* Main.storyboard in Resources */,
+				B86859FF25A6E90A00B3F9D5 /* NestedStackViews.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,10 +207,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8C7AD8A25A5C8980049E0B1 /* DataSource.swift in Sources */,
-				B8C7AD9825A5CB520049E0B1 /* CustomImageView.swift in Sources */,
 				B8C7AD8D25A5C9A30049E0B1 /* TwitterHomeViewController.swift in Sources */,
+				B8EB102825A6EE0200946F9C /* NestedStackViewController.swift in Sources */,
 				B8C7AD9225A5CA840049E0B1 /* StoryViewCell.swift in Sources */,
 				B8C7AD8725A5C7CE0049E0B1 /* Person.swift in Sources */,
+				B86859FB25A6E80000B3F9D5 /* CustomizedImageView.swift in Sources */,
 				B8C7AD6F25A5BE060049E0B1 /* ViewController.swift in Sources */,
 				B8C7AD6B25A5BE060049E0B1 /* AppDelegate.swift in Sources */,
 				B8C7AD6D25A5BE060049E0B1 /* SceneDelegate.swift in Sources */,
