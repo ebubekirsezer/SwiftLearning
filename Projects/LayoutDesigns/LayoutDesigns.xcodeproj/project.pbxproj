@@ -28,6 +28,8 @@
 		B8EB103425A6F90A00946F9C /* ComplexWidthsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB103325A6F90A00946F9C /* ComplexWidthsViewController.swift */; };
 		B8EB104825A7394E00946F9C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB104725A7394E00946F9C /* SettingsViewController.swift */; };
 		B8EB104B25A73D5500946F9C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB104A25A73D5500946F9C /* Settings.swift */; };
+		B8EB105325A753DC00946F9C /* PostViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB105125A753DC00946F9C /* PostViewCell.swift */; };
+		B8EB105425A753DC00946F9C /* PostViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8EB105225A753DC00946F9C /* PostViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		B8EB103325A6F90A00946F9C /* ComplexWidthsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexWidthsViewController.swift; sourceTree = "<group>"; };
 		B8EB104725A7394E00946F9C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B8EB104A25A73D5500946F9C /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		B8EB105125A753DC00946F9C /* PostViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewCell.swift; sourceTree = "<group>"; };
+		B8EB105225A753DC00946F9C /* PostViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,8 @@
 			children = (
 				B8C7AD9025A5CA840049E0B1 /* StoryViewCell.swift */,
 				B8C7AD9125A5CA840049E0B1 /* StoryViewCell.xib */,
+				B8EB105125A753DC00946F9C /* PostViewCell.swift */,
+				B8EB105225A753DC00946F9C /* PostViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -209,6 +215,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8EB105425A753DC00946F9C /* PostViewCell.xib in Resources */,
 				B8C7AD7725A5BE0B0049E0B1 /* LaunchScreen.storyboard in Resources */,
 				B8C7AD7425A5BE0B0049E0B1 /* Assets.xcassets in Resources */,
 				B8C7AD9325A5CA840049E0B1 /* StoryViewCell.xib in Resources */,
@@ -224,6 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8EB105325A753DC00946F9C /* PostViewCell.swift in Sources */,
 				B8EB103125A6F6CB00946F9C /* DifferentWidthsViewController.swift in Sources */,
 				B8C7AD8A25A5C8980049E0B1 /* DataSource.swift in Sources */,
 				B8EB102E25A6F4C600946F9C /* EqualWidthsController.swift in Sources */,

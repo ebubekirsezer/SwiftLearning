@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PostViewCell" id="gTV-IL-0wX" customClass="PostViewCell" customModule="LayoutDesigns" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="298" height="280"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="298" height="280"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mmG-Vf-156">
+                        <rect key="frame" x="0.0" y="44" width="298" height="236"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wozniak" translatesAutoresizingMaskIntoConstraints="NO" id="rTO-KT-nQL" customClass="CustomizedImageView" customModule="LayoutDesigns" customModuleProvider="target">
+                                <rect key="frame" x="8" y="16" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="jhg-2p-JDf"/>
+                                    <constraint firstAttribute="width" constant="60" id="qQF-l1-CSG"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kjY-3b-xo0">
+                                <rect key="frame" x="76" y="16" width="214" height="22"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steve Wozniak" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOM-ez-Bw4">
+                                        <rect key="frame" x="0.0" y="0.0" width="100.5" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@wozniak" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qbz-JY-cpE">
+                                        <rect key="frame" x="100.5" y="0.0" width="57" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.098082549869999994" green="0.26281177999999999" blue="0.28423666949999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6J-k9-Pul">
+                                        <rect key="frame" x="157.5" y="0.0" width="56.5" height="22"/>
+                                        <color key="tintColor" red="0.098082549869999994" green="0.26281177999999999" blue="0.28423666949999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="rectangle.and.pencil.and.ellipsis.rtl" catalog="system"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="H6J-k9-Pul" firstAttribute="width" secondItem="fOM-ez-Bw4" secondAttribute="width" multiplier="0.562189" id="Sqd-RD-Z0K"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swift is really good, has lots of features. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypT-mI-6XG">
+                                <rect key="frame" x="76" y="46" width="214" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square_flowers" translatesAutoresizingMaskIntoConstraints="NO" id="ofE-vQ-ubP" customClass="CustomizedImageView" customModule="LayoutDesigns" customModuleProvider="target">
+                                <rect key="frame" x="76" y="108" width="214" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="ZDx-U8-fUk"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kjY-3b-xo0" firstAttribute="leading" secondItem="rTO-KT-nQL" secondAttribute="trailing" constant="8" id="Bhz-Ed-QUw"/>
+                            <constraint firstAttribute="trailing" secondItem="ypT-mI-6XG" secondAttribute="trailing" constant="8" id="De8-hY-3QS"/>
+                            <constraint firstAttribute="bottom" secondItem="ofE-vQ-ubP" secondAttribute="bottom" constant="8" id="Gay-Qi-ffs"/>
+                            <constraint firstAttribute="trailing" secondItem="ofE-vQ-ubP" secondAttribute="trailing" constant="8" id="Jd2-oI-2W1"/>
+                            <constraint firstItem="rTO-KT-nQL" firstAttribute="top" secondItem="mmG-Vf-156" secondAttribute="top" constant="16" id="Lgc-kX-y7t"/>
+                            <constraint firstItem="ofE-vQ-ubP" firstAttribute="leading" secondItem="rTO-KT-nQL" secondAttribute="trailing" constant="8" id="apx-sx-LrY"/>
+                            <constraint firstItem="rTO-KT-nQL" firstAttribute="leading" secondItem="mmG-Vf-156" secondAttribute="leading" constant="8" id="fmR-Jz-6zX"/>
+                            <constraint firstAttribute="trailing" secondItem="kjY-3b-xo0" secondAttribute="trailing" constant="8" id="m2E-tu-9IT"/>
+                            <constraint firstItem="ofE-vQ-ubP" firstAttribute="top" secondItem="ypT-mI-6XG" secondAttribute="bottom" constant="8" id="nf2-Mj-gqs"/>
+                            <constraint firstItem="kjY-3b-xo0" firstAttribute="top" secondItem="rTO-KT-nQL" secondAttribute="top" id="phF-GE-EMD"/>
+                            <constraint firstItem="ypT-mI-6XG" firstAttribute="top" secondItem="kjY-3b-xo0" secondAttribute="bottom" constant="8" id="vi2-lE-DX9"/>
+                            <constraint firstItem="ypT-mI-6XG" firstAttribute="leading" secondItem="rTO-KT-nQL" secondAttribute="trailing" constant="8" id="vwh-Yk-57O"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="mmG-Vf-156" secondAttribute="bottom" id="LpB-kH-miC"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="mmG-Vf-156" secondAttribute="top" id="M6O-Dr-m0F"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="leading" secondItem="mmG-Vf-156" secondAttribute="leading" id="e7d-6z-yiA"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="mmG-Vf-156" secondAttribute="trailing" id="fz4-1A-HTi"/>
+            </constraints>
+            <size key="customSize" width="298" height="280"/>
+            <point key="canvasLocation" x="208.69565217391306" y="164.73214285714286"/>
+        </collectionViewCell>
+    </objects>
+    <designables>
+        <designable name="ofE-vQ-ubP">
+            <size key="intrinsicContentSize" width="300" height="300"/>
+        </designable>
+        <designable name="rTO-KT-nQL">
+            <size key="intrinsicContentSize" width="316" height="396"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="rectangle.and.pencil.and.ellipsis.rtl" catalog="system" width="128" height="92"/>
+        <image name="square_flowers" width="300" height="300"/>
+        <image name="wozniak" width="316" height="396"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
