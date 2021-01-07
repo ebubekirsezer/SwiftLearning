@@ -14,13 +14,28 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
-    @IBAction func nestedStackViewPressed(_ sender: UIButton) {
+    @IBAction private func nestedStackViewPressed(_ sender: UIButton) {
         goToAny(viewController: NestedStackViewController(), from: "NestedStackViews")
+    }
+    
+    @IBAction private func contraintsButtonPressed(_ sender: UIButton) {
+        goToAny(viewController: BlueViewController(), from: "NestedStackViews")
+    }
+    
+    @IBAction private func equalWidthsPressed(_ sender: UIButton) {
+        goToAny(viewController: EqualWidthsController(), from: "NestedStackViews")
+    }
+    
+    @IBAction private func differentWidthsPressed(_ sender: UIButton) {
+        goToAny(viewController: DifferentWidthsViewController(), from: "NestedStackViews")
+    }
+    
+    @IBAction private func complexWidthsPressed(_ sender: UIButton) {
+        goToAny(viewController: ComplexWidthsViewController(), from: "NestedStackViews")
     }
 }
 
-extension ViewController {
+extension UIViewController {
     
     func goToAny<T: UIViewController>(viewController: T, from storyboardName: String){
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)

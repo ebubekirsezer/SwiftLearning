@@ -9,6 +9,45 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Equal Widths Controller-->
+        <scene sceneID="gyY-y5-gdw">
+            <objects>
+                <viewController storyboardIdentifier="EqualWidthsController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qZV-Nm-aJT" customClass="EqualWidthsController" customModule="LayoutDesigns" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9fA-mx-Jx4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FSG-Tt-udK">
+                                <rect key="frame" x="0.0" y="64" width="207" height="778"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fg-T1-jui">
+                                <rect key="frame" x="207" y="64" width="207" height="778"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gXR-Nx-Tmi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2fg-T1-jui" firstAttribute="top" secondItem="gXR-Nx-Tmi" secondAttribute="top" constant="20" id="29X-02-nW7"/>
+                            <constraint firstItem="gXR-Nx-Tmi" firstAttribute="bottom" secondItem="2fg-T1-jui" secondAttribute="bottom" constant="20" id="5mY-XA-T4C"/>
+                            <constraint firstItem="2fg-T1-jui" firstAttribute="width" secondItem="FSG-Tt-udK" secondAttribute="width" id="AkZ-cW-3Wj"/>
+                            <constraint firstItem="FSG-Tt-udK" firstAttribute="top" secondItem="gXR-Nx-Tmi" secondAttribute="top" constant="20" id="B63-z6-HJp"/>
+                            <constraint firstItem="FSG-Tt-udK" firstAttribute="leading" secondItem="gXR-Nx-Tmi" secondAttribute="leading" id="DyJ-K7-9gx"/>
+                            <constraint firstItem="2fg-T1-jui" firstAttribute="trailing" secondItem="gXR-Nx-Tmi" secondAttribute="trailing" id="KZ2-fb-d6o"/>
+                            <constraint firstItem="gXR-Nx-Tmi" firstAttribute="bottom" secondItem="FSG-Tt-udK" secondAttribute="bottom" constant="20" id="pbm-yr-RKK"/>
+                            <constraint firstItem="2fg-T1-jui" firstAttribute="leading" secondItem="FSG-Tt-udK" secondAttribute="trailing" id="zS3-9b-GPA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="greenView" destination="2fg-T1-jui" id="jLx-3t-2Yg"/>
+                        <outlet property="yellowView" destination="FSG-Tt-udK" id="4gB-vz-hlI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nQ4-G3-eG7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1059" y="110"/>
+        </scene>
         <!--Nested Stack View Controller-->
         <scene sceneID="gMO-gk-m9I">
             <objects>
@@ -129,6 +168,116 @@
             </objects>
             <point key="canvasLocation" x="-316" y="111"/>
         </scene>
+        <!--Blue View Controller-->
+        <scene sceneID="LqY-d2-inw">
+            <objects>
+                <viewController storyboardIdentifier="BlueViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HN7-dn-yB9" customClass="BlueViewController" customModule="LayoutDesigns" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wlh-Xm-uW1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mI6-KI-WuO">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cFV-Le-333"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mI6-KI-WuO" firstAttribute="top" secondItem="cFV-Le-333" secondAttribute="top" priority="750" id="GPM-2v-23G"/>
+                            <constraint firstItem="cFV-Le-333" firstAttribute="trailing" secondItem="mI6-KI-WuO" secondAttribute="trailing" id="KGr-lj-ofr"/>
+                            <constraint firstItem="mI6-KI-WuO" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Wlh-Xm-uW1" secondAttribute="top" constant="20" id="VxS-7N-jOd"/>
+                            <constraint firstItem="cFV-Le-333" firstAttribute="bottom" secondItem="mI6-KI-WuO" secondAttribute="bottom" priority="750" id="uGG-mr-zyP"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="mI6-KI-WuO" secondAttribute="bottom" constant="20" id="vd9-Yn-c7e"/>
+                            <constraint firstItem="mI6-KI-WuO" firstAttribute="leading" secondItem="cFV-Le-333" secondAttribute="leading" id="vhy-uT-7f5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WOj-1r-Go2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="393" y="110"/>
+        </scene>
+        <!--Different Widths View Controller-->
+        <scene sceneID="Brb-mQ-15R">
+            <objects>
+                <viewController storyboardIdentifier="DifferentWidthsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="23i-O9-yj0" customClass="DifferentWidthsViewController" customModule="LayoutDesigns" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ddn-nc-kHR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTF-xe-MOX">
+                                <rect key="frame" x="0.0" y="64" width="131.5" height="778"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1KF-rn-Sna">
+                                <rect key="frame" x="151.5" y="64" width="262.5" height="778"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="f4v-Lu-ybX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="f4v-Lu-ybX" firstAttribute="bottom" secondItem="1KF-rn-Sna" secondAttribute="bottom" constant="20" id="FZb-dF-2CU"/>
+                            <constraint firstItem="f4v-Lu-ybX" firstAttribute="bottom" secondItem="zTF-xe-MOX" secondAttribute="bottom" constant="20" id="IW8-jc-cra"/>
+                            <constraint firstItem="zTF-xe-MOX" firstAttribute="leading" secondItem="f4v-Lu-ybX" secondAttribute="leading" id="Mqd-W1-OQ4"/>
+                            <constraint firstItem="1KF-rn-Sna" firstAttribute="leading" secondItem="zTF-xe-MOX" secondAttribute="trailing" constant="20" id="Uoa-y4-K0n"/>
+                            <constraint firstItem="zTF-xe-MOX" firstAttribute="top" secondItem="f4v-Lu-ybX" secondAttribute="top" constant="20" id="XhJ-OY-iW1"/>
+                            <constraint firstItem="1KF-rn-Sna" firstAttribute="width" secondItem="zTF-xe-MOX" secondAttribute="width" multiplier="2" id="YpN-nu-bY2"/>
+                            <constraint firstItem="1KF-rn-Sna" firstAttribute="top" secondItem="f4v-Lu-ybX" secondAttribute="top" constant="20" id="dsy-qc-aV3"/>
+                            <constraint firstItem="f4v-Lu-ybX" firstAttribute="trailing" secondItem="1KF-rn-Sna" secondAttribute="trailing" id="qIU-s2-co8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="orangeView" destination="1KF-rn-Sna" id="hL5-hq-FQf"/>
+                        <outlet property="purpleView" destination="zTF-xe-MOX" id="6bU-5a-IhR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iel-rk-t57" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1109" y="110"/>
+        </scene>
+        <!--Complex Widths View Controller-->
+        <scene sceneID="qLY-ph-Qno">
+            <objects>
+                <viewController storyboardIdentifier="ComplexWidthsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bz3-Sj-27P" customClass="ComplexWidthsViewController" customModule="LayoutDesigns" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c9p-az-Epg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkf-Ch-ET0">
+                                <rect key="frame" x="0.0" y="64" width="150" height="778"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="szg-l4-G6q"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T6a-fT-UTQ">
+                                <rect key="frame" x="170" y="64" width="244" height="778"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ff4-k3-DCX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="T6a-fT-UTQ" firstAttribute="top" secondItem="ff4-k3-DCX" secondAttribute="top" constant="20" id="4Hs-yF-w8G"/>
+                            <constraint firstItem="ff4-k3-DCX" firstAttribute="bottom" secondItem="T6a-fT-UTQ" secondAttribute="bottom" constant="20" id="E7h-2e-avA"/>
+                            <constraint firstItem="ff4-k3-DCX" firstAttribute="bottom" secondItem="dkf-Ch-ET0" secondAttribute="bottom" constant="20" id="Qfv-cy-Fwm"/>
+                            <constraint firstItem="dkf-Ch-ET0" firstAttribute="leading" secondItem="ff4-k3-DCX" secondAttribute="leading" id="Z3C-JC-vGt"/>
+                            <constraint firstItem="T6a-fT-UTQ" firstAttribute="leading" secondItem="dkf-Ch-ET0" secondAttribute="trailing" constant="20" id="ZBX-gI-Mug"/>
+                            <constraint firstItem="T6a-fT-UTQ" firstAttribute="width" secondItem="dkf-Ch-ET0" secondAttribute="width" multiplier="2" priority="750" id="naw-yP-6oo"/>
+                            <constraint firstItem="ff4-k3-DCX" firstAttribute="trailing" secondItem="T6a-fT-UTQ" secondAttribute="trailing" id="pis-jD-tgs"/>
+                            <constraint firstItem="dkf-Ch-ET0" firstAttribute="top" secondItem="ff4-k3-DCX" secondAttribute="top" constant="20" id="veH-wQ-fBn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="blueView" destination="dkf-Ch-ET0" id="PN6-Tq-l3T"/>
+                        <outlet property="redView" destination="T6a-fT-UTQ" id="ZSK-c1-hca"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="haF-T2-n5F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1820" y="110"/>
+        </scene>
     </scenes>
     <resources>
         <image name="square_flowers" width="300" height="300"/>
@@ -138,8 +287,26 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

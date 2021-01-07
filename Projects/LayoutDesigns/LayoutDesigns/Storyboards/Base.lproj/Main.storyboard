@@ -131,24 +131,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fN1-ZQ-QJr">
-                                <rect key="frame" x="16" y="104" width="382" height="35"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="Nested Stack Views">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="nestedStackViewPressed:" destination="BUJ-42-ncy" eventType="touchUpInside" id="rs7-DR-zif"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="BG1-K5-5t3">
+                                <rect key="frame" x="8" y="96" width="398" height="709"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fN1-ZQ-QJr">
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="122"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <state key="normal" title="Nested Stack Views">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nestedStackViewPressed:" destination="BUJ-42-ncy" eventType="touchUpInside" id="rs7-DR-zif"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2c-mr-qBt">
+                                        <rect key="frame" x="0.0" y="147" width="398" height="121.5"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Blue View">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="contraintsButtonPressed:" destination="BUJ-42-ncy" eventType="touchUpInside" id="DJu-ON-s5o"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zh7-A0-Qdx">
+                                        <rect key="frame" x="0.0" y="293.5" width="398" height="122"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Equal Widths">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="equalWidthsPressed:" destination="BUJ-42-ncy" eventType="touchUpInside" id="6pX-Zs-Hzq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mw-wn-aYG">
+                                        <rect key="frame" x="0.0" y="440.5" width="398" height="121.5"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Different Widths">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="differentWidthsPressed:" destination="BUJ-42-ncy" eventType="touchUpInside" id="pva-ky-Xjr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZL-9O-x9x">
+                                        <rect key="frame" x="0.0" y="587" width="398" height="122"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Complex Widths">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="complexWidthsPressed:" destination="BUJ-42-ncy" eventType="touchUpInside" id="zUc-w6-cJV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aC9-VF-zfY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="fN1-ZQ-QJr" firstAttribute="top" secondItem="aC9-VF-zfY" secondAttribute="top" constant="16" id="2V0-RQ-Hk6"/>
-                            <constraint firstItem="fN1-ZQ-QJr" firstAttribute="leading" secondItem="aC9-VF-zfY" secondAttribute="leading" constant="16" id="IxE-Xx-xGj"/>
-                            <constraint firstItem="aC9-VF-zfY" firstAttribute="trailing" secondItem="fN1-ZQ-QJr" secondAttribute="trailing" constant="16" id="WHp-rG-uIF"/>
+                            <constraint firstItem="BG1-K5-5t3" firstAttribute="leading" secondItem="aC9-VF-zfY" secondAttribute="leading" constant="8" id="Ef1-SM-qbM"/>
+                            <constraint firstItem="aC9-VF-zfY" firstAttribute="trailing" secondItem="BG1-K5-5t3" secondAttribute="trailing" constant="8" id="RF6-XZ-66l"/>
+                            <constraint firstItem="BG1-K5-5t3" firstAttribute="top" secondItem="aC9-VF-zfY" secondAttribute="top" constant="8" id="RzI-cc-Afp"/>
+                            <constraint firstItem="aC9-VF-zfY" firstAttribute="bottom" secondItem="BG1-K5-5t3" secondAttribute="bottom" constant="8" id="rJh-8g-c0p"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Qvu-mJ-8mS"/>
@@ -214,6 +264,7 @@
         <!--Item-->
         <scene sceneID="XzJ-7I-M5L">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s4M-bh-Vh0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="y9N-MT-zGy" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Xop-kt-Wm1"/>
                     <toolbarItems/>
@@ -226,7 +277,6 @@
                         <segue destination="BUJ-42-ncy" kind="relationship" relationship="rootViewController" id="1wf-rM-djd"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="s4M-bh-Vh0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="548" y="1088"/>
         </scene>
