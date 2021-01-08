@@ -30,6 +30,13 @@
 		B8EB104B25A73D5500946F9C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB104A25A73D5500946F9C /* Settings.swift */; };
 		B8EB105325A753DC00946F9C /* PostViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB105125A753DC00946F9C /* PostViewCell.swift */; };
 		B8EB105425A753DC00946F9C /* PostViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8EB105225A753DC00946F9C /* PostViewCell.xib */; };
+		B8EB105725A874F100946F9C /* GarantiHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB105625A874F100946F9C /* GarantiHomeViewController.swift */; };
+		B8EB105A25A8771900946F9C /* CustomizedButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB105925A8771900946F9C /* CustomizedButtonView.swift */; };
+		B8EB105D25A87D8700946F9C /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB105C25A87D8700946F9C /* Bank.swift */; };
+		B8EB106425A87E4700946F9C /* BankOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB106325A87E4700946F9C /* BankOperation.swift */; };
+		B8EB106C25A87FF600946F9C /* GarantiCardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB106A25A87FF600946F9C /* GarantiCardViewCell.swift */; };
+		B8EB106D25A87FF600946F9C /* GarantiCardViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8EB106B25A87FF600946F9C /* GarantiCardViewCell.xib */; };
+		B8EB107025A887DD00946F9C /* CustomizedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB106F25A887DD00946F9C /* CustomizedUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +65,13 @@
 		B8EB104A25A73D5500946F9C /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		B8EB105125A753DC00946F9C /* PostViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewCell.swift; sourceTree = "<group>"; };
 		B8EB105225A753DC00946F9C /* PostViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostViewCell.xib; sourceTree = "<group>"; };
+		B8EB105625A874F100946F9C /* GarantiHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarantiHomeViewController.swift; sourceTree = "<group>"; };
+		B8EB105925A8771900946F9C /* CustomizedButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedButtonView.swift; sourceTree = "<group>"; };
+		B8EB105C25A87D8700946F9C /* Bank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
+		B8EB106325A87E4700946F9C /* BankOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankOperation.swift; sourceTree = "<group>"; };
+		B8EB106A25A87FF600946F9C /* GarantiCardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarantiCardViewCell.swift; sourceTree = "<group>"; };
+		B8EB106B25A87FF600946F9C /* GarantiCardViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GarantiCardViewCell.xib; sourceTree = "<group>"; };
+		B8EB106F25A887DD00946F9C /* CustomizedUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +105,7 @@
 				B8EB103025A6F6CB00946F9C /* DifferentWidthsViewController.swift */,
 				B8EB103325A6F90A00946F9C /* ComplexWidthsViewController.swift */,
 				B8EB104725A7394E00946F9C /* SettingsViewController.swift */,
+				B8EB105625A874F100946F9C /* GarantiHomeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -99,6 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				B86859FA25A6E80000B3F9D5 /* CustomizedImageView.swift */,
+				B8EB105925A8771900946F9C /* CustomizedButtonView.swift */,
+				B8EB106F25A887DD00946F9C /* CustomizedUIView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -143,6 +160,8 @@
 				B8C7AD8625A5C7CE0049E0B1 /* Person.swift */,
 				B8C7AD8925A5C8980049E0B1 /* DataSource.swift */,
 				B8EB104A25A73D5500946F9C /* Settings.swift */,
+				B8EB105C25A87D8700946F9C /* Bank.swift */,
+				B8EB106325A87E4700946F9C /* BankOperation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -154,6 +173,8 @@
 				B8C7AD9125A5CA840049E0B1 /* StoryViewCell.xib */,
 				B8EB105125A753DC00946F9C /* PostViewCell.swift */,
 				B8EB105225A753DC00946F9C /* PostViewCell.xib */,
+				B8EB106A25A87FF600946F9C /* GarantiCardViewCell.swift */,
+				B8EB106B25A87FF600946F9C /* GarantiCardViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -219,6 +240,7 @@
 				B8C7AD7725A5BE0B0049E0B1 /* LaunchScreen.storyboard in Resources */,
 				B8C7AD7425A5BE0B0049E0B1 /* Assets.xcassets in Resources */,
 				B8C7AD9325A5CA840049E0B1 /* StoryViewCell.xib in Resources */,
+				B8EB106D25A87FF600946F9C /* GarantiCardViewCell.xib in Resources */,
 				B8C7AD7225A5BE060049E0B1 /* Main.storyboard in Resources */,
 				B86859FF25A6E90A00B3F9D5 /* NestedStackViews.storyboard in Resources */,
 			);
@@ -232,11 +254,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8EB105325A753DC00946F9C /* PostViewCell.swift in Sources */,
+				B8EB106425A87E4700946F9C /* BankOperation.swift in Sources */,
+				B8EB105A25A8771900946F9C /* CustomizedButtonView.swift in Sources */,
 				B8EB103125A6F6CB00946F9C /* DifferentWidthsViewController.swift in Sources */,
+				B8EB105725A874F100946F9C /* GarantiHomeViewController.swift in Sources */,
 				B8C7AD8A25A5C8980049E0B1 /* DataSource.swift in Sources */,
 				B8EB102E25A6F4C600946F9C /* EqualWidthsController.swift in Sources */,
 				B8C7AD8D25A5C9A30049E0B1 /* TwitterHomeViewController.swift in Sources */,
+				B8EB107025A887DD00946F9C /* CustomizedUIView.swift in Sources */,
 				B8EB103425A6F90A00946F9C /* ComplexWidthsViewController.swift in Sources */,
+				B8EB106C25A87FF600946F9C /* GarantiCardViewCell.swift in Sources */,
 				B8EB102825A6EE0200946F9C /* NestedStackViewController.swift in Sources */,
 				B8C7AD9225A5CA840049E0B1 /* StoryViewCell.swift in Sources */,
 				B8C7AD8725A5C7CE0049E0B1 /* Person.swift in Sources */,
@@ -246,6 +273,7 @@
 				B8C7AD6F25A5BE060049E0B1 /* ViewController.swift in Sources */,
 				B8C7AD6B25A5BE060049E0B1 /* AppDelegate.swift in Sources */,
 				B8C7AD6D25A5BE060049E0B1 /* SceneDelegate.swift in Sources */,
+				B8EB105D25A87D8700946F9C /* Bank.swift in Sources */,
 				B8C7AD8325A5C7BD0049E0B1 /* Post.swift in Sources */,
 				B8EB102B25A6F23F00946F9C /* BlueViewController.swift in Sources */,
 			);

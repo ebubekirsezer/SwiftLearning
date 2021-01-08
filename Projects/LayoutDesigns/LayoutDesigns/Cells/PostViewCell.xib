@@ -69,6 +69,7 @@
                                 <rect key="frame" x="76" y="68.5" width="266" height="175"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="175" id="ZDx-U8-fUk"/>
+                                    <constraint firstAttribute="height" priority="750" id="hVZ-jw-Xve"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -140,6 +141,18 @@
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="mmG-Vf-156" secondAttribute="trailing" id="fz4-1A-HTi"/>
             </constraints>
             <size key="customSize" width="355" height="338"/>
+            <connections>
+                <outlet property="commentsButton" destination="jiU-vS-Fj7" id="7Bc-MW-yL4"/>
+                <outlet property="likeButton" destination="tI5-00-edo" id="tjW-XA-u8s"/>
+                <outlet property="postDetail" destination="ypT-mI-6XG" id="gMF-xc-2ch"/>
+                <outlet property="postNameAndSurname" destination="fOM-ez-Bw4" id="mb2-u7-VY1"/>
+                <outlet property="postPicture" destination="ofE-vQ-ubP" id="tWv-vk-LAe"/>
+                <outlet property="postPictureHeightForImage" destination="ZDx-U8-fUk" id="YnH-Dy-7vk"/>
+                <outlet property="postPictureHeightWithoutImage" destination="hVZ-jw-Xve" id="FJk-sU-hfa"/>
+                <outlet property="postProfilePicture" destination="rTO-KT-nQL" id="vzW-RU-CzB"/>
+                <outlet property="postUserName" destination="Qbz-JY-cpE" id="GxA-kz-fbK"/>
+                <outlet property="retweetButton" destination="xh8-Yk-5e4" id="g80-YO-jo7"/>
+            </connections>
             <point key="canvasLocation" x="250.00000000000003" y="184.15178571428569"/>
         </collectionViewCell>
     </objects>

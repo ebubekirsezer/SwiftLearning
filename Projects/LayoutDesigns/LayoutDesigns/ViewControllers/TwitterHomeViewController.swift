@@ -24,11 +24,16 @@ class TwitterHomeViewController: UIViewController {
     }
     
     private let people = DataSource.people
+    private let posts = DataSource.posts
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateUI()
         registerCells()
-        
+    }
+    
+    private func updateUI(){
+        self.navigationController?.hidesBarsOnSwipe = true
         self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
@@ -46,22 +51,22 @@ extension TwitterHomeViewController: UICollectionViewDelegate, UICollectionViewD
         guard collectionView == postList else {
             return people.count
         }
-        return people[section].posts.count
+        return posts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         guard collectionView == postList else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StoryViewCell", for: indexPath) as! StoryViewCell
-            
             let person = people[indexPath.row]
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StoryViewCell", for: indexPath) as! StoryViewCell
             cell.configureWith(person: person)
             return cell
         }
         let postCell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostViewCell", for: indexPath) as! PostViewCell
+        let post = posts[indexPath.row]
+        postCell.configureWith(post: post)
+        postCell.sizeToFit()
         return postCell
     }
-    
 }
 
 extension TwitterHomeViewController: UICollectionViewDelegateFlowLayout {
@@ -81,3 +86,4 @@ extension TwitterHomeViewController: UICollectionViewDelegateFlowLayout {
         return 0
     }
 }
+

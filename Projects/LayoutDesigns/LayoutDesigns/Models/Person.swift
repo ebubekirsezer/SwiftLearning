@@ -12,5 +12,4 @@ struct Person {
     let name: String
     let surname: String
     let profilePicture: UIImage
-    let posts: [Post]
 }

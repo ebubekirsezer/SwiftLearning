@@ -9,9 +9,11 @@ import UIKit
 
 struct Post {
     let postDate: String
-    let postPicture: UIImage
+    let postPicture: UIImage?
+    let postDetail: String
     let postLike: Int
     let isLiked: Bool
     let comments: Int
     let shared: Int
+    let person: Person
 }
