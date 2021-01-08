@@ -28,6 +28,8 @@ class TwitterHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
+        
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     private func registerCells(){
@@ -68,7 +70,7 @@ extension TwitterHomeViewController: UICollectionViewDelegateFlowLayout {
         guard collectionView == postList else {
             return CGSize(width: 90, height: 90)
         }
-        return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height / 2)
+        return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height / 2.25)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
