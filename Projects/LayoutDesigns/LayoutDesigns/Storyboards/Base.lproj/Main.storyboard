@@ -28,7 +28,7 @@
             </objects>
             <point key="canvasLocation" x="-295" y="27"/>
         </scene>
-        <!--Twitter Home View Controller-->
+        <!--Twitter-->
         <scene sceneID="uzQ-u4-pQV">
             <objects>
                 <viewController storyboardIdentifier="TwitterHomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cZZ-IS-ACJ" customClass="TwitterHomeViewController" customModule="LayoutDesigns" customModuleProvider="target" sceneMemberID="viewController">
@@ -74,7 +74,7 @@
                             <constraint firstItem="Vo2-B6-Tbl" firstAttribute="top" secondItem="L2J-UI-5FN" secondAttribute="top" id="qwA-LP-4Zc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="UYz-yP-ld5"/>
+                    <navigationItem key="navigationItem" title="Twitter" id="UYz-yP-ld5"/>
                     <connections>
                         <outlet property="postList" destination="Aet-JJ-6Ej" id="YvQ-Hg-308"/>
                         <outlet property="storyList" destination="Vo2-B6-Tbl" id="iPh-6V-uNz"/>
