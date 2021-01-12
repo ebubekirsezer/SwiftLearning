@@ -58,7 +58,8 @@ extension AllMusicsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MusicViewCell", for: indexPath) as! MusicViewCell
         let music = listOfMusic[indexPath.row]
-        cell.configureWith(music: music)
+        cell.configureWith(music: music)        
+        cell.selectionStyle = .none
                 
         return cell
     }

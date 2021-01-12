@@ -26,13 +26,13 @@
                         <rect key="frame" x="150" y="16" width="212" height="133"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRF-AJ-Ujk">
-                                <rect key="frame" x="16" y="16" width="52" height="26.5"/>
+                                <rect key="frame" x="16" y="16" width="180" height="26.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKV-BM-Low">
-                                <rect key="frame" x="32" y="50.5" width="41.5" height="20.5"/>
+                                <rect key="frame" x="32" y="50.5" width="164" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -44,6 +44,8 @@
                             <constraint firstItem="NKV-BM-Low" firstAttribute="leading" secondItem="Cvq-p9-wa0" secondAttribute="leading" constant="32" id="9cK-Gy-8c9"/>
                             <constraint firstItem="eRF-AJ-Ujk" firstAttribute="top" secondItem="Cvq-p9-wa0" secondAttribute="top" constant="16" id="UpG-kX-IDd"/>
                             <constraint firstItem="eRF-AJ-Ujk" firstAttribute="leading" secondItem="Cvq-p9-wa0" secondAttribute="leading" constant="16" id="ezO-WT-rR1"/>
+                            <constraint firstAttribute="trailing" secondItem="NKV-BM-Low" secondAttribute="trailing" constant="16" id="ikf-fL-eT8"/>
+                            <constraint firstAttribute="trailing" secondItem="eRF-AJ-Ujk" secondAttribute="trailing" constant="16" id="pUa-Js-VE8"/>
                         </constraints>
                     </view>
                 </subviews>

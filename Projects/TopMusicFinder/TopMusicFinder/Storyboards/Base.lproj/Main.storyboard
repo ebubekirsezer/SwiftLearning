@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gdd-RI-rtX">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gdd-RI-rtX">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -53,26 +53,26 @@
                                     <constraint firstAttribute="height" constant="300" id="QgB-6O-haF"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XbP-5S-hbc">
-                                <rect key="frame" x="16" y="316" width="112.5" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name: " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XbP-5S-hbc">
+                                <rect key="frame" x="16" y="316" width="382" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtQ-fi-h46">
-                                <rect key="frame" x="16" y="348" width="109" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name:" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtQ-fi-h46">
+                                <rect key="frame" x="16" y="348" width="382" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collection Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08A-cD-2IJ">
-                                <rect key="frame" x="16" y="380" width="144.5" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collection Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08A-cD-2IJ">
+                                <rect key="frame" x="16" y="380" width="382" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRY-mU-s3J">
-                                <rect key="frame" x="16" y="412" width="120" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release Date:" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRY-mU-s3J">
+                                <rect key="frame" x="16" y="412" width="382" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -97,14 +97,18 @@
                             <constraint firstItem="MRY-mU-s3J" firstAttribute="top" secondItem="08A-cD-2IJ" secondAttribute="bottom" constant="8" id="K4a-Yf-WOj"/>
                             <constraint firstItem="baa-uf-8a4" firstAttribute="top" secondItem="aGi-qd-g73" secondAttribute="top" id="Kd0-ly-DHy"/>
                             <constraint firstItem="08A-cD-2IJ" firstAttribute="top" secondItem="gtQ-fi-h46" secondAttribute="bottom" constant="8" id="P2g-Dc-Rjy"/>
+                            <constraint firstItem="TtI-ec-cxM" firstAttribute="trailing" secondItem="XbP-5S-hbc" secondAttribute="trailing" constant="16" id="PvS-Qv-O9c"/>
                             <constraint firstItem="08A-cD-2IJ" firstAttribute="leading" secondItem="TtI-ec-cxM" secondAttribute="leading" constant="16" id="Qfx-F0-k8G"/>
                             <constraint firstItem="baa-uf-8a4" firstAttribute="leading" secondItem="TtI-ec-cxM" secondAttribute="leading" id="Zfw-gx-BAO"/>
                             <constraint firstItem="XbP-5S-hbc" firstAttribute="leading" secondItem="TtI-ec-cxM" secondAttribute="leading" constant="16" id="b7N-ay-reC"/>
+                            <constraint firstItem="TtI-ec-cxM" firstAttribute="trailing" secondItem="08A-cD-2IJ" secondAttribute="trailing" constant="16" id="d6J-lQ-Ygg"/>
                             <constraint firstItem="XbP-5S-hbc" firstAttribute="top" secondItem="baa-uf-8a4" secondAttribute="bottom" constant="16" id="lYR-30-4tG"/>
+                            <constraint firstItem="TtI-ec-cxM" firstAttribute="trailing" secondItem="gtQ-fi-h46" secondAttribute="trailing" constant="16" id="nq9-Nv-Lqn"/>
                             <constraint firstItem="gtQ-fi-h46" firstAttribute="top" secondItem="XbP-5S-hbc" secondAttribute="bottom" constant="8" id="r7H-yG-WmC"/>
                             <constraint firstItem="2wa-I9-lSb" firstAttribute="top" secondItem="TtI-ec-cxM" secondAttribute="top" constant="16" id="rYD-O0-pu0"/>
                             <constraint firstItem="2wa-I9-lSb" firstAttribute="leading" secondItem="TtI-ec-cxM" secondAttribute="leading" constant="16" id="sSE-hR-XhA"/>
                             <constraint firstItem="MRY-mU-s3J" firstAttribute="leading" secondItem="TtI-ec-cxM" secondAttribute="leading" constant="16" id="xdh-uP-EDL"/>
+                            <constraint firstItem="TtI-ec-cxM" firstAttribute="trailing" secondItem="MRY-mU-s3J" secondAttribute="trailing" constant="16" id="xo6-UE-a7g"/>
                         </constraints>
                     </view>
                     <connections>
