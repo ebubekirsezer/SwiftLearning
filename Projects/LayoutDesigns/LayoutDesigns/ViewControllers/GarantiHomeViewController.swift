@@ -47,7 +47,8 @@ extension GarantiHomeViewController: UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GarantiCardViewCell", for: indexPath) as! GarantiCardViewCell
-        
+        let bank = bankSource[indexPath.section].operation
+        cell.configureWith(bank: bank)
         return cell
     }
 }

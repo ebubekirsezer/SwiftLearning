@@ -249,6 +249,7 @@
                 <outlet property="bankAccountID" destination="WhU-3t-aen" id="ehl-Wl-Xuc"/>
                 <outlet property="bankBalance" destination="Gxw-EL-EKa" id="zUY-7h-lZS"/>
                 <outlet property="bankLastBalance" destination="90Q-cZ-ez7" id="PaU-SV-1gc"/>
+                <outlet property="bankLastCheck" destination="dxm-3c-Bze" id="95r-JS-tZJ"/>
                 <outlet property="bankLastOperation" destination="1be-ta-Elu" id="o4o-Ef-nz0"/>
                 <outlet property="bankLastOperationDetail" destination="Q2h-9b-BQa" id="9xk-IT-85o"/>
             </connections>
