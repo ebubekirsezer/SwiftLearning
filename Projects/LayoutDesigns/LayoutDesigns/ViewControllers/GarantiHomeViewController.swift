@@ -54,6 +54,7 @@ extension GarantiHomeViewController: UICollectionViewDelegate, UICollectionViewD
 
 extension GarantiHomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        print("width: \(collectionView.bounds.width) height: \(collectionView.bounds.height)")
         return CGSize(width: collectionView.bounds.width - 8, height: collectionView.bounds.height)
     }
 }
