@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cNr-kk-9kR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,33 +8,54 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--All Musics View Controller-->
+        <scene sceneID="PEn-Ga-4Ae">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TopMusicFinder" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController storyboardIdentifier="AllMusicsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uOe-fQ-hEG" customClass="AllMusicsViewController" customModule="TopMusicFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SVU-Ir-qbV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEH-fS-8VE">
-                                <rect key="frame" x="184" y="438" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="fetchData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wfl-xt-7RV"/>
-                                </connections>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gdd-RI-rtX">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="6Mm-fy-JRl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="uEH-fS-8VE" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="k1Y-ad-vUA"/>
-                            <constraint firstItem="uEH-fS-8VE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="yBK-HI-8vD"/>
+                            <constraint firstItem="6Mm-fy-JRl" firstAttribute="trailing" secondItem="Gdd-RI-rtX" secondAttribute="trailing" id="31V-9s-kJe"/>
+                            <constraint firstItem="6Mm-fy-JRl" firstAttribute="bottom" secondItem="Gdd-RI-rtX" secondAttribute="bottom" id="brr-p8-sjP"/>
+                            <constraint firstItem="Gdd-RI-rtX" firstAttribute="top" secondItem="6Mm-fy-JRl" secondAttribute="top" id="fBT-go-rSe"/>
+                            <constraint firstItem="Gdd-RI-rtX" firstAttribute="leading" secondItem="6Mm-fy-JRl" secondAttribute="leading" id="s04-1Z-RhM"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="BUx-bD-OgY"/>
+                    <connections>
+                        <outlet property="musicTableView" destination="Gdd-RI-rtX" id="eJG-cV-pFT"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pz4-AS-9rX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="29" y="73"/>
+            <point key="canvasLocation" x="821.73913043478262" y="96.428571428571431"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EBJ-O5-cR0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cNr-kk-9kR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aYf-YJ-gCD">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uOe-fQ-hEG" kind="relationship" relationship="rootViewController" id="8xv-rh-mSB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="saZ-95-qKi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-88.405797101449281" y="96.428571428571431"/>
         </scene>
     </scenes>
     <resources>

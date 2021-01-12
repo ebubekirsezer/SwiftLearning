@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MusicViewCell" rowHeight="159" id="KGk-i7-Jjw" customClass="MusicViewCell" customModule="TopMusicFinder" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="362" height="159"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="362" height="159"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kpg-xd-S7D">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="149"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="Brn-aw-TyP"/>
+                        </constraints>
+                    </imageView>
+                    <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cvq-p9-wa0">
+                        <rect key="frame" x="150" y="16" width="212" height="133"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRF-AJ-Ujk">
+                                <rect key="frame" x="16" y="16" width="52" height="26.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKV-BM-Low">
+                                <rect key="frame" x="32" y="50.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NKV-BM-Low" firstAttribute="top" secondItem="eRF-AJ-Ujk" secondAttribute="bottom" constant="8" id="62T-17-V8f"/>
+                            <constraint firstItem="NKV-BM-Low" firstAttribute="leading" secondItem="Cvq-p9-wa0" secondAttribute="leading" constant="32" id="9cK-Gy-8c9"/>
+                            <constraint firstItem="eRF-AJ-Ujk" firstAttribute="top" secondItem="Cvq-p9-wa0" secondAttribute="top" constant="16" id="UpG-kX-IDd"/>
+                            <constraint firstItem="eRF-AJ-Ujk" firstAttribute="leading" secondItem="Cvq-p9-wa0" secondAttribute="leading" constant="16" id="ezO-WT-rR1"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Cvq-p9-wa0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="BGv-Yf-Rge"/>
+                    <constraint firstItem="Cvq-p9-wa0" firstAttribute="leading" secondItem="kpg-xd-S7D" secondAttribute="trailing" id="I3b-hy-SqU"/>
+                    <constraint firstAttribute="bottom" secondItem="kpg-xd-S7D" secondAttribute="bottom" constant="10" id="Xe5-YT-G3S"/>
+                    <constraint firstAttribute="trailing" secondItem="Cvq-p9-wa0" secondAttribute="trailing" id="aYV-UW-QfA"/>
+                    <constraint firstItem="kpg-xd-S7D" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ui2-jO-cmD"/>
+                    <constraint firstItem="kpg-xd-S7D" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="wwv-cW-zlu"/>
+                    <constraint firstAttribute="bottom" secondItem="Cvq-p9-wa0" secondAttribute="bottom" constant="10" id="yLE-8b-5qr"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="artistName" destination="NKV-BM-Low" id="2fd-Up-UqN"/>
+                <outlet property="musicImage" destination="kpg-xd-S7D" id="HFh-Z4-NGS"/>
+                <outlet property="musicName" destination="eRF-AJ-Ujk" id="EOT-hc-Tjj"/>
+            </connections>
+            <point key="canvasLocation" x="162.31884057971016" y="126.22767857142857"/>
+        </tableViewCell>
+    </objects>
+</document>
