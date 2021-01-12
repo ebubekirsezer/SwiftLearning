@@ -59,7 +59,7 @@ extension AllMusicsViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MusicViewCell", for: indexPath) as! MusicViewCell
         let music = listOfMusic[indexPath.row]
         cell.configureWith(music: music)
-        
+                
         return cell
     }
     
@@ -67,7 +67,24 @@ extension AllMusicsViewController: UITableViewDelegate, UITableViewDataSource {
         return CGFloat(tableView.bounds.height / 4)
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let musicDetailViewController = storyboard.instantiateViewController(identifier: "MusicDetailViewController") as! MusicDetailViewController
+        
+        let music = listOfMusic[indexPath.row]
+        musicDetailViewController.music = music
+        
+        show(musicDetailViewController, sender: self)
+    }
+}
+
+extension UIViewController {
+    func goToAny<T: UIViewController>(viewController: T, from storyboardName: String){
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+        guard let nextViewController = storyboard.instantiateViewController(identifier: String(describing: T.self)) as? T else { return }
+                    
+        show(nextViewController, sender: self)
+    }
 }
 
 

@@ -25,24 +25,8 @@ class MusicViewCell: UITableViewCell {
     }
     
     func configureWith(music: Music){
-        downloadImage(imageUrl: music.artworkUrl100)
+        musicImage.downloadImage(imageUrl: music.artworkUrl100)
         musicName.text = music.name
         artistName.text = music.artistName
-    }
-    
-    private func downloadImage(imageUrl: String){
-        let songUrl = URL(string: imageUrl)
-        
-        if let url = songUrl {
-            let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
-                if let imageData = data {
-                    DispatchQueue.main.async {
-                        self.musicImage.image = UIImage(data: imageData)
-                    }
-                }
-                
-            }
-            dataTask.resume()
-        }
     }
 }
