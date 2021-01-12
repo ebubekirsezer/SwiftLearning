@@ -75,6 +75,7 @@ extension TwitterHomeViewController: UICollectionViewDelegateFlowLayout {
         guard collectionView == postList else {
             return CGSize(width: 90, height: 90)
         }
+        //Table view automatic dimension
         return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height / 2.25)
     }
     
