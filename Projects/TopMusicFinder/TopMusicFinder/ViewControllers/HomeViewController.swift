@@ -79,6 +79,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return listOfMusicByCountries[section].country
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableView.bounds.height / 3.5
+    }
     
     
 }

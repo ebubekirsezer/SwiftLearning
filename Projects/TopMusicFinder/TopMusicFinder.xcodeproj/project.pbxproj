@@ -16,6 +16,8 @@
 		B83AB02E25AECEE700A5215C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83AB02D25AECEE700A5215C /* HomeViewController.swift */; };
 		B83AB03225AED8D500A5215C /* SongViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83AB03025AED8D500A5215C /* SongViewCell.swift */; };
 		B83AB03325AED8D500A5215C /* SongViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B83AB03125AED8D500A5215C /* SongViewCell.xib */; };
+		B83AB03725AEDD9300A5215C /* HorizontalMusicViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83AB03525AEDD9300A5215C /* HorizontalMusicViewCell.swift */; };
+		B83AB03825AEDD9300A5215C /* HorizontalMusicViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B83AB03625AEDD9300A5215C /* HorizontalMusicViewCell.xib */; };
 		B85DB0FA25AD894500D8AA28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85DB0F925AD894500D8AA28 /* AppDelegate.swift */; };
 		B85DB0FC25AD894500D8AA28 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85DB0FB25AD894500D8AA28 /* SceneDelegate.swift */; };
 		B85DB10125AD894500D8AA28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B85DB0FF25AD894500D8AA28 /* Main.storyboard */; };
@@ -39,6 +41,8 @@
 		B83AB02D25AECEE700A5215C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B83AB03025AED8D500A5215C /* SongViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongViewCell.swift; sourceTree = "<group>"; };
 		B83AB03125AED8D500A5215C /* SongViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongViewCell.xib; sourceTree = "<group>"; };
+		B83AB03525AEDD9300A5215C /* HorizontalMusicViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalMusicViewCell.swift; sourceTree = "<group>"; };
+		B83AB03625AEDD9300A5215C /* HorizontalMusicViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HorizontalMusicViewCell.xib; sourceTree = "<group>"; };
 		B85DB0F625AD894500D8AA28 /* TopMusicFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopMusicFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B85DB0F925AD894500D8AA28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B85DB0FB25AD894500D8AA28 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +146,8 @@
 				B83AB02025ADAE0F00A5215C /* MusicViewCell.xib */,
 				B83AB03025AED8D500A5215C /* SongViewCell.swift */,
 				B83AB03125AED8D500A5215C /* SongViewCell.xib */,
+				B83AB03525AEDD9300A5215C /* HorizontalMusicViewCell.swift */,
+				B83AB03625AEDD9300A5215C /* HorizontalMusicViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -222,6 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B83AB03825AEDD9300A5215C /* HorizontalMusicViewCell.xib in Resources */,
 				B83AB02225ADAE0F00A5215C /* MusicViewCell.xib in Resources */,
 				B85DB10625AD894800D8AA28 /* LaunchScreen.storyboard in Resources */,
 				B85DB10325AD894800D8AA28 /* Assets.xcassets in Resources */,
@@ -251,6 +258,7 @@
 				B83AB02825ADB5FC00A5215C /* MusicDetailViewController.swift in Sources */,
 				B83AB02B25ADBA2900A5215C /* RoundedImageView.swift in Sources */,
 				B85DB11D25AD933F00D8AA28 /* Music.swift in Sources */,
+				B83AB03725AEDD9300A5215C /* HorizontalMusicViewCell.swift in Sources */,
 				B85DB12725AD951900D8AA28 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
