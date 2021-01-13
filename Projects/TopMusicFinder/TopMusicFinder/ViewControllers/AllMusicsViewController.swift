@@ -42,8 +42,8 @@ class AllMusicsViewController: UIViewController {
             switch result {
             case .failure(let error):
                 print(error)
-            case .success(let musics):
-                self.listOfMusic = musics
+            case .success(let musicFeed):
+                self.listOfMusic = musicFeed.results
             }
         }
     }

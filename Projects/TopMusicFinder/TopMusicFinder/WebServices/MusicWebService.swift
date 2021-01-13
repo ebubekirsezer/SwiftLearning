@@ -17,7 +17,7 @@ struct MusicWebService {
     }
     
     
-    func fetchTopMusics(completion: @escaping(Result<[Music], MusicError>) -> Void) {
+    func fetchTopMusics(completion: @escaping(Result<MusicFeed, MusicError>) -> Void) {
         let dataTask = URLSession.shared.dataTask(with: BASE_URL) { data, response, error in
             
             guard let jsonData = data else {
@@ -28,10 +28,9 @@ struct MusicWebService {
             do {
                 let decoder = JSONDecoder()
                 let musicResponse = try decoder.decode(MusicResponse.self, from: jsonData)
-                let musics = musicResponse.feed.results
-                completion(.success(musics))
+                let musicFeed = musicResponse.feed
+                completion(.success(musicFeed))
             } catch {
-                print(error)
                 completion(.failure(.fecthingError))
             }
         }
