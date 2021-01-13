@@ -16,6 +16,8 @@ class SongViewCell: UITableViewCell {
         }
     }
     
+    var viewController: HomeViewController?
+    
     var listOfMusics = [Music](){
         didSet{
             DispatchQueue.main.async {
@@ -41,8 +43,9 @@ class SongViewCell: UITableViewCell {
         musicCollectionView.register(horizontalMusicCell, forCellWithReuseIdentifier: "HorizontalMusicViewCell")
     }
     
-    func configureWith(musicFeed: MusicFeed){
+    func configureWith(musicFeed: MusicFeed, viewController: HomeViewController){
         listOfMusics = musicFeed.results
+        self.viewController = viewController
     }
 }
 
@@ -58,6 +61,16 @@ extension SongViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.configureWith(music: music)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let musicDetailViewController = storyboard.instantiateViewController(identifier: "MusicDetailViewController") as! MusicDetailViewController
+        
+        let selectedMusic = listOfMusics[indexPath.row]
+        musicDetailViewController.music = selectedMusic
+        
+        self.viewController?.show(musicDetailViewController, sender: self.viewController)
     }
 }
 

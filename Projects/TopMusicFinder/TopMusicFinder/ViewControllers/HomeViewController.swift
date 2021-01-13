@@ -72,7 +72,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SongViewCell", for: indexPath) as! SongViewCell
         
         let musicFeed = listOfMusicByCountries[indexPath.section]
-        cell.configureWith(musicFeed: musicFeed)
+        cell.configureWith(musicFeed: musicFeed, viewController: self)
         
         return cell
     }
