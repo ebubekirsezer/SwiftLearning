@@ -28,9 +28,6 @@
                         <state key="normal" title="See All">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
-                        <connections>
-                            <action selector="seeAllPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="kEL-IX-OpD"/>
-                        </connections>
                     </button>
                 </subviews>
                 <constraints>

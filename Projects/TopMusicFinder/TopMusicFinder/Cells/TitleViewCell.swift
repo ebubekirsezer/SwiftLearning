@@ -17,17 +17,18 @@ class TitleViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        seeAllButton.isEnabled = true
         // Initialization code
+        self.isUserInteractionEnabled = true
+
+    }
+    
+    @objc func buttonPressed(){
+        print("pressed")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
-    }
-    
-    @IBAction func seeAllPressed(_ sender: UIButton) {
-        print("pressed")
     }
     
     func configureWith(musicFeed: MusicFeed, viewController: HomeViewController){

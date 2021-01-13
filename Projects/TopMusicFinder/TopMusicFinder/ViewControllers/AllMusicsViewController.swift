@@ -31,6 +31,11 @@ class AllMusicsViewController: UIViewController {
         super.viewDidLoad()
         registerCells()
         fetchMusics(countryCode: countryCode)
+        updateUI()
+    }
+    
+    private func updateUI(){
+        title = "Top 15 Musics"
     }
     
     private func registerCells(){

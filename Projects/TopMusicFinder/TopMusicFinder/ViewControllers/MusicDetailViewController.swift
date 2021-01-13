@@ -23,6 +23,11 @@ class MusicDetailViewController: UIViewController {
         updateUI()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
     private func updateUI(){
         self.navigationController?.navigationBar.isHidden = true
         

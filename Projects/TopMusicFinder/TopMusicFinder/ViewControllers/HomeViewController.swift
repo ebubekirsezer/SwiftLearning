@@ -25,6 +25,8 @@ class HomeViewController: UIViewController {
         }
     }
     
+    private var selectedMusicCategoryFeed: MusicFeed?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
@@ -81,8 +83,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TitleViewCell") as! TitleViewCell
         
         let musicFeed = listOfMusicByCountries[section]
+        selectedMusicCategoryFeed = musicFeed
         cell.configureWith(musicFeed: musicFeed, viewController: self)
-        cell.isUserInteractionEnabled = true
+        let seeAllTapGesture = UITapGestureRecognizer(target: self, action: #selector(seeAllPressed))
+        cell.seeAllButton.addGestureRecognizer(seeAllTapGesture)
         
         return cell.contentView
     }
@@ -93,5 +97,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.bounds.height / 2.75
+    }
+    
+    @objc func seeAllPressed(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let allMusicsVC = storyboard.instantiateViewController(identifier: "AllMusicsViewController") as! AllMusicsViewController
+        
+        allMusicsVC.countryCode = selectedMusicCategoryFeed?.country
+        
+        show(allMusicsVC, sender: self)
     }
 }
