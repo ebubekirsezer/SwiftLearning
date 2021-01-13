@@ -28,10 +28,10 @@ class MusicDetailViewController: UIViewController {
         
         if let song = music {
             songImage.downloadImage(imageUrl: song.artworkUrl100)
-            songName.text = "Song Name: \(song.name)"
-            artistName.text = "Artist Name: \(song.artistName)"
-            collectionName.text = "Collection Name: \(song.collectionName)"
-            releaseDate.text = "Release Date: \(song.releaseDate)"
+            songName.text = "Song Name: \(song.name ?? "Not Found")"
+            artistName.text = "Artist Name: \(song.artistName ?? "Not Found")"
+            collectionName.text = "Collection Name: \(song.collectionName ?? "Not Found")"
+            releaseDate.text = "Release Date: \(song.releaseDate ?? "Not Found")"
         }
     }
     

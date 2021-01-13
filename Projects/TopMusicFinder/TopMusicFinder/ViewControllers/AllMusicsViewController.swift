@@ -37,7 +37,7 @@ class AllMusicsViewController: UIViewController {
     }
     
     private func fetchMusics(){
-        let musicWebService = MusicWebService()
+        let musicWebService = MusicWebService(countryCode: "tr", itemCount: 10)
         musicWebService.fetchTopMusics { result in
             switch result {
             case .failure(let error):
@@ -87,5 +87,3 @@ extension UIViewController {
         show(nextViewController, sender: self)
     }
 }
-
-

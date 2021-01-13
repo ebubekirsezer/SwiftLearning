@@ -39,6 +39,36 @@
             </objects>
             <point key="canvasLocation" x="821.73913043478262" y="96.428571428571431"/>
         </scene>
+        <!--Home View Controller-->
+        <scene sceneID="HXk-Jr-FHe">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mab-pR-Fn0" customClass="HomeViewController" customModule="TopMusicFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u8j-Qe-KNc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NvG-zU-0GK">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ovb-dA-QOl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NvG-zU-0GK" firstAttribute="leading" secondItem="ovb-dA-QOl" secondAttribute="leading" id="71p-FS-pfk"/>
+                            <constraint firstItem="ovb-dA-QOl" firstAttribute="bottom" secondItem="NvG-zU-0GK" secondAttribute="bottom" id="ELP-fR-TaX"/>
+                            <constraint firstItem="NvG-zU-0GK" firstAttribute="top" secondItem="ovb-dA-QOl" secondAttribute="top" id="OyM-ek-gvm"/>
+                            <constraint firstItem="ovb-dA-QOl" firstAttribute="trailing" secondItem="NvG-zU-0GK" secondAttribute="trailing" id="v6I-NO-ceu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="allMusicsTableView" destination="NvG-zU-0GK" id="2j0-vw-vg8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6dS-Q1-zjx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-39" y="783"/>
+        </scene>
         <!--Music Detail View Controller-->
         <scene sceneID="HTU-PD-3y3">
             <objects>

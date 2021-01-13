@@ -8,11 +8,17 @@
 import Foundation
 
 struct MusicWebService {
+    let BASE_URL: URL
+        
+    init(countryCode: String, itemCount: Int) {
+        let baseString = "https://rss.itunes.apple.com/api/v1/\(countryCode)/apple-music/top-songs/all/\(itemCount)/explicit.json"
+        guard let BASE_URL = URL(string: baseString) else { fatalError() }
+        self.BASE_URL = BASE_URL
+    }
     
     
     func fetchTopMusics(completion: @escaping(Result<[Music], MusicError>) -> Void) {
-        guard let resourceURL = Constants.BASE_URL else { fatalError() }
-        let dataTask = URLSession.shared.dataTask(with: resourceURL) { data, response, error in
+        let dataTask = URLSession.shared.dataTask(with: BASE_URL) { data, response, error in
             
             guard let jsonData = data else {
                 completion(.failure(.noDataAvailable))
@@ -25,6 +31,7 @@ struct MusicWebService {
                 let musics = musicResponse.feed.results
                 completion(.success(musics))
             } catch {
+                print(error)
                 completion(.failure(.fecthingError))
             }
         }
