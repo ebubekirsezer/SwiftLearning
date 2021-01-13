@@ -17,6 +17,8 @@ class AllMusicsViewController: UIViewController {
         }
     }
     
+    var countryCode: String?
+    
     private var listOfMusic = [Music]() {
         didSet{
             DispatchQueue.main.async {
@@ -28,7 +30,7 @@ class AllMusicsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
-        fetchMusics()
+        fetchMusics(countryCode: countryCode)
     }
     
     private func registerCells(){
@@ -36,8 +38,8 @@ class AllMusicsViewController: UIViewController {
         musicTableView.register(musicCell, forCellReuseIdentifier: "MusicViewCell")
     }
     
-    private func fetchMusics(){
-        let musicWebService = MusicWebService(countryCode: "tr", itemCount: 10)
+    private func fetchMusics(countryCode: String?){
+        let musicWebService = MusicWebService(countryCode: countryCode!.lowercased(), itemCount: 15)
         musicWebService.fetchTopMusics { result in
             switch result {
             case .failure(let error):

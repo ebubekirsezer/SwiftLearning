@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
         }
     }
     
-    var listOfMusicByCountries = [MusicFeed]() {
+    private var listOfMusicByCountries = [MusicFeed]() {
         didSet{
             DispatchQueue.main.async {
                 self.allMusicsTableView.reloadData()
@@ -81,7 +81,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TitleViewCell") as! TitleViewCell
         
         let musicFeed = listOfMusicByCountries[section]
-        cell.configureWith(musicFeed: musicFeed)
+        cell.configureWith(musicFeed: musicFeed, viewController: self)
+        cell.isUserInteractionEnabled = true
         
         return cell.contentView
     }
@@ -91,8 +92,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.bounds.height / 3
+        return tableView.bounds.height / 2.75
     }
-    
-    
 }

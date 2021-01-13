@@ -22,22 +22,27 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See All" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ekf-E3-dT9">
-                        <rect key="frame" x="257" y="13" width="47" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSM-gg-cKj">
+                        <rect key="frame" x="259" y="7.5" width="45" height="29"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="See All">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <connections>
+                            <action selector="seeAllPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="kEL-IX-OpD"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="UsM-qk-8ad" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="RpH-I7-jVw"/>
-                    <constraint firstAttribute="trailing" secondItem="Ekf-E3-dT9" secondAttribute="trailing" constant="16" id="kzG-k4-OUC"/>
+                    <constraint firstAttribute="trailing" secondItem="xSM-gg-cKj" secondAttribute="trailing" constant="16" id="TC7-Aq-eY4"/>
+                    <constraint firstItem="xSM-gg-cKj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="gaF-NR-gy6"/>
                     <constraint firstItem="UsM-qk-8ad" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="sRH-hp-vG6"/>
-                    <constraint firstItem="Ekf-E3-dT9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="vdv-rL-BHz"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="seeAllButton" destination="xSM-gg-cKj" id="MED-eu-7sJ"/>
                 <outlet property="titleLabel" destination="UsM-qk-8ad" id="bUD-0F-soK"/>
             </connections>
             <point key="canvasLocation" x="29" y="14"/>

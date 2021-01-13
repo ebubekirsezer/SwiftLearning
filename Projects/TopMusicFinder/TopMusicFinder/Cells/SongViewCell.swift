@@ -16,9 +16,9 @@ class SongViewCell: UITableViewCell {
         }
     }
     
-    var viewController: HomeViewController?
+    private var viewController: HomeViewController?
     
-    var listOfMusics = [Music](){
+    private var listOfMusics = [Music](){
         didSet{
             DispatchQueue.main.async {
                 self.musicCollectionView.reloadData()
