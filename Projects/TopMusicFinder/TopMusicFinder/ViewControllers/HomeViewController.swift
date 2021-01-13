@@ -53,6 +53,8 @@ class HomeViewController: UIViewController {
     private func registerCells(){
         let songViewCell = UINib(nibName: "SongViewCell", bundle: nil)
         allMusicsTableView.register(songViewCell, forCellReuseIdentifier: "SongViewCell")
+        let titleViewCell = UINib(nibName: "TitleViewCell", bundle: nil)
+        allMusicsTableView.register(titleViewCell, forCellReuseIdentifier: "TitleViewCell")
     }
 }
 
@@ -75,12 +77,21 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return listOfMusicByCountries[section].country
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TitleViewCell") as! TitleViewCell
+        
+        let musicFeed = listOfMusicByCountries[section]
+        cell.configureWith(musicFeed: musicFeed)
+        
+        return cell.contentView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 48
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.bounds.height / 3.5
+        return tableView.bounds.height / 3
     }
     
     
