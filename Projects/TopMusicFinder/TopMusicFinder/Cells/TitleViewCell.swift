@@ -21,14 +21,14 @@ class TitleViewCell: UITableViewCell {
         self.isUserInteractionEnabled = true
 
     }
-    
-    @objc func buttonPressed(){
-        print("pressed")
-    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
+    }
+    
+    @IBAction func seeAllPressed(_ sender: UIButton) {
+        print("see all pressed")
     }
     
     func configureWith(musicFeed: MusicFeed, viewController: HomeViewController){

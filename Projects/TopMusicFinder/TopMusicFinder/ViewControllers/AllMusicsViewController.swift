@@ -85,12 +85,3 @@ extension AllMusicsViewController: UITableViewDelegate, UITableViewDataSource {
         show(musicDetailViewController, sender: self)
     }
 }
-
-extension UIViewController {
-    func goToAny<T: UIViewController>(viewController: T, from storyboardName: String){
-        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
-        guard let nextViewController = storyboard.instantiateViewController(identifier: String(describing: T.self)) as? T else { return }
-                    
-        show(nextViewController, sender: self)
-    }
-}

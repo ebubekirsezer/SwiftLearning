@@ -25,7 +25,7 @@ class MusicViewCell: UITableViewCell {
     }
     
     func configureWith(music: Music){
-        musicImage.downloadImage(imageUrl: music.artworkUrl100)
+        musicImage.downloadImage(imageUrl: music.artworkUrl100!)
         musicName.text = music.name
         artistName.text = music.artistName
     }

@@ -23,16 +23,21 @@ class MusicDetailViewController: UIViewController {
         updateUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    //Localization
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBar.isHidden = false
     }
     
     private func updateUI(){
-        self.navigationController?.navigationBar.isHidden = true
-        
         if let song = music {
-            songImage.downloadImage(imageUrl: song.artworkUrl100)
+            songImage.downloadImage(imageUrl: song.artworkUrl100!)
+            songImage.roundCorners([.bottomLeft, .bottomRight], radius: 30)
             songName.text = "Song Name: \(song.name ?? "Not Found")"
             artistName.text = "Artist Name: \(song.artistName ?? "Not Found")"
             collectionName.text = "Collection Name: \(song.collectionName ?? "Not Found")"

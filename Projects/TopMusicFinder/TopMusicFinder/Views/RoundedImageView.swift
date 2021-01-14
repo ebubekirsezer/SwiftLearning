@@ -7,12 +7,20 @@
 
 import UIKit
 
+@IBDesignable
 class RoundedImageView: UIImageView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.roundCorners([.bottomLeft, .bottomRight], radius: 20)
     }
+    
+    @IBInspectable var cornerRadius: CGFloat = 0 {
+        didSet{
+            layer.cornerRadius = cornerRadius
+            layer.masksToBounds = cornerRadius > 0
+        }
+    }
+    
 }
 
 //Rounding Corners

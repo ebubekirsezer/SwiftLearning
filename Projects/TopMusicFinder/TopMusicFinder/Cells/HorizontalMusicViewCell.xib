@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,29 +20,29 @@
                         <rect key="frame" x="0.0" y="44" width="241" height="222"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MtG-GI-558">
-                                <rect key="frame" x="0.0" y="0.0" width="241" height="150"/>
+                                <rect key="frame" x="8" y="0.0" width="233" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="NBt-LP-euC"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2U-kP-ADR">
-                                <rect key="frame" x="16" y="158" width="209" height="24"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="16" y="158" width="209" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWH-ht-T9G">
-                                <rect key="frame" x="16" y="190" width="209" height="21"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="16" y="186.5" width="209" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cWH-ht-T9G" firstAttribute="top" secondItem="a2U-kP-ADR" secondAttribute="bottom" constant="8" id="5Iq-Bt-g1v"/>
                             <constraint firstAttribute="trailing" secondItem="MtG-GI-558" secondAttribute="trailing" id="AFO-Kg-1re"/>
-                            <constraint firstItem="MtG-GI-558" firstAttribute="leading" secondItem="R2M-xh-0oC" secondAttribute="leading" id="NYB-py-dDJ"/>
+                            <constraint firstItem="MtG-GI-558" firstAttribute="leading" secondItem="R2M-xh-0oC" secondAttribute="leading" constant="8" id="NYB-py-dDJ"/>
                             <constraint firstAttribute="trailing" secondItem="cWH-ht-T9G" secondAttribute="trailing" constant="16" id="Xts-P2-itO"/>
                             <constraint firstItem="cWH-ht-T9G" firstAttribute="leading" secondItem="R2M-xh-0oC" secondAttribute="leading" constant="16" id="apP-nN-rvC"/>
                             <constraint firstItem="MtG-GI-558" firstAttribute="top" secondItem="R2M-xh-0oC" secondAttribute="top" id="c7o-fS-Jdj"/>
@@ -55,6 +54,7 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="R2M-xh-0oC" firstAttribute="trailing" secondItem="ZTg-uK-7eu" secondAttribute="trailing" id="9aa-qu-WnO"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="leading" secondItem="R2M-xh-0oC" secondAttribute="leading" id="KA8-4X-xmI"/>
@@ -70,9 +70,4 @@
             <point key="canvasLocation" x="167.39130434782609" y="160.04464285714286"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

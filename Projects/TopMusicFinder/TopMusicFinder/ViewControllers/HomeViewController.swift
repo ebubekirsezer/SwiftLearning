@@ -41,6 +41,7 @@ class HomeViewController: UIViewController {
     }
     
     private func fetchMusics(countryCode: String, itemCount: Int = 5){
+        //move to the app class
         let musicWebService = MusicWebService(countryCode: countryCode, itemCount: itemCount)
         musicWebService.fetchTopMusics { result in
             switch result {
@@ -85,8 +86,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let musicFeed = listOfMusicByCountries[section]
         selectedMusicCategoryFeed = musicFeed
         cell.configureWith(musicFeed: musicFeed, viewController: self)
-        let seeAllTapGesture = UITapGestureRecognizer(target: self, action: #selector(seeAllPressed))
-        cell.seeAllButton.addGestureRecognizer(seeAllTapGesture)
+//        let seeAllTapGesture = UITapGestureRecognizer(target: self, action: #selector(seeAllPressed))
+//        cell.seeAllButton.addGestureRecognizer(seeAllTapGesture)
         
         return cell.contentView
     }
@@ -96,7 +97,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.bounds.height / 2.75
+        return tableView.bounds.height / 3
     }
     
     @objc func seeAllPressed(){

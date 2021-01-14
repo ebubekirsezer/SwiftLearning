@@ -20,7 +20,7 @@ class HorizontalMusicViewCell: UICollectionViewCell {
     }
     
     func configureWith(music: Music){
-        songImage.downloadImage(imageUrl: music.artworkUrl100)
+        songImage.downloadImage(imageUrl: music.artworkUrl100!)
         songName.text = music.name
         artistName.text = music.artistName
     }
