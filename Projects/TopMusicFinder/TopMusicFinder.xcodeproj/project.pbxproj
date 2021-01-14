@@ -42,6 +42,10 @@
 		B876B67725B01D85001712BE /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876B67625B01D85001712BE /* RoundedView.swift */; };
 		B876B67B25B02C39001712BE /* AppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876B67925B02C39001712BE /* AppTableViewCell.swift */; };
 		B876B67C25B02C39001712BE /* AppTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B876B67A25B02C39001712BE /* AppTableViewCell.xib */; };
+		B876B68325B073BC001712BE /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876B68225B073BC001712BE /* Book.swift */; };
+		B876B68625B07418001712BE /* BookFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876B68525B07418001712BE /* BookFeed.swift */; };
+		B876B68925B07449001712BE /* BookResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876B68825B07449001712BE /* BookResponse.swift */; };
+		B876B68C25B077D0001712BE /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876B68B25B077D0001712BE /* BookViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +86,10 @@
 		B876B67625B01D85001712BE /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		B876B67925B02C39001712BE /* AppTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTableViewCell.swift; sourceTree = "<group>"; };
 		B876B67A25B02C39001712BE /* AppTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppTableViewCell.xib; sourceTree = "<group>"; };
+		B876B68225B073BC001712BE /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		B876B68525B07418001712BE /* BookFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFeed.swift; sourceTree = "<group>"; };
+		B876B68825B07449001712BE /* BookResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookResponse.swift; sourceTree = "<group>"; };
+		B876B68B25B077D0001712BE /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +164,7 @@
 				B83AB02D25AECEE700A5215C /* HomeViewController.swift */,
 				B876B65E25AF77FF001712BE /* AppsViewController.swift */,
 				B876B66D25AF83FD001712BE /* BaseViewController.swift */,
+				B876B68B25B077D0001712BE /* BookViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -198,6 +207,9 @@
 				B876B66425AF7DC0001712BE /* App.swift */,
 				B876B66725AF7E28001712BE /* AppFeed.swift */,
 				B876B66A25AF7E7E001712BE /* AppResponse.swift */,
+				B876B68225B073BC001712BE /* Book.swift */,
+				B876B68525B07418001712BE /* BookFeed.swift */,
+				B876B68825B07449001712BE /* BookResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -298,6 +310,7 @@
 				B876B67725B01D85001712BE /* RoundedView.swift in Sources */,
 				B83AB02E25AECEE700A5215C /* HomeViewController.swift in Sources */,
 				B876B66B25AF7E7E001712BE /* AppResponse.swift in Sources */,
+				B876B68925B07449001712BE /* BookResponse.swift in Sources */,
 				B85DB0FC25AD894500D8AA28 /* SceneDelegate.swift in Sources */,
 				B85DB12025AD93EC00D8AA28 /* MusicResponse.swift in Sources */,
 				B85DB11925AD931400D8AA28 /* Genre.swift in Sources */,
@@ -306,10 +319,13 @@
 				B876B66525AF7DC0001712BE /* App.swift in Sources */,
 				B83AB02825ADB5FC00A5215C /* MusicDetailViewController.swift in Sources */,
 				B83AB02B25ADBA2900A5215C /* RoundedImageView.swift in Sources */,
+				B876B68625B07418001712BE /* BookFeed.swift in Sources */,
 				B876B67325B01D2E001712BE /* TopAppsViewCell.swift in Sources */,
 				B876B65F25AF77FF001712BE /* AppsViewController.swift in Sources */,
 				B85DB11D25AD933F00D8AA28 /* Music.swift in Sources */,
+				B876B68325B073BC001712BE /* Book.swift in Sources */,
 				B83AB03725AEDD9300A5215C /* HorizontalMusicViewCell.swift in Sources */,
+				B876B68C25B077D0001712BE /* BookViewController.swift in Sources */,
 				B876B66825AF7E28001712BE /* AppFeed.swift in Sources */,
 				B85DB12725AD951900D8AA28 /* Constants.swift in Sources */,
 			);
