@@ -55,8 +55,8 @@ extension TopAppsViewCell: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AppTableViewCell", for: indexPath) as! AppTableViewCell
         
+        print(appFeeds.count)
         let app = appFeeds[indexPath.section].results?[indexPath.row]
-        
         if let app = app {
             cell.configureWith(app: app)
         }
@@ -64,13 +64,20 @@ extension TopAppsViewCell: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Uygulamalar"
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 48))
+        headerView.backgroundColor = UIColor.clear
+        
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: headerView.bounds.width, height: headerView.bounds.height))
+        titleLabel.text = appFeeds[section].title
+        titleLabel.textColor = UIColor.white
+        titleLabel.font = UIFont.systemFont(ofSize: 18)
+        
+        headerView.addSubview(titleLabel)
+        return headerView
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.bounds.height / 4.25
+        return tableView.bounds.height / 7.5
     }
-    
-    
 }

@@ -26,7 +26,7 @@ class AppTableViewCell: UITableViewCell {
     func configureWith(app: App){
         appImage.downloadImage(imageUrl: app.artworkUrl100 ?? "")
         appName.text = app.name
-        appDeveloperName.text = app.artistName
+        appDeveloperName.text = app.artistName        
     }
     
     @IBAction func buttonDownloadPressed(_ sender: UIButton) {

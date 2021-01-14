@@ -27,12 +27,12 @@ class AppsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
-        getTopGrossing()
-        getTopApps()
+        getNewGamesWeLove()
+        self.getTopApps(appType: "top-free", itemcCount: 7)
     }
     
-    private func getTopApps(){
-        appWebService?.getTopApps(appType: "top-free", itemCount: 4) { result in
+    private func getTopApps(appType: String, itemcCount: Int = 3){
+        appWebService?.getTopApps(appType: appType, itemCount: itemcCount) { result in
             switch result {
             case .failure(let error):
                 print(error)
@@ -42,7 +42,7 @@ class AppsViewController: BaseViewController {
         }
     }
     
-    private func getTopGrossing(){
+    private func getNewGamesWeLove(){
         appWebService?.getTopApps(appType: "new-games-we-love", itemCount: 1, completion: { result in
             switch result {
             case .failure(let error):
@@ -62,11 +62,12 @@ class AppsViewController: BaseViewController {
 extension AppsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return appFeeds.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return appFeeds[section].results?.count ?? 0
+        print(section)
+        return appFeeds.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -78,7 +79,7 @@ extension AppsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.bounds.height / 1.5
+        return tableView.bounds.height
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
