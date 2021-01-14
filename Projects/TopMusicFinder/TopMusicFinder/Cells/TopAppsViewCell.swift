@@ -15,7 +15,7 @@ class TopAppsViewCell: UITableViewCell {
             appTableView.dataSource = self
         }
     }
-    private var appFeeds = [AppFeed]() {
+    private var appFeeds = [MediaFeed]() {
         didSet{
             appTableView.reloadData()
         }
@@ -38,7 +38,7 @@ class TopAppsViewCell: UITableViewCell {
         appTableView.register(appCell, forCellReuseIdentifier: "AppTableViewCell")
     }
     
-    func configureWith(appFeeds: [AppFeed]){
+    func configureWith(appFeeds: [MediaFeed]){
         self.appFeeds = appFeeds
     }
 }
@@ -49,17 +49,15 @@ extension TopAppsViewCell: UITableViewDelegate, UITableViewDataSource {
         return appFeeds.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return appFeeds[section].results?.count ?? 0
+        return appFeeds[section].results.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AppTableViewCell", for: indexPath) as! AppTableViewCell
         
         print(appFeeds.count)
-        let app = appFeeds[indexPath.section].results?[indexPath.row]
-        if let app = app {
-            cell.configureWith(app: app)
-        }
+        let app = appFeeds[indexPath.section].results[indexPath.row]
+        cell.configureWith(media: app)
         cell.selectionStyle = .none
         return cell
     }

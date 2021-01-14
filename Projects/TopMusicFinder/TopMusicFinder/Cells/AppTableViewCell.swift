@@ -23,10 +23,10 @@ class AppTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureWith(app: App){
-        appImage.downloadImage(imageUrl: app.artworkUrl100 ?? "")
-        appName.text = app.name
-        appDeveloperName.text = app.artistName        
+    func configureWith(media: Media){
+        appImage.downloadImage(imageUrl: media.artworkUrl100 )
+        appName.text = media.name
+        appDeveloperName.text = media.artistName
     }
     
     @IBAction func buttonDownloadPressed(_ sender: UIButton) {

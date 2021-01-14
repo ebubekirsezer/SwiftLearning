@@ -24,7 +24,6 @@
 		B85DB10125AD894500D8AA28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B85DB0FF25AD894500D8AA28 /* Main.storyboard */; };
 		B85DB10325AD894800D8AA28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B85DB10225AD894800D8AA28 /* Assets.xcassets */; };
 		B85DB10625AD894800D8AA28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B85DB10425AD894800D8AA28 /* LaunchScreen.storyboard */; };
-		B85DB11425AD89FB00D8AA28 /* MusicWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85DB11325AD89FB00D8AA28 /* MusicWebService.swift */; };
 		B85DB12725AD951900D8AA28 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85DB12625AD951900D8AA28 /* Constants.swift */; };
 		B876B65F25AF77FF001712BE /* AppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876B65E25AF77FF001712BE /* AppsViewController.swift */; };
 		B876B66225AF7B16001712BE /* AppWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876B66125AF7B16001712BE /* AppWebService.swift */; };
@@ -61,7 +60,6 @@
 		B85DB10225AD894800D8AA28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B85DB10525AD894800D8AA28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B85DB10725AD894800D8AA28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B85DB11325AD89FB00D8AA28 /* MusicWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicWebService.swift; sourceTree = "<group>"; };
 		B85DB12625AD951900D8AA28 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B876B65E25AF77FF001712BE /* AppsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsViewController.swift; sourceTree = "<group>"; };
 		B876B66125AF7B16001712BE /* AppWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebService.swift; sourceTree = "<group>"; };
@@ -136,7 +134,6 @@
 		B85DB10F25AD896C00D8AA28 /* WebServices */ = {
 			isa = PBXGroup;
 			children = (
-				B85DB11325AD89FB00D8AA28 /* MusicWebService.swift */,
 				B876B66125AF7B16001712BE /* AppWebService.swift */,
 			);
 			path = WebServices;
@@ -277,7 +274,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B85DB11425AD89FB00D8AA28 /* MusicWebService.swift in Sources */,
 				B83AB03C25AEE93900A5215C /* TitleViewCell.swift in Sources */,
 				B876B66E25AF83FD001712BE /* BaseViewController.swift in Sources */,
 				B83AB02125ADAE0F00A5215C /* MusicViewCell.swift in Sources */,

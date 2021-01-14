@@ -8,9 +8,28 @@
 import UIKit
 
 struct Constants {
-    static let BASE_URL = URL(string: "https://rss.itunes.apple.com/api/v1/tr/apple-music/top-songs/all/10/explicit.json")
     
-    struct Colors {
-        static let darkBlue: UIColor = UIColor(red: 30, green: 39, blue: 63, alpha: 1)
+    struct MediaType{
+        static let apps = "itunes-app"
+        static let musics = "itunes-music"
+        static let books = "books"
+        static let tvShows = "tv-shows"
+    }
+    
+    struct FeedType{
+        static let topSongs = "top-songs"
+        static let newGamesWeLove = "new-games-we-love"
+        static let topFree = "top-free"
+        static let topGrossing = "top-grossing"
+        static let topPaid = "top-paid"
+    }
+    
+    struct CountryCodes {
+        static let turkey = "tr"
+        static let germany = "de"
+        static let france = "fr"
+        static let unitedStates = "us"
+        static let italy = "it"
+        static let unitedKingdom = "gb"
     }
 }

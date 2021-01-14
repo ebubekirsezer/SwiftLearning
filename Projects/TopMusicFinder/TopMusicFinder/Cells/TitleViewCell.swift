@@ -12,7 +12,7 @@ class TitleViewCell: UITableViewCell {
     @IBOutlet private weak var titleLabel: UILabel!
     
     private var viewController: HomeViewController?
-    private var musicFeed: MusicFeed?
+    private var musicFeed: MediaFeed?
     @IBOutlet weak var seeAllButton: UIButton!
     
     override func awakeFromNib() {
@@ -31,7 +31,7 @@ class TitleViewCell: UITableViewCell {
         print("see all pressed")
     }
     
-    func configureWith(musicFeed: MusicFeed, viewController: HomeViewController){
+    func configureWith(musicFeed: MediaFeed, viewController: HomeViewController){
         titleLabel.text = musicFeed.country.uppercased() + " Top Musics"
         self.musicFeed = musicFeed
         self.viewController = viewController

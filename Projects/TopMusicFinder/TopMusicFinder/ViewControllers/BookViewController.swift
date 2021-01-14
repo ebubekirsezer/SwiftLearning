@@ -15,12 +15,12 @@ class BookViewController: BaseViewController {
     }
     
     private func getBooks(){
-        appWebService?.getTopBooks(bookType: "top-free", itemCount: 10, completion: { (result) in
+        appWebService?.getTopBy(mediaType: Constants.MediaType.books, feedType: Constants.FeedType.topFree, itemCount: 10, completion: { (result) in
             switch result{
             case .failure(let error):
                 print(error)
-            case .success(let bookFeed):
-                print(bookFeed.results)
+            case .success(let mediaFeed):
+                print(mediaFeed.results)
             }
         })
     }

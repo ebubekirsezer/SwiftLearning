@@ -18,7 +18,7 @@ class SongViewCell: UITableViewCell {
     
     private var viewController: HomeViewController?
     
-    private var listOfMusics = [Music](){
+    private var listOfMusics = [Media](){
         didSet{
             DispatchQueue.main.async {
                 self.musicCollectionView.reloadData()
@@ -43,7 +43,7 @@ class SongViewCell: UITableViewCell {
         musicCollectionView.register(horizontalMusicCell, forCellWithReuseIdentifier: "HorizontalMusicViewCell")
     }
     
-    func configureWith(musicFeed: MusicFeed, viewController: HomeViewController){
+    func configureWith(musicFeed: MediaFeed, viewController: HomeViewController){
         listOfMusics = musicFeed.results
         self.viewController = viewController
     }

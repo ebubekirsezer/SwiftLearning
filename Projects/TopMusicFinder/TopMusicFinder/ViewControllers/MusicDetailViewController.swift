@@ -16,7 +16,7 @@ class MusicDetailViewController: UIViewController {
     @IBOutlet private weak var collectionName: UILabel!
     @IBOutlet private weak var releaseDate: UILabel!
     
-    var music: Music? = nil
+    var music: Media? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,12 +36,12 @@ class MusicDetailViewController: UIViewController {
     
     private func updateUI(){
         if let song = music {
-            songImage.downloadImage(imageUrl: song.artworkUrl100!)
+            songImage.downloadImage(imageUrl: song.artworkUrl100 )
             songImage.roundCorners([.bottomLeft, .bottomRight], radius: 30)
-            songName.text = "Song Name: \(song.name ?? "Not Found")"
-            artistName.text = "Artist Name: \(song.artistName ?? "Not Found")"
+            songName.text = "Song Name: \(song.name )"
+            artistName.text = "Artist Name: \(song.artistName )"
             collectionName.text = "Collection Name: \(song.collectionName ?? "Not Found")"
-            releaseDate.text = "Release Date: \(song.releaseDate ?? "Not Found")"
+            releaseDate.text = "Release Date: \(song.releaseDate )"
         }
     }
     

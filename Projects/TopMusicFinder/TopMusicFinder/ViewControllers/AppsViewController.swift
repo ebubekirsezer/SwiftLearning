@@ -17,12 +17,12 @@ class AppsViewController: BaseViewController {
         }
     }
     
-    private var appFeeds = [AppFeed]() {
+    private var appFeeds = [MediaFeed]() {
         didSet{
             self.topAppsTableView.reloadData()
         }
     }
-    private var mostLovedApp: App?
+    private var mostLovedApp: Media?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,23 +32,23 @@ class AppsViewController: BaseViewController {
     }
     
     private func getTopApps(appType: String, itemcCount: Int = 3){
-        appWebService?.getTopApps(appType: appType, itemCount: itemcCount) { result in
-            switch result {
+        appWebService?.getTopBy(mediaType: Constants.MediaType.apps, feedType: Constants.FeedType.topFree, itemCount: itemcCount, completion: { (result) in
+            switch result{
             case .failure(let error):
                 print(error)
-            case .success(let appFeed):
-                self.appFeeds.append(appFeed)
+            case .success(let mediaFeed):
+                self.appFeeds.append(mediaFeed)
             }
-        }
+        })
     }
     
     private func getNewGamesWeLove(){
-        appWebService?.getTopApps(appType: "new-games-we-love", itemCount: 1, completion: { result in
-            switch result {
+        appWebService?.getTopBy(mediaType: Constants.MediaType.apps, feedType: Constants.FeedType.newGamesWeLove, itemCount: 1, completion: { (result) in
+            switch result{
             case .failure(let error):
                 print(error)
-            case .success(let appFeed):
-                self.mostLovedApp = appFeed.results?[0]
+            case .success(let mediaFeed):
+                self.mostLovedApp = mediaFeed.results[0]
             }
         })
     }

@@ -24,8 +24,8 @@ class MusicViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureWith(music: Music){
-        musicImage.downloadImage(imageUrl: music.artworkUrl100!)
+    func configureWith(music: Media){
+        musicImage.downloadImage(imageUrl: music.artworkUrl100)
         musicName.text = music.name
         artistName.text = music.artistName
     }

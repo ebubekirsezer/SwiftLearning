@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class AllMusicsViewController: UIViewController {
+class AllMusicsViewController: BaseViewController {
     
     @IBOutlet weak var musicTableView: UITableView! {
         didSet {
@@ -17,13 +17,11 @@ class AllMusicsViewController: UIViewController {
         }
     }
     
-    var countryCode: String?
+    var countryCode: String = ""
     
-    private var listOfMusic = [Music]() {
+    private var musics = [Media]() {
         didSet{
-            DispatchQueue.main.async {
-                self.musicTableView.reloadData()
-            }
+            self.musicTableView.reloadData()
         }
     }
     
@@ -43,28 +41,27 @@ class AllMusicsViewController: UIViewController {
         musicTableView.register(musicCell, forCellReuseIdentifier: "MusicViewCell")
     }
     
-    private func fetchMusics(countryCode: String?){
-        let musicWebService = MusicWebService(countryCode: countryCode!.lowercased(), itemCount: 15)
-        musicWebService.fetchTopMusics { result in
+    private func fetchMusics(countryCode: String){
+        appWebService?.getTopBy(countryCode: countryCode, mediaType: Constants.MediaType.musics, feedType: Constants.FeedType.topSongs, itemCount: 15, completion: { (result) in
             switch result {
             case .failure(let error):
                 print(error)
-            case .success(let musicFeed):
-                self.listOfMusic = musicFeed.results
+            case .success(let mediaFeed):
+                self.musics = mediaFeed.results
             }
-        }
+        })
     }
 }
 
 
 extension AllMusicsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listOfMusic.count
+        return musics.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MusicViewCell", for: indexPath) as! MusicViewCell
-        let music = listOfMusic[indexPath.row]
+        let music = musics[indexPath.row]
         cell.configureWith(music: music)        
         cell.selectionStyle = .none
                 
@@ -79,7 +76,7 @@ extension AllMusicsViewController: UITableViewDelegate, UITableViewDataSource {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let musicDetailViewController = storyboard.instantiateViewController(identifier: "MusicDetailViewController") as! MusicDetailViewController
         
-        let music = listOfMusic[indexPath.row]
+        let music = musics[indexPath.row]
         musicDetailViewController.music = music
         
         show(musicDetailViewController, sender: self)

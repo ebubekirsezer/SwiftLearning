@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
     
     @IBOutlet private weak var allMusicsTableView: UITableView! {
         didSet{
@@ -17,15 +17,13 @@ class HomeViewController: UIViewController {
         }
     }
     
-    private var listOfMusicByCountries = [MusicFeed]() {
+    private var musicsByCountries = [MediaFeed]() {
         didSet{
-            DispatchQueue.main.async {
-                self.allMusicsTableView.reloadData()
-            }
+            self.allMusicsTableView.reloadData()
         }
     }
     
-    private var selectedMusicCategoryFeed: MusicFeed?
+    private var selectedMusicCategoryFeed: MediaFeed?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,23 +32,21 @@ class HomeViewController: UIViewController {
     }
     
     private func getAllMusicByTheCountries(){
-        fetchMusics(countryCode: "tr")
-        fetchMusics(countryCode: "gb")
-        fetchMusics(countryCode: "de")
-        fetchMusics(countryCode: "fr")
+        fetchMusics(countryCode: Constants.CountryCodes.turkey)
+        fetchMusics(countryCode: Constants.CountryCodes.unitedStates)
+        fetchMusics(countryCode: Constants.CountryCodes.unitedKingdom)
+        fetchMusics(countryCode: Constants.CountryCodes.france)
     }
     
     private func fetchMusics(countryCode: String, itemCount: Int = 5){
-        //move to the app class
-        let musicWebService = MusicWebService(countryCode: countryCode, itemCount: itemCount)
-        musicWebService.fetchTopMusics { result in
-            switch result {
+        appWebService?.getTopBy(countryCode: countryCode, mediaType: Constants.MediaType.musics, feedType: Constants.FeedType.topSongs, itemCount: itemCount, completion: { (result) in
+            switch result{
             case .failure(let error):
                 print(error)
-            case .success(let musicFeed):
-                self.listOfMusicByCountries.append(musicFeed)
+            case .success(let mediaFeed):
+                self.musicsByCountries.append(mediaFeed)
             }
-        }
+        })
     }
     
     private func registerCells(){
@@ -64,7 +60,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return listOfMusicByCountries.count
+        return musicsByCountries.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -74,7 +70,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SongViewCell", for: indexPath) as! SongViewCell
         
-        let musicFeed = listOfMusicByCountries[indexPath.section]
+        let musicFeed = musicsByCountries[indexPath.section]
         cell.configureWith(musicFeed: musicFeed, viewController: self)
         
         return cell
@@ -83,11 +79,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TitleViewCell") as! TitleViewCell
         
-        let musicFeed = listOfMusicByCountries[section]
+        let musicFeed = musicsByCountries[section]
         selectedMusicCategoryFeed = musicFeed
         cell.configureWith(musicFeed: musicFeed, viewController: self)
-//        let seeAllTapGesture = UITapGestureRecognizer(target: self, action: #selector(seeAllPressed))
-//        cell.seeAllButton.addGestureRecognizer(seeAllTapGesture)
         
         return cell.contentView
     }
@@ -104,7 +98,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let allMusicsVC = storyboard.instantiateViewController(identifier: "AllMusicsViewController") as! AllMusicsViewController
         
-        allMusicsVC.countryCode = selectedMusicCategoryFeed?.country
+        allMusicsVC.countryCode = selectedMusicCategoryFeed!.country
         
         show(allMusicsVC, sender: self)
     }
