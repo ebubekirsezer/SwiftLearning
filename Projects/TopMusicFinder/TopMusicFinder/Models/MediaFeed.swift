@@ -1,5 +1,5 @@
 //
-//  BookFeed.swift
+//  MediaFeed.swift
 //  TopMusicFinder
 //
 //  Created by Ebubekir Sezer on 14.01.2021.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct BookFeed: Decodable {
+struct MediaFeed: Decodable {
     let title: String
     let country: String
-    let results: [Book]
+    let results: [Media]
 }

@@ -8,6 +8,10 @@
 import Foundation
 
 struct AppWebService {
+    
+//    func getTopBy(mediaType: String, feedType: String, itemCount: Int, completion: @escaping()){
+//
+//    }
         
     func getTopApps(appType: String, itemCount: Int, completion: @escaping(Result<AppFeed, MusicError>) -> Void) {
         guard let BASE_URL = URL(string: "https://rss.itunes.apple.com/api/v1/tr/ios-apps/\(appType)/all/\(itemCount)/explicit.json") else { fatalError() }
