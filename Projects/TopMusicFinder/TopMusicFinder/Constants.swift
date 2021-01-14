@@ -9,8 +9,10 @@ import UIKit
 
 struct Constants {
     
+    static let defaultImage = "https://redzonekickboxing.com/wp-content/uploads/2017/04/default-image-620x600.jpg"
+    
     struct MediaType{
-        static let apps = "itunes-app"
+        static let apps = "ios-apps"
         static let musics = "itunes-music"
         static let books = "books"
         static let tvShows = "tv-shows"
