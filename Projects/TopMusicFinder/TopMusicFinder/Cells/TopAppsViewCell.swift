@@ -15,6 +15,7 @@ class TopAppsViewCell: UITableViewCell {
             appTableView.dataSource = self
         }
     }
+    var appViewControllerDelegate: AppsViewController?
     private var appFeeds = [MediaFeed]() {
         didSet{
             appTableView.reloadData()
@@ -23,14 +24,11 @@ class TopAppsViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         registerCells()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     private func registerCells(){
@@ -73,6 +71,11 @@ extension TopAppsViewCell: UITableViewDelegate, UITableViewDataSource {
         
         headerView.addSubview(titleLabel)
         return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedMedia = appFeeds[indexPath.section].results[indexPath.row]
+        appViewControllerDelegate?.goToMediaDetailViewController(media: selectedMedia)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

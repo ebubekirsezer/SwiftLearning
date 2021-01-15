@@ -15,8 +15,7 @@ class SongViewCell: UITableViewCell {
             musicCollectionView.dataSource = self
         }
     }
-    
-    private var viewController: HomeViewController?
+    var homeViewControllerDelegate: HomeViewController?
     
     private var listOfMusics = [Media](){
         didSet{
@@ -28,14 +27,11 @@ class SongViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         registerCell()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        // HorizontalMusicViewCell
-        // Configure the view for the selected state
     }
     
     private func registerCell(){
@@ -43,9 +39,8 @@ class SongViewCell: UITableViewCell {
         musicCollectionView.register(horizontalMusicCell, forCellWithReuseIdentifier: "HorizontalMusicViewCell")
     }
     
-    func configureWith(musicFeed: MediaFeed, viewController: HomeViewController){
+    func configureWith(musicFeed: MediaFeed){
         listOfMusics = musicFeed.results
-        self.viewController = viewController
     }
 }
 
@@ -64,13 +59,8 @@ extension SongViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let musicDetailViewController = storyboard.instantiateViewController(identifier: "MusicDetailViewController") as! MusicDetailViewController
-        
-        let selectedMusic = listOfMusics[indexPath.row]
-        musicDetailViewController.music = selectedMusic
-        
-        self.viewController?.show(musicDetailViewController, sender: self.viewController)
+        let selectedMedia = listOfMusics[indexPath.row]
+        homeViewControllerDelegate?.goToMediaDetailViewController(media: selectedMedia)        
     }
 }
 

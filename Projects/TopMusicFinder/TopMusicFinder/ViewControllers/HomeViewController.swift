@@ -69,21 +69,20 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SongViewCell", for: indexPath) as! SongViewCell
-        
+        cell.homeViewControllerDelegate = self
         let musicFeed = musicsByCountries[indexPath.section]
-        cell.configureWith(musicFeed: musicFeed, viewController: self)
+        cell.configureWith(musicFeed: musicFeed)
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TitleViewCell") as! TitleViewCell
-        
-        let musicFeed = musicsByCountries[section]
-        selectedMusicCategoryFeed = musicFeed
-        cell.configureWith(musicFeed: musicFeed, viewController: self)
-        
-        return cell.contentView
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {        
+        let selectedFeed = musicsByCountries[section]
+        let titleView = MusicTitleView()
+        titleView.homeViewControllerDelegate = self
+        titleView.mediaFeed = selectedFeed
+        titleView.countryTitle.text = selectedFeed.country.uppercased() + " Top Musics"
+        return titleView
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -92,14 +91,5 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.bounds.height / 3
-    }
-    
-    @objc func seeAllPressed(){
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let allMusicsVC = storyboard.instantiateViewController(identifier: "AllMusicsViewController") as! AllMusicsViewController
-        
-        allMusicsVC.countryCode = selectedMusicCategoryFeed!.country
-        
-        show(allMusicsVC, sender: self)
     }
 }

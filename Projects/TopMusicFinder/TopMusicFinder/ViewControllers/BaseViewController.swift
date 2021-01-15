@@ -18,3 +18,14 @@ class BaseViewController: UIViewController {
         appWebService = appDelegate?.appWebService
     }
 }
+
+extension BaseViewController {
+    
+    func goToMediaDetailViewController(media: Media, from storyboardName: String = "Main"){
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+        let mediaDetailViewController = storyboard.instantiateViewController(identifier: "MediaDetailViewController") as! MediaDetailViewController
+        
+        mediaDetailViewController.media = media
+        show(mediaDetailViewController, sender: self)
+    }
+}

@@ -10,15 +10,13 @@ import UIKit
 
 class AllMusicsViewController: BaseViewController {
     
-    @IBOutlet weak var musicTableView: UITableView! {
+    @IBOutlet private weak var musicTableView: UITableView! {
         didSet {
             musicTableView.delegate = self
             musicTableView.dataSource = self
         }
     }
-    
     var countryCode: String = ""
-    
     private var musics = [Media]() {
         didSet{
             self.musicTableView.reloadData()
@@ -33,7 +31,7 @@ class AllMusicsViewController: BaseViewController {
     }
     
     private func updateUI(){
-        title = "Top 15 Musics"
+        title = countryCode.uppercased() + " Top 15 Musics"
     }
     
     private func registerCells(){
@@ -52,7 +50,6 @@ class AllMusicsViewController: BaseViewController {
         })
     }
 }
-
 
 extension AllMusicsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -73,12 +70,7 @@ extension AllMusicsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let musicDetailViewController = storyboard.instantiateViewController(identifier: "MusicDetailViewController") as! MusicDetailViewController
-        
         let music = musics[indexPath.row]
-        musicDetailViewController.music = music
-        
-        show(musicDetailViewController, sender: self)
+        goToMediaDetailViewController(media: music)
     }
 }

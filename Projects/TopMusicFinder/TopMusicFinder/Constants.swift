@@ -15,7 +15,7 @@ struct Constants {
         static let apps = "ios-apps"
         static let musics = "itunes-music"
         static let books = "books"
-        static let tvShows = "tv-shows"
+        static let movies = "movies"
     }
     
     struct FeedType{
@@ -24,6 +24,7 @@ struct Constants {
         static let topFree = "top-free"
         static let topGrossing = "top-grossing"
         static let topPaid = "top-paid"
+        static let topMovies = "top-movies"
     }
     
     struct CountryCodes {
