@@ -27,7 +27,7 @@ class MovieViewCell: UITableViewCell {
     }
     
     func configureWith(movie: Media){
-        movieImage.downloadImage(imageUrl: movie.artworkUrl100)
+        movieImage.downloadImage(imageUrl: movie.artworkUrl100 ?? Constants.defaultImage)
         movieName.text = movie.name
         movieDirectorName.text = movie.artistName
     }

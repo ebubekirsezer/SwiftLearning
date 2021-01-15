@@ -25,11 +25,11 @@ class MediaDetailViewController: UIViewController {
     //Localization
     private func updateUI(){
         if let appMedia = media {
-            mediaImage.downloadImage(imageUrl: appMedia.artworkUrl100)
+            mediaImage.downloadImage(imageUrl: appMedia.artworkUrl100 ?? Constants.defaultImage)
             mediaName.text = appMedia.name
             mediaArtisName.text = appMedia.artistName
             mediaCollectionName.text = appMedia.collectionName
-            mediaReleaseDate.text = "Release Date:  \(appMedia.releaseDate)"
+            mediaReleaseDate.text = "Release Date:  \(appMedia.releaseDate ?? "Not Found")"
         }
     }
 }

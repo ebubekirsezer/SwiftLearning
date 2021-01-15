@@ -18,7 +18,7 @@ class BookViewCell: UICollectionViewCell {
     }
     
     func configureWith(book: Media){
-        bookImage.downloadImage(imageUrl: book.artworkUrl100)
+        bookImage.downloadImage(imageUrl: book.artworkUrl100 ?? Constants.defaultImage)
         bookName.text = book.name
         bookAuthorName.text = book.artistName
     }

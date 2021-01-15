@@ -22,7 +22,7 @@ class AppTableViewCell: UITableViewCell {
     }
     
     func configureWith(media: Media){
-        appImage.downloadImage(imageUrl: media.artworkUrl100 )
+        appImage.downloadImage(imageUrl: media.artworkUrl100 ?? Constants.defaultImage)
         appName.text = media.name
         appDeveloperName.text = media.artistName
     }
