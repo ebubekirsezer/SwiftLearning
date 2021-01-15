@@ -11,11 +11,30 @@ struct Constants {
     
     static let defaultImage = "https://redzonekickboxing.com/wp-content/uploads/2017/04/default-image-620x600.jpg"
     
+    static let categories: [String : String] = [
+        "Apple Music" : MediaType.appleMusic,
+        "iTunes Music": MediaType.iTunesMusics,
+        "iOS Apps": MediaType.apps,
+        "Audio Books": MediaType.audioBooks,
+        "Books": MediaType.books,
+        "TV Shows": MediaType.tvShows,
+        "Movies": MediaType.movies,
+        "iTunes U": MediaType.iTunesU,
+        "Podcasts": MediaType.podcasts,
+        "Music Videos": MediaType.musicVideos
+    ]
+    
     struct MediaType{
+        static let appleMusic = "apple-music"
         static let apps = "ios-apps"
-        static let musics = "itunes-music"
+        static let iTunesMusics = "itunes-music"
         static let books = "books"
         static let movies = "movies"
+        static let audioBooks = "audiobooks"
+        static let tvShows = "tv-shows"
+        static let iTunesU = "itunes-u"
+        static let podcasts = "podcasts"
+        static let musicVideos = "music-videos"
     }
     
     struct FeedType{

@@ -371,6 +371,7 @@
                         <segue destination="Pxa-Sb-nMM" kind="relationship" relationship="viewControllers" id="xGZ-wQ-Yw1"/>
                         <segue destination="Glx-8B-Flg" kind="relationship" relationship="viewControllers" id="RKR-hX-KGu"/>
                         <segue destination="I4A-gx-hJR" kind="relationship" relationship="viewControllers" id="i1m-m7-RR1"/>
+                        <segue destination="a2m-Mx-gYx" kind="relationship" relationship="viewControllers" id="LKa-X0-YQn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r3w-go-Fet" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -423,6 +424,49 @@
             </objects>
             <point key="canvasLocation" x="33" y="869"/>
         </scene>
+        <!--Category View Controller-->
+        <scene sceneID="cV9-YR-hed">
+            <objects>
+                <viewController storyboardIdentifier="CategoryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="505-kj-Ror" customClass="CategoryViewController" customModule="TopMusicFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="II3-XR-Vy9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="28P-Tl-PD6">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CategoryCell" id="N5t-X7-Z9H">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N5t-X7-Z9H" id="Cbs-Bf-xBp">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3QX-Zf-JdS"/>
+                        <color key="backgroundColor" red="0.1176470588" green="0.12549019610000001" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3QX-Zf-JdS" firstAttribute="trailing" secondItem="28P-Tl-PD6" secondAttribute="trailing" id="LSL-Vq-7tB"/>
+                            <constraint firstItem="3QX-Zf-JdS" firstAttribute="bottom" secondItem="28P-Tl-PD6" secondAttribute="bottom" id="mDe-4Q-cTM"/>
+                            <constraint firstItem="28P-Tl-PD6" firstAttribute="leading" secondItem="3QX-Zf-JdS" secondAttribute="leading" id="qRW-Pz-OnA"/>
+                            <constraint firstItem="28P-Tl-PD6" firstAttribute="top" secondItem="3QX-Zf-JdS" secondAttribute="top" id="yVR-cn-Wan"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="C51-PH-xu1"/>
+                    <connections>
+                        <outlet property="categoriesTableView" destination="28P-Tl-PD6" id="tcu-7M-knJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w2W-tL-gRw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000" y="1615"/>
+        </scene>
         <!--Movies-->
         <scene sceneID="pW2-XJ-rfH">
             <objects>
@@ -448,6 +492,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M6y-iy-zLq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2707" y="869"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="JF0-Uw-8Q8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a2m-Mx-gYx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="o8T-G0-OEY"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="w0R-k0-a7N">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.1176470588" green="0.12549019610000001" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="505-kj-Ror" kind="relationship" relationship="rootViewController" id="uQd-52-KXh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wVe-sG-NC8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000" y="869"/>
         </scene>
     </scenes>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

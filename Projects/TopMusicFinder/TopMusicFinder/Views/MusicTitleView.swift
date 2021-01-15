@@ -9,12 +9,19 @@ import UIKit
 
 class MusicTitleView: UIView {
     
-    let countryTitle = UILabel()
+    private let countryTitle = UILabel()
+    private let seeAllButton = UIButton()
     var mediaFeed: MediaFeed?
     var homeViewControllerDelegate: HomeViewController?
-    private let seeAllButton = UIButton()
     
-    //Burada init kullanılabilir.
+    init(mediaFeed: MediaFeed) {
+        self.mediaFeed = mediaFeed
+        super.init(frame: CGRect(x: 0, y: 0, width: 100, height: 48))
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -25,6 +32,7 @@ class MusicTitleView: UIView {
     
     private func createTitleLabel(){
         self.addSubview(countryTitle)
+        countryTitle.text = (mediaFeed?.country.uppercased() ?? "") + " Top Musics"
         // enables Auto Layout
         countryTitle.translatesAutoresizingMaskIntoConstraints = false
         countryTitle.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true

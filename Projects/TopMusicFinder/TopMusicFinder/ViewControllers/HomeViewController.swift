@@ -39,7 +39,7 @@ class HomeViewController: BaseViewController {
     }
     
     private func fetchMusics(countryCode: String, itemCount: Int = 5){
-        appWebService?.getTopBy(countryCode: countryCode, mediaType: Constants.MediaType.musics, feedType: Constants.FeedType.topSongs, itemCount: itemCount, completion: { (result) in
+        appWebService?.getTopBy(countryCode: countryCode, mediaType: Constants.MediaType.iTunesMusics, feedType: Constants.FeedType.topSongs, itemCount: itemCount, completion: { (result) in
             switch result{
             case .failure(let error):
                 print(error)
@@ -81,10 +81,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {        
         let selectedFeed = musicsByCountries[section]
-        let titleView = MusicTitleView()
+        let titleView = MusicTitleView(mediaFeed: selectedFeed)
         titleView.homeViewControllerDelegate = self
-        titleView.mediaFeed = selectedFeed
-        titleView.countryTitle.text = selectedFeed.country.uppercased() + " Top Musics"
         return titleView
     }
     
