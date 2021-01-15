@@ -34,7 +34,6 @@ class HomeViewController: BaseViewController {
     private func getAllMusicByTheCountries(){
         fetchMusics(countryCode: Constants.CountryCodes.turkey)
         fetchMusics(countryCode: Constants.CountryCodes.unitedStates)
-        fetchMusics(countryCode: Constants.CountryCodes.unitedKingdom)
         fetchMusics(countryCode: Constants.CountryCodes.france)
     }
     

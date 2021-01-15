@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AIC-j7-BDq" customClass="RoundedImageView" customModule="TopMusicFinder" customModuleProvider="target">
-                        <rect key="frame" x="16" y="56" width="50" height="50"/>
+                        <rect key="frame" x="8" y="56" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="5bP-xN-jWF"/>
                             <constraint firstAttribute="height" constant="50" id="eth-cv-21P"/>
@@ -30,24 +29,24 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0F-3X-zWw">
-                        <rect key="frame" x="74" y="64" width="250" height="0.0"/>
+                        <rect key="frame" x="66" y="64" width="258" height="0.0"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBr-2j-xyQ">
-                        <rect key="frame" x="74" y="72" width="242" height="0.0"/>
+                        <rect key="frame" x="66" y="72" width="258" height="0.0"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3i9-Sl-GIg">
-                        <rect key="frame" x="324" y="66" width="75" height="30"/>
-                        <color key="backgroundColor" systemColor="labelColor"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3i9-Sl-GIg">
+                        <rect key="frame" x="332" y="66" width="75" height="30"/>
+                        <color key="backgroundColor" red="0.1176470588" green="0.12549019610000001" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="75" id="DCB-bI-KBc"/>
                         </constraints>
-                        <state key="normal" title="İNDİR"/>
+                        <state key="normal" title="Download"/>
                         <connections>
                             <action selector="buttonDownloadPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="82f-yT-AKM"/>
                         </connections>
@@ -59,12 +58,12 @@
                     <constraint firstItem="oBr-2j-xyQ" firstAttribute="top" secondItem="X0F-3X-zWw" secondAttribute="bottom" constant="8" id="A69-sz-ey0"/>
                     <constraint firstItem="AIC-j7-BDq" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="F5s-12-M4f"/>
                     <constraint firstItem="3i9-Sl-GIg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Fux-qU-iKc"/>
-                    <constraint firstItem="AIC-j7-BDq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="S4N-d8-ZX3"/>
-                    <constraint firstItem="3i9-Sl-GIg" firstAttribute="leading" secondItem="X0F-3X-zWw" secondAttribute="trailing" id="ef5-8q-4wJ"/>
+                    <constraint firstItem="AIC-j7-BDq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="S4N-d8-ZX3"/>
+                    <constraint firstItem="3i9-Sl-GIg" firstAttribute="leading" secondItem="X0F-3X-zWw" secondAttribute="trailing" constant="8" id="ef5-8q-4wJ"/>
                     <constraint firstItem="oBr-2j-xyQ" firstAttribute="leading" secondItem="X0F-3X-zWw" secondAttribute="leading" id="fMY-dU-y9u"/>
                     <constraint firstItem="X0F-3X-zWw" firstAttribute="leading" secondItem="AIC-j7-BDq" secondAttribute="trailing" constant="8" id="hUR-t0-7Sm"/>
                     <constraint firstItem="3i9-Sl-GIg" firstAttribute="leading" secondItem="oBr-2j-xyQ" secondAttribute="trailing" constant="8" id="tlg-kh-v2R"/>
-                    <constraint firstAttribute="trailing" secondItem="3i9-Sl-GIg" secondAttribute="trailing" constant="16" id="ypk-xs-FbP"/>
+                    <constraint firstAttribute="trailing" secondItem="3i9-Sl-GIg" secondAttribute="trailing" constant="8" id="ypk-xs-FbP"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -77,9 +76,4 @@
             <point key="canvasLocation" x="84.782608695652186" y="123.21428571428571"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

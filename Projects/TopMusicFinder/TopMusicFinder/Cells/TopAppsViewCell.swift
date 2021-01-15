@@ -53,7 +53,6 @@ extension TopAppsViewCell: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AppTableViewCell", for: indexPath) as! AppTableViewCell
         
-        print(appFeeds.count)
         let app = appFeeds[indexPath.section].results[indexPath.row]
         cell.configureWith(media: app)
         cell.selectionStyle = .none
