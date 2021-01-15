@@ -36,9 +36,9 @@ extension UIImageView {
 
 extension UIImageView {
     func downloadImage(imageUrl: String){
-        let songUrl = URL(string: imageUrl)
+        let mediaUrl = URL(string: imageUrl)
         
-        if let url = songUrl {
+        if let url = mediaUrl {
             let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
                 if let imageData = data {
                     DispatchQueue.main.async {
@@ -48,6 +48,25 @@ extension UIImageView {
             }
             dataTask.resume()
         }
+    }
+    
+    
+    func returnDownloadedImage(imageUrl: String) -> UIImage {
+        let mediaUrl = URL(string: imageUrl)
+        var mediaImage = UIImage()
+        
+        if let url = mediaUrl {
+            let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
+                if let imageData = data {
+                    DispatchQueue.main.async {
+                        if let downloadedImage = UIImage(data: imageData){ mediaImage = downloadedImage }
+                    }
+                }
+            }
+            dataTask.resume()
+        }
+        
+        return mediaImage
     }
 }
 
