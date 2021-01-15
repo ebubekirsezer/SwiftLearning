@@ -37,6 +37,7 @@
 		B876B6A225B07AFC001712BE /* MediaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876B6A125B07AFC001712BE /* MediaError.swift */; };
 		B876B6AC25B08C1F001712BE /* AppsViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876B6AB25B08C1F001712BE /* AppsViewController+TableView.swift */; };
 		B876B6AF25B0CD14001712BE /* MusicTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B876B6AE25B0CD14001712BE /* MusicTitleView.swift */; };
+		B8AE652225B198440091CABC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B8AE652025B198440091CABC /* Localizable.strings */; };
 		B8C25A6625B0E01E00E49E79 /* BookViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C25A6425B0E01E00E49E79 /* BookViewCell.swift */; };
 		B8C25A6725B0E01E00E49E79 /* BookViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8C25A6525B0E01E00E49E79 /* BookViewCell.xib */; };
 		B8C25A6A25B0E6FE00E49E79 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C25A6925B0E6FE00E49E79 /* MovieViewController.swift */; };
@@ -78,6 +79,11 @@
 		B876B6A125B07AFC001712BE /* MediaError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaError.swift; sourceTree = "<group>"; };
 		B876B6AB25B08C1F001712BE /* AppsViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppsViewController+TableView.swift"; sourceTree = "<group>"; };
 		B876B6AE25B0CD14001712BE /* MusicTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTitleView.swift; sourceTree = "<group>"; };
+		B8AE651D25B193400091CABC /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
+		B8AE651E25B193400091CABC /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		B8AE652125B198440091CABC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B8AE652425B199390091CABC /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B8AE652525B1993C0091CABC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B8C25A6425B0E01E00E49E79 /* BookViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewCell.swift; sourceTree = "<group>"; };
 		B8C25A6525B0E01E00E49E79 /* BookViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookViewCell.xib; sourceTree = "<group>"; };
 		B8C25A6925B0E6FE00E49E79 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +122,7 @@
 		B85DB0F825AD894500D8AA28 /* TopMusicFinder */ = {
 			isa = PBXGroup;
 			children = (
+				B8AE652025B198440091CABC /* Localizable.strings */,
 				B85DB12225AD94B800D8AA28 /* Enums */,
 				B85DB11725AD92EF00D8AA28 /* Models */,
 				B85DB11225AD89AA00D8AA28 /* Cells */,
@@ -262,6 +269,7 @@
 			knownRegions = (
 				en,
 				Base,
+				tr,
 			);
 			mainGroup = B85DB0ED25AD894500D8AA28;
 			productRefGroup = B85DB0F725AD894500D8AA28 /* Products */;
@@ -280,6 +288,7 @@
 			files = (
 				B8C25A6725B0E01E00E49E79 /* BookViewCell.xib in Resources */,
 				B83AB03825AEDD9300A5215C /* HorizontalMusicViewCell.xib in Resources */,
+				B8AE652225B198440091CABC /* Localizable.strings in Resources */,
 				B83AB02225ADAE0F00A5215C /* MusicViewCell.xib in Resources */,
 				B85DB10625AD894800D8AA28 /* LaunchScreen.storyboard in Resources */,
 				B85DB10325AD894800D8AA28 /* Assets.xcassets in Resources */,
@@ -334,6 +343,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B85DB10025AD894500D8AA28 /* Base */,
+				B8AE651D25B193400091CABC /* tr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -342,8 +352,19 @@
 			isa = PBXVariantGroup;
 			children = (
 				B85DB10525AD894800D8AA28 /* Base */,
+				B8AE651E25B193400091CABC /* tr */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B8AE652025B198440091CABC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B8AE652125B198440091CABC /* Base */,
+				B8AE652425B199390091CABC /* tr */,
+				B8AE652525B1993C0091CABC /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -353,6 +374,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -414,6 +436,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

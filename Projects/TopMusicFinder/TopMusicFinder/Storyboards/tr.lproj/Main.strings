@@ -1,0 +1,36 @@
+
+/* Class = "UINavigationItem"; title = "Apps"; ObjectID = "9Ld-Js-6bT"; */
+"9Ld-Js-6bT.title" = "Uygulamalar";
+
+/* Class = "UITabBarItem"; title = "Musics"; ObjectID = "9oo-5w-RqZ"; */
+"9oo-5w-RqZ.title" = "Müzik";
+
+/* Class = "UITabBarItem"; title = "Apps"; ObjectID = "Kdp-ke-bdO"; */
+"Kdp-ke-bdO.title" = "Uygulama";
+
+/* Class = "UILabel"; text = "Collection Name:"; ObjectID = "QQo-89-BeM"; */
+"QQo-89-BeM.text" = "Albüm:";
+
+/* Class = "UINavigationItem"; title = "TopMusicFinder "; ObjectID = "RZk-zo-NNm"; */
+"RZk-zo-NNm.title" = "TopMusicFinder ";
+
+/* Class = "UINavigationItem"; title = "Movies"; ObjectID = "RdY-z5-HTz"; */
+"RdY-z5-HTz.title" = "Filmler";
+
+/* Class = "UITabBarItem"; title = "Movies"; ObjectID = "TBZ-Zj-9vg"; */
+"TBZ-Zj-9vg.title" = "Film";
+
+/* Class = "UILabel"; text = "Release Date:"; ObjectID = "XDf-x8-9tG"; */
+"XDf-x8-9tG.text" = "Yayınlanma Tarihi:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "eH9-ms-JrE"; */
+"eH9-ms-JrE.text" = "Etiket";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gAZ-jG-vLz"; */
+"gAZ-jG-vLz.text" = "Etiket";
+
+/* Class = "UITabBarItem"; title = "Books"; ObjectID = "kM4-l1-W36"; */
+"kM4-l1-W36.title" = "Kitap";
+
+/* Class = "UINavigationItem"; title = "Books"; ObjectID = "muA-lq-BkN"; */
+"muA-lq-BkN.title" = "Kitaplar";

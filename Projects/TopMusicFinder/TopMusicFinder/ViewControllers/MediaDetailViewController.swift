@@ -29,7 +29,7 @@ class MediaDetailViewController: UIViewController {
             mediaName.text = appMedia.name
             mediaArtisName.text = appMedia.artistName
             mediaCollectionName.text = appMedia.collectionName
-            mediaReleaseDate.text = "Release Date:  \(appMedia.releaseDate ?? "Not Found")"
+            mediaReleaseDate.text = NSLocalizedString("Release Date: ", comment: "") + (appMedia.releaseDate ?? "Not Found")
         }
     }
 }
