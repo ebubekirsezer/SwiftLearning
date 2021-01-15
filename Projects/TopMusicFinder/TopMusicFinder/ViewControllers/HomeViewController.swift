@@ -16,6 +16,7 @@ class HomeViewController: BaseViewController {
             allMusicsTableView.dataSource = self
         }
     }
+    @IBOutlet private weak var musicActivityIndicator: UIActivityIndicatorView!
     
     private var musicsByCountries = [MediaFeed]() {
         didSet{
@@ -32,9 +33,11 @@ class HomeViewController: BaseViewController {
     }
     
     private func getAllMusicByTheCountries(){
+        musicActivityIndicator.startAnimating()
         fetchMusics(countryCode: Constants.CountryCodes.turkey)
         fetchMusics(countryCode: Constants.CountryCodes.unitedStates)
         fetchMusics(countryCode: Constants.CountryCodes.france)
+        musicActivityIndicator.hidesWhenStopped = true
     }
     
     private func fetchMusics(countryCode: String, itemCount: Int = 5){
@@ -42,8 +45,11 @@ class HomeViewController: BaseViewController {
             switch result{
             case .failure(let error):
                 print(error)
+                self.musicActivityIndicator.stopAnimating()
             case .success(let mediaFeed):
                 self.musicsByCountries.append(mediaFeed)
+                self.musicActivityIndicator.stopAnimating()
+
             }
         })
     }

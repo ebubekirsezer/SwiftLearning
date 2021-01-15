@@ -15,6 +15,7 @@ class MovieViewController: BaseViewController {
             moviesTableView.dataSource = self
         }
     }
+    @IBOutlet private weak var movieActivityIndicator: UIActivityIndicatorView!
     
     private var movies: [Media]? {
         didSet{
@@ -34,12 +35,15 @@ class MovieViewController: BaseViewController {
     }
     
     private func getMovies(){
+        movieActivityIndicator.startAnimating()
+        movieActivityIndicator.hidesWhenStopped = true
         appWebService?.getTopBy(mediaType: Constants.MediaType.movies, feedType: Constants.FeedType.topMovies, itemCount: 10, completion: { (result) in
             switch result {
             case .failure(let error):
                 print(error)
             case .success(let mediaFeed):
                 self.movies = mediaFeed.results
+                self.movieActivityIndicator.stopAnimating()
             }
         })
     }

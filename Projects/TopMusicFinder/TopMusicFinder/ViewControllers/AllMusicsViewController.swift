@@ -16,6 +16,8 @@ class AllMusicsViewController: BaseViewController {
             musicTableView.dataSource = self
         }
     }
+    @IBOutlet private weak var musicActivityIndicator: UIActivityIndicatorView!
+    
     var countryCode: String = ""
     private var musics = [Media]() {
         didSet{
@@ -40,12 +42,15 @@ class AllMusicsViewController: BaseViewController {
     }
     
     private func fetchMusics(countryCode: String){
+        musicActivityIndicator.startAnimating()
+        musicActivityIndicator.hidesWhenStopped = true
         appWebService?.getTopBy(countryCode: countryCode, mediaType: Constants.MediaType.musics, feedType: Constants.FeedType.topSongs, itemCount: 15, completion: { (result) in
             switch result {
             case .failure(let error):
                 print(error)
             case .success(let mediaFeed):
                 self.musics = mediaFeed.results
+                self.musicActivityIndicator.stopAnimating()
             }
         })
     }

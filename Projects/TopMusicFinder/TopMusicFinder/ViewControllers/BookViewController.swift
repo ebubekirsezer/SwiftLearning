@@ -15,6 +15,7 @@ class BookViewController: BaseViewController {
             bookCollectionView.dataSource = self
         }
     }
+    @IBOutlet private weak var bookActivityIndicator: UIActivityIndicatorView!
     
     private var books: [Media]? {
         didSet{
@@ -33,12 +34,15 @@ class BookViewController: BaseViewController {
     }
     
     private func getBooks(){
+        bookActivityIndicator.startAnimating()
+        bookActivityIndicator.hidesWhenStopped = true
         appWebService?.getTopBy(mediaType: Constants.MediaType.books, feedType: Constants.FeedType.topFree, itemCount: 10, completion: { (result) in
             switch result{
             case .failure(let error):
                 print(error)
             case .success(let mediaFeed):
                 self.books = mediaFeed.results
+                self.bookActivityIndicator.stopAnimating()
             }
         })
     }

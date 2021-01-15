@@ -16,6 +16,7 @@ class AppsViewController: BaseViewController {
             topAppsTableView.dataSource = self
         }
     }
+    @IBOutlet private weak var appActivityIndicator: UIActivityIndicatorView!
     
     var appFeeds = [MediaFeed]() {
         didSet{
@@ -33,12 +34,15 @@ class AppsViewController: BaseViewController {
     
     //Getting top free application on the Apple Store
     private func getTopApps(mediaType: String ,feedType: String, itemcCount: Int = 3){
+        appActivityIndicator.startAnimating()
+        appActivityIndicator.hidesWhenStopped = true
         appWebService?.getTopBy(mediaType: mediaType, feedType: feedType, itemCount: itemcCount, completion: { (result) in
             switch result{
             case .failure(let error):
                 print(error)
             case .success(let mediaFeed):
                 self.appFeeds.append(mediaFeed)
+                self.appActivityIndicator.stopAnimating()
             }
         })
     }
