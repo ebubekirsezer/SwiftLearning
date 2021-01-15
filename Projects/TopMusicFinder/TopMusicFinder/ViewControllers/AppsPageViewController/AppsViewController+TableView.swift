@@ -19,7 +19,6 @@ extension AppsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TopAppsViewCell", for: indexPath) as! TopAppsViewCell
-        
         cell.configureWith(appFeeds: self.appFeeds)
         cell.appViewControllerDelegate = self
         cell.selectionStyle = .none

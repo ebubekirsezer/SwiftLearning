@@ -23,9 +23,7 @@ class HomeViewController: BaseViewController {
             self.allMusicsTableView.reloadData()
         }
     }
-    
-    private var selectedMusicCategoryFeed: MediaFeed?
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()

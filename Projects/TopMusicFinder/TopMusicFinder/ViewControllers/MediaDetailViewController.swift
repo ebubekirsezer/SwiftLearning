@@ -22,7 +22,6 @@ class MediaDetailViewController: UIViewController {
         updateUI()
     }
     
-    //Localization
     private func updateUI(){
         if let appMedia = media {
             mediaImage.downloadImage(imageUrl: appMedia.artworkUrl100 ?? Constants.defaultImage)

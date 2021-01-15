@@ -14,7 +14,7 @@ class MusicTitleView: UIView {
     var homeViewControllerDelegate: HomeViewController?
     private let seeAllButton = UIButton()
     
-    //Burada init kullanılabilir ona bak.
+    //Burada init kullanılabilir.
     
     override func layoutSubviews() {
         super.layoutSubviews()

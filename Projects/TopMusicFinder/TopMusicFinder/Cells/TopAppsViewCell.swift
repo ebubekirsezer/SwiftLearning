@@ -9,7 +9,7 @@ import UIKit
 
 class TopAppsViewCell: UITableViewCell {
     
-    @IBOutlet weak var appTableView: UITableView! {
+    @IBOutlet private weak var appTableView: UITableView! {
         didSet{
             appTableView.delegate = self
             appTableView.dataSource = self
@@ -31,13 +31,13 @@ class TopAppsViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    func configureWith(appFeeds: [MediaFeed]){
+        self.appFeeds = appFeeds
+    }
+    
     private func registerCells(){
         let appCell = UINib(nibName: "AppTableViewCell", bundle: nil)
         appTableView.register(appCell, forCellReuseIdentifier: "AppTableViewCell")
-    }
-    
-    func configureWith(appFeeds: [MediaFeed]){
-        self.appFeeds = appFeeds
     }
 }
 

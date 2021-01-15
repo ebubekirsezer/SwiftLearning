@@ -9,7 +9,7 @@ import UIKit
 
 class BookViewController: BaseViewController {
     
-    @IBOutlet weak var bookCollectionView: UICollectionView! {
+    @IBOutlet private weak var bookCollectionView: UICollectionView! {
         didSet{
             bookCollectionView.delegate = self
             bookCollectionView.dataSource = self
@@ -22,6 +22,7 @@ class BookViewController: BaseViewController {
             bookCollectionView.reloadData()
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getBooks()

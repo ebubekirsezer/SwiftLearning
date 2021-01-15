@@ -9,7 +9,7 @@ import UIKit
 
 class MovieViewController: BaseViewController {
     
-    @IBOutlet weak var moviesTableView: UITableView! {
+    @IBOutlet private weak var moviesTableView: UITableView! {
         didSet{
             moviesTableView.delegate = self
             moviesTableView.dataSource = self
