@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SportCategoriesViewCell" id="gTV-IL-0wX" customClass="SportCategoriesViewCell" customModule="SportsInfo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="202" height="291"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="202" height="291"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8US-3Y-Oy4" customClass="RoundedView" customModule="SportsInfo" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="44" width="202" height="247"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rx7-8c-Tsn" customClass="CustomImageView" customModule="SportsInfo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="202" height="247"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXy-ze-CHH">
+                                <rect key="frame" x="16" y="179" width="170" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="RXy-ze-CHH" secondAttribute="trailing" constant="16" id="6Bx-hU-o2C"/>
+                            <constraint firstAttribute="trailing" secondItem="rx7-8c-Tsn" secondAttribute="trailing" id="Ev3-Y6-brv"/>
+                            <constraint firstAttribute="bottom" secondItem="RXy-ze-CHH" secondAttribute="bottom" constant="48" id="KAl-7K-QdF"/>
+                            <constraint firstItem="rx7-8c-Tsn" firstAttribute="leading" secondItem="8US-3Y-Oy4" secondAttribute="leading" id="Xvu-zO-l9X"/>
+                            <constraint firstItem="RXy-ze-CHH" firstAttribute="leading" secondItem="8US-3Y-Oy4" secondAttribute="leading" constant="16" id="l8F-6v-dwx"/>
+                            <constraint firstItem="rx7-8c-Tsn" firstAttribute="top" secondItem="8US-3Y-Oy4" secondAttribute="top" id="lgd-SC-MnQ"/>
+                            <constraint firstAttribute="bottom" secondItem="rx7-8c-Tsn" secondAttribute="bottom" id="rHo-UB-hPm"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="8US-3Y-Oy4" secondAttribute="top" id="CV0-z4-Xju"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="leading" secondItem="8US-3Y-Oy4" secondAttribute="leading" id="KJf-aC-ahU"/>
+                <constraint firstItem="8US-3Y-Oy4" firstAttribute="trailing" secondItem="ZTg-uK-7eu" secondAttribute="trailing" id="N8y-Ff-SvY"/>
+                <constraint firstItem="8US-3Y-Oy4" firstAttribute="bottom" secondItem="ZTg-uK-7eu" secondAttribute="bottom" id="ejJ-lF-bzf"/>
+            </constraints>
+            <size key="customSize" width="202" height="291"/>
+            <connections>
+                <outlet property="sportCategoryImage" destination="rx7-8c-Tsn" id="brt-LR-gGJ"/>
+                <outlet property="sportCategoryName" destination="RXy-ze-CHH" id="9Jp-k6-FfR"/>
+            </connections>
+            <point key="canvasLocation" x="139.13043478260872" y="169.08482142857142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
