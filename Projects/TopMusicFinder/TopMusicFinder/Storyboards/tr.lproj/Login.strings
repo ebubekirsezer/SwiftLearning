@@ -1,0 +1,28 @@
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "06c-vo-tfK"; */
+"06c-vo-tfK.text" = "Şifre";
+
+/* Class = "UILabel"; text = "E-mail"; ObjectID = "3NI-sq-jon"; */
+"3NI-sq-jon.text" = "E-mail";
+
+/* Class = "UITextField"; text = "123456"; ObjectID = "69e-RC-eaM"; */
+"69e-RC-eaM.text" = "123456";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "7ve-JR-5rp"; */
+"7ve-JR-5rp.text" = "Şifre";
+
+/* Class = "UILabel"; text = "E-mail"; ObjectID = "Ax9-43-mY2"; */
+"Ax9-43-mY2.text" = "E-mail";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "HLJ-6z-TJG"; */
+"HLJ-6z-TJG.normalTitle" = "Kayıt Ol";
+
+/* Class = "UILabel"; text = "Don't have an account? Register"; ObjectID = "ffE-Hy-Tn4"; */
+"ffE-Hy-Tn4.text" = "Hesabın yok mu? Kayıt Ol";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "mNe-3V-8N4"; */
+"mNe-3V-8N4.normalTitle" = "Giriş Yap";
+
+/* Class = "UITextField"; text = "1@2.com"; ObjectID = "v3A-TH-EwP"; */
+"v3A-TH-EwP.text" = "1@2.com";
+w

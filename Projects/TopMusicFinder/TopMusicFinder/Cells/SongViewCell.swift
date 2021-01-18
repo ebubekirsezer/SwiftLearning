@@ -15,7 +15,7 @@ class SongViewCell: UITableViewCell {
             musicCollectionView.dataSource = self
         }
     }
-    var homeViewControllerDelegate: HomeViewController?
+    var homeViewControllerDelegate: MusicViewController?
     
     private var listOfMusics = [Media](){
         didSet{

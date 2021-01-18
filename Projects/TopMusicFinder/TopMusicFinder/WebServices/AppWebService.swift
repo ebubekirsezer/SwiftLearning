@@ -9,7 +9,7 @@ import Foundation
 
 struct AppWebService {
     
-    func getTopBy(countryCode: String = Constants.CountryCodes.turkey, mediaType: String, feedType: String, itemCount: Int, completion: @escaping(Result<MediaFeed, MediaError>) -> Void){
+    func getTopBy(countryCode: String = Constants.CountryCodes.unitedStates, mediaType: String, feedType: String, itemCount: Int, completion: @escaping(Result<MediaFeed, MediaError>) -> Void){
         guard let BASE_URL = URL(string: "https://rss.itunes.apple.com/api/v1/\(countryCode)/\(mediaType)/\(feedType)/all/\(itemCount)/explicit.json") else { fatalError() }
         
         let dataTask = URLSession.shared.dataTask(with: BASE_URL) { (data, response, error) in

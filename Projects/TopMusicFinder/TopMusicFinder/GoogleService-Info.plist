@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>50698206478-9j9bgghll50d13p5bsi7ejjk1u12b0fm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.50698206478-9j9bgghll50d13p5bsi7ejjk1u12b0fm</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBWX6m8_Bt0DJub-dlOPlm9Lqqx9EWCNq8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>50698206478</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.ess.TopMusicFinder</string>
+	<key>PROJECT_ID</key>
+	<string>mabv-5d647</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mabv-5d647.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:50698206478:ios:a98810a2c25e4ec3e8eb5f</string>
+</dict>
+</plist>

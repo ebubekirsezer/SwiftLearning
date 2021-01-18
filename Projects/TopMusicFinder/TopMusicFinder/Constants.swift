@@ -8,6 +8,9 @@
 import UIKit
 
 struct Constants {
+    static let mainStoryboard = "Main"
+    static let detailStoryBoard = "Detail"
+    static let loginStoryboard = "Login"
     
     static let defaultImage = "https://redzonekickboxing.com/wp-content/uploads/2017/04/default-image-620x600.jpg"
     
@@ -44,6 +47,11 @@ struct Constants {
         static let topGrossing = "top-grossing"
         static let topPaid = "top-paid"
         static let topMovies = "top-movies"
+        static let topAudioBooks = "top-audiobooks"
+        static let topiTunesUCourses = "top-itunes-u-courses"
+        static let topMusicVideos = "top-music-videos"
+        static let topPodcasts = "top-podcasts"
+        static let topTvEpisodes = "top-tv-episodes"
     }
     
     struct CountryCodes {

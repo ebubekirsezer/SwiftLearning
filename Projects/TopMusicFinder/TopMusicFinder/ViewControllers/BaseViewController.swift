@@ -23,11 +23,25 @@ class BaseViewController: UIViewController {
 
 extension BaseViewController {
     
-    func goToMediaDetailViewController(media: Media, from storyboardName: String = "Main"){
+    func goToMediaDetailViewController(media: Media, from storyboardName: String = "Detail"){
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
         let mediaDetailViewController = storyboard.instantiateViewController(identifier: "MediaDetailViewController") as! MediaDetailViewController
         
         mediaDetailViewController.media = media
         show(mediaDetailViewController, sender: self)
+    }
+    
+    func goToHomePage(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let homeVC = storyboard.instantiateViewController(withIdentifier: "HomeTabbarViewController") as! UITabBarController
+        UIApplication.shared.windows.first?.rootViewController = homeVC
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
+    }
+    
+    func goToLoginPage(){
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        UIApplication.shared.windows.first?.rootViewController = loginVC
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
     }
 }

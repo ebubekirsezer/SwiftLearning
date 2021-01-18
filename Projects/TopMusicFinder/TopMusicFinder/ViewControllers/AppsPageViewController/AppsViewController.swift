@@ -5,8 +5,8 @@
 //  Created by Ebubekir Sezer on 13.01.2021.
 //
 
-import Foundation
 import UIKit
+import Firebase
 
 class AppsViewController: BaseViewController {
     
@@ -30,6 +30,15 @@ class AppsViewController: BaseViewController {
         registerCells()
         getNewGamesWeLove(mediaType: Constants.MediaType.apps, feedtype: Constants.FeedType.newGamesWeLove)
         getTopApps(mediaType: Constants.MediaType.apps, feedType: Constants.FeedType.topFree, itemcCount: 7)
+    }
+    
+    @IBAction private func logoutPressed(_ sender: UIBarButtonItem) {
+        do {
+            try Auth.auth().signOut()
+            goToLoginPage()
+        } catch let logoutError as NSError {
+            print("Log out error: \(logoutError.localizedDescription)")
+        }
     }
     
     //Getting top free application on the Apple Store

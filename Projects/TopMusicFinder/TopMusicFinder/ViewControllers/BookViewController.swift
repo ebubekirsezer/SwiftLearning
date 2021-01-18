@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class BookViewController: BaseViewController {
     
@@ -27,6 +28,14 @@ class BookViewController: BaseViewController {
         super.viewDidLoad()
         getBooks()
         registerCells()
+    }
+    @IBAction private func logoutPressed(_ sender: UIBarButtonItem) {
+        do {
+            try Auth.auth().signOut()
+            goToLoginPage()
+        } catch let logoutError as NSError {
+            print("Log out error: \(logoutError.localizedDescription)")
+        }
     }
     
     private func registerCells(){

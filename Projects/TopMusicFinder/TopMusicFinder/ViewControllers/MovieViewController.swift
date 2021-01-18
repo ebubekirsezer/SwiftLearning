@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MovieViewController: BaseViewController {
     
@@ -29,9 +30,18 @@ class MovieViewController: BaseViewController {
         getMovies()
     }
     
+    @IBAction private func logoutPressed(_ sender: UIBarButtonItem) {
+        do {
+            try Auth.auth().signOut()
+            goToLoginPage()
+        } catch let logoutError as NSError {
+            print("Log out error: \(logoutError.localizedDescription)")
+        }
+    }
+    
     private func registerCells(){
-        let movieCell = UINib(nibName: "MovieViewCell", bundle: nil)
-        moviesTableView.register(movieCell, forCellReuseIdentifier: "MovieViewCell")
+        let mediaCell = UINib(nibName: "MediaViewCell", bundle: nil)
+        moviesTableView.register(mediaCell, forCellReuseIdentifier: "MediaViewCell")
     }
     
     private func getMovies(){
@@ -55,12 +65,13 @@ extension MovieViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieViewCell", for: indexPath) as! MovieViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MediaViewCell", for: indexPath) as! MediaViewCell
         
         if let movie = movies?[indexPath.row] {
-            cell.configureWith(movie: movie)
+            cell.configureWith(media: movie)
         }
         //Accessory tint color needs to be white
+        cell.accessoryType = .detailDisclosureButton
         cell.tintColor = UIColor.white
         cell.accessoryView?.backgroundColor = UIColor.white
         cell.accessoryView?.tintColor = UIColor.white

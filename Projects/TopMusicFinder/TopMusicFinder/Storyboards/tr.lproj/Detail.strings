@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "FIF-GR-yVn"; */
+"FIF-GR-yVn.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "QjU-vK-1m8"; */
+"QjU-vK-1m8.text" = "Label";
+
+/* Class = "UILabel"; text = "Release Date:"; ObjectID = "h50-yy-fXr"; */
+"h50-yy-fXr.text" = "Yayınlanma Tarihi:";
+
+/* Class = "UILabel"; text = "Collection Name:"; ObjectID = "nUu-1P-3jo"; */
+"nUu-1P-3jo.text" = "Albüm:";

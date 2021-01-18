@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MediaViewCell" rowHeight="264" id="KGk-i7-Jjw" customClass="MediaViewCell" customModule="TopMusicFinder" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="418" height="264"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="418" height="264"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BML-sB-qyn">
+                        <rect key="frame" x="16" y="32" width="150" height="200"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="200" id="Hfo-Ou-1yr"/>
+                            <constraint firstAttribute="width" constant="150" id="K9I-wQ-wI6"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36D-19-ySl">
+                        <rect key="frame" x="182" y="64" width="220" height="20.5"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHF-TN-vnO">
+                        <rect key="frame" x="182" y="100.5" width="220" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="BML-sB-qyn" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="4KE-ku-5za"/>
+                    <constraint firstItem="BML-sB-qyn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="5hP-cp-dxg"/>
+                    <constraint firstAttribute="trailing" secondItem="36D-19-ySl" secondAttribute="trailing" constant="16" id="6Fr-Jh-p3V"/>
+                    <constraint firstItem="36D-19-ySl" firstAttribute="leading" secondItem="BML-sB-qyn" secondAttribute="trailing" constant="16" id="8AD-0v-ioC"/>
+                    <constraint firstItem="36D-19-ySl" firstAttribute="top" secondItem="BML-sB-qyn" secondAttribute="top" constant="32" id="C9w-Zq-BzA"/>
+                    <constraint firstItem="HHF-TN-vnO" firstAttribute="top" secondItem="36D-19-ySl" secondAttribute="bottom" constant="16" id="XdM-O5-hwt"/>
+                    <constraint firstAttribute="trailing" secondItem="HHF-TN-vnO" secondAttribute="trailing" constant="16" id="dXS-oG-Sby"/>
+                    <constraint firstItem="HHF-TN-vnO" firstAttribute="leading" secondItem="BML-sB-qyn" secondAttribute="trailing" constant="16" id="kF6-3P-Q04"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="mediaArtistName" destination="HHF-TN-vnO" id="KBB-1b-GD0"/>
+                <outlet property="mediaImage" destination="BML-sB-qyn" id="XTe-gb-nFE"/>
+                <outlet property="mediaName" destination="36D-19-ySl" id="bbc-gq-7u0"/>
+            </connections>
+            <point key="canvasLocation" x="71.014492753623188" y="157.36607142857142"/>
+        </tableViewCell>
+    </objects>
+</document>

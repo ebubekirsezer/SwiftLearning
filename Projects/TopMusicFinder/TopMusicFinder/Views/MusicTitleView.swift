@@ -12,7 +12,7 @@ class MusicTitleView: UIView {
     private let countryTitle = UILabel()
     private let seeAllButton = UIButton()
     var mediaFeed: MediaFeed?
-    var homeViewControllerDelegate: HomeViewController?
+    var homeViewControllerDelegate: MusicViewController?
     
     init(mediaFeed: MediaFeed) {
         self.mediaFeed = mediaFeed
@@ -54,7 +54,7 @@ class MusicTitleView: UIView {
     }
     
     @objc private func seeAllPressed(_ sender: UIButton){
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Detail", bundle: nil)
         let allMusicsVC = storyboard.instantiateViewController(identifier: "AllMusicsViewController") as! AllMusicsViewController
         if let feed = mediaFeed {
             allMusicsVC.countryCode = feed.country
