@@ -13,6 +13,7 @@ class LoginViewController: BaseViewController {
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var registerLabel: UILabel!
+    @IBOutlet private weak var loginActivityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,12 +21,15 @@ class LoginViewController: BaseViewController {
     }
     
     @IBAction private func loginPressed(_ sender: RoundedButton) {
+        loginActivityIndicator.startAnimating()
         if let email = emailTextField.text, let password = passwordTextField.text {
             Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
                 if let e = error {
                     print(e.localizedDescription)
+                    self.loginActivityIndicator.stopAnimating()
                 } else {
                     self.goToHomePage()
+                    self.loginActivityIndicator.stopAnimating()
                 }
             }
         }

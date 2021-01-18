@@ -30,7 +30,7 @@ class MusicViewController: BaseViewController {
         super.viewDidLoad()
         registerCells()
         getAllMusicByTheCountries()
-        getMovies()
+        updateUI()
     }
     
     @IBAction private func logoutPressed(_ sender: UIBarButtonItem) {
@@ -40,6 +40,10 @@ class MusicViewController: BaseViewController {
         } catch let logoutError as NSError {
             print("Log out error: \(logoutError.localizedDescription)")
         }
+    }
+    
+    private func updateUI(){
+        galleryHeaderView.delegate = self
     }
     
     private func getAllMusicByTheCountries(){
@@ -60,17 +64,6 @@ class MusicViewController: BaseViewController {
                 self.musicsByCountries.append(mediaFeed)
                 self.musicActivityIndicator.stopAnimating()
 
-            }
-        })
-    }
-    
-    private func getMovies(){
-        appWebService?.getTopBy(mediaType: Constants.MediaType.movies, feedType: Constants.FeedType.topMovies, itemCount: 6, completion: { (result) in
-            switch result {
-            case .failure(let error):
-                print(error)
-            case .success(let mediaFeed):
-                self.galleryHeaderView.gallery = mediaFeed.results
             }
         })
     }

@@ -98,6 +98,14 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Gnl-9e-Ytd">
+                                <rect key="frame" x="182" y="428" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="MmY-9z-cgw"/>
+                                    <constraint firstAttribute="width" constant="50" id="rC4-E5-7Zg"/>
+                                </constraints>
+                                <color key="color" red="0.51372549020000002" green="0.86274509799999999" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yj4-wa-pUW"/>
                         <color key="backgroundColor" red="0.1176470588" green="0.12549019610000001" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -110,14 +118,17 @@
                             <constraint firstItem="7eT-HZ-xqn" firstAttribute="centerY" secondItem="yj4-wa-pUW" secondAttribute="centerY" id="P25-1G-8pJ"/>
                             <constraint firstItem="yj4-wa-pUW" firstAttribute="trailing" secondItem="mNe-3V-8N4" secondAttribute="trailing" constant="16" id="Ph2-q0-B7A"/>
                             <constraint firstItem="yj4-wa-pUW" firstAttribute="trailing" secondItem="7eT-HZ-xqn" secondAttribute="trailing" constant="16" id="V1a-zu-nGW"/>
+                            <constraint firstItem="Gnl-9e-Ytd" firstAttribute="centerY" secondItem="yj4-wa-pUW" secondAttribute="centerY" id="YEX-6g-a3l"/>
                             <constraint firstItem="yj4-wa-pUW" firstAttribute="bottom" secondItem="ffE-Hy-Tn4" secondAttribute="bottom" constant="32" id="YKj-F0-KIR"/>
                             <constraint firstItem="mNe-3V-8N4" firstAttribute="top" secondItem="7eT-HZ-xqn" secondAttribute="bottom" constant="24" id="bah-pc-az3"/>
                             <constraint firstItem="7eT-HZ-xqn" firstAttribute="top" secondItem="FfL-SH-eSU" secondAttribute="bottom" constant="24" id="tad-fZ-Knt"/>
+                            <constraint firstItem="Gnl-9e-Ytd" firstAttribute="centerX" secondItem="yj4-wa-pUW" secondAttribute="centerX" id="wIG-zg-FEB"/>
                             <constraint firstItem="ffE-Hy-Tn4" firstAttribute="leading" secondItem="yj4-wa-pUW" secondAttribute="leading" constant="16" id="y3d-Ka-KI5"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="v3A-TH-EwP" id="lsa-KY-N3f"/>
+                        <outlet property="loginActivityIndicator" destination="Gnl-9e-Ytd" id="OzD-fv-cQn"/>
                         <outlet property="passwordTextField" destination="69e-RC-eaM" id="EP4-76-zSd"/>
                         <outlet property="registerLabel" destination="ffE-Hy-Tn4" id="Xpl-Sl-m5K"/>
                     </connections>
@@ -186,14 +197,24 @@
                                             <action selector="registerPressed:" destination="vmq-4F-P0v" eventType="touchUpInside" id="xhj-yU-Bju"/>
                                         </connections>
                                     </button>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="qtY-iy-N2K">
+                                        <rect key="frame" x="182" y="428" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="Lsu-G3-vKJ"/>
+                                            <constraint firstAttribute="height" constant="50" id="m0L-by-QLu"/>
+                                        </constraints>
+                                        <color key="color" red="0.51372549020000002" green="0.86274509799999999" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <viewLayoutGuide key="safeArea" id="sVa-lp-2YI"/>
                                 <color key="backgroundColor" red="0.1176470588" green="0.12549019610000001" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="sVa-lp-2YI" firstAttribute="trailing" secondItem="HLJ-6z-TJG" secondAttribute="trailing" constant="16" id="2EI-oJ-Jnb"/>
                                     <constraint firstItem="H6S-fX-Sww" firstAttribute="top" secondItem="bLg-lA-c8K" secondAttribute="bottom" constant="24" id="40a-DL-eTn"/>
+                                    <constraint firstItem="qtY-iy-N2K" firstAttribute="centerX" secondItem="sVa-lp-2YI" secondAttribute="centerX" id="4x7-EZ-qlC"/>
                                     <constraint firstItem="HLJ-6z-TJG" firstAttribute="top" secondItem="H6S-fX-Sww" secondAttribute="bottom" constant="24" id="J6I-xu-CAm"/>
                                     <constraint firstItem="sVa-lp-2YI" firstAttribute="trailing" secondItem="bLg-lA-c8K" secondAttribute="trailing" constant="16" id="VQ0-6r-SZS"/>
+                                    <constraint firstItem="qtY-iy-N2K" firstAttribute="centerY" secondItem="sVa-lp-2YI" secondAttribute="centerY" id="aP3-Ot-ECd"/>
                                     <constraint firstItem="HLJ-6z-TJG" firstAttribute="leading" secondItem="sVa-lp-2YI" secondAttribute="leading" constant="16" id="ahO-gd-mL2"/>
                                     <constraint firstItem="sVa-lp-2YI" firstAttribute="trailing" secondItem="H6S-fX-Sww" secondAttribute="trailing" constant="16" id="ePY-47-Yjo"/>
                                     <constraint firstItem="H6S-fX-Sww" firstAttribute="leading" secondItem="sVa-lp-2YI" secondAttribute="leading" constant="16" id="hg4-YV-5Fa"/>
@@ -208,6 +229,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="nWy-db-7Lo" id="erQ-8w-o4C"/>
                         <outlet property="passwordTextField" destination="DiE-GP-OqY" id="BHO-lt-Omf"/>
+                        <outlet property="registerActivityIndicator" destination="qtY-iy-N2K" id="S8h-lm-doN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7lU-3c-edm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

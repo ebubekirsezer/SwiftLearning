@@ -15,7 +15,14 @@ class GalleryHeaderView: UIView {
             galleryCollectionView.dataSource = self
         }
     }
-    var gallery: [Media] = []{
+    var delegate: MusicViewController? {
+        didSet{
+            getMovies()
+            galleryCollectionView.reloadData()
+        }
+    }
+    
+    private var gallery: [Media] = []{
         didSet{
             galleryCollectionView.reloadData()
         }
@@ -29,6 +36,17 @@ class GalleryHeaderView: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         commonInit()
+    }
+    
+    private func getMovies(){
+        delegate?.appWebService?.getTopBy(mediaType: Constants.MediaType.movies, feedType: Constants.FeedType.topMovies, itemCount: 6, completion: { (result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let mediaFeed):
+                self.gallery = mediaFeed.results
+            }
+        })
     }
     
     private func commonInit(){
@@ -76,6 +94,10 @@ extension GalleryHeaderView: UICollectionViewDelegate, UICollectionViewDataSourc
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let media = gallery[indexPath.row]
+        delegate?.goToMediaDetailViewController(media: media)
+    }
     
 }
 
