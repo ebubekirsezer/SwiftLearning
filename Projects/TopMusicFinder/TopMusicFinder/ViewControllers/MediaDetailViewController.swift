@@ -24,8 +24,7 @@ class MediaDetailViewController: BaseViewController {
     
     private func updateUI(){
         if let appMedia = media {
-            //let cachedImage = cache.object(forKey: "CachedMediaImage")
-            //mediaImage.image = cachedImage
+//            mediaImage.image = cachedImage
             mediaImage.downloadImage(imageUrl: appMedia.artworkUrl100 ?? Constants.defaultImage)
             mediaName.text = appMedia.name
             mediaArtisName.text = appMedia.artistName
