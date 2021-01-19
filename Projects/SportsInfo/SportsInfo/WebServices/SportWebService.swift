@@ -51,4 +51,26 @@ struct SportWebService {
         }
         dataTask.resume()
     }
+    
+    func getLeaguesBySportName(query: String, completion: @escaping(Result<Countries, SportError>) -> Void){
+        guard let url = URL(string: Constants.BASE_URL + query) else { return }
+        print(Constants.BASE_URL + query)
+        let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            DispatchQueue.main.async {
+                guard let jsonData = data else {
+                    completion(.failure(.noDataAvailable))
+                    return
+                }
+                
+                do {
+                    let decoder = JSONDecoder()
+                    let countries = try decoder.decode(Countries.self, from: jsonData)
+                    completion(.success(countries))
+                } catch {
+                    completion(.failure(.fetchingError))
+                }
+            }
+        }
+        dataTask.resume()
+    }
 }

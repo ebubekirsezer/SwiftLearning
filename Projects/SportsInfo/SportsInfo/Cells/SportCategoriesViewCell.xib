@@ -29,7 +29,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXy-ze-CHH">
-                                <rect key="frame" x="16" y="163" width="154" height="20"/>
+                                <rect key="frame" x="16" y="105.5" width="154" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -37,9 +37,9 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="RXy-ze-CHH" firstAttribute="centerY" secondItem="rx7-8c-Tsn" secondAttribute="centerY" id="1dW-Yn-BwS"/>
                             <constraint firstAttribute="trailing" secondItem="RXy-ze-CHH" secondAttribute="trailing" constant="16" id="6Bx-hU-o2C"/>
                             <constraint firstAttribute="trailing" secondItem="rx7-8c-Tsn" secondAttribute="trailing" id="Ev3-Y6-brv"/>
-                            <constraint firstAttribute="bottom" secondItem="RXy-ze-CHH" secondAttribute="bottom" constant="48" id="KAl-7K-QdF"/>
                             <constraint firstItem="rx7-8c-Tsn" firstAttribute="leading" secondItem="8US-3Y-Oy4" secondAttribute="leading" id="Xvu-zO-l9X"/>
                             <constraint firstItem="RXy-ze-CHH" firstAttribute="leading" secondItem="8US-3Y-Oy4" secondAttribute="leading" constant="16" id="l8F-6v-dwx"/>
                             <constraint firstItem="rx7-8c-Tsn" firstAttribute="top" secondItem="8US-3Y-Oy4" secondAttribute="top" id="lgd-SC-MnQ"/>

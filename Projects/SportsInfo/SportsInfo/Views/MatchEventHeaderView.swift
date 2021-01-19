@@ -73,6 +73,14 @@ extension MatchEventHeaderView: UICollectionViewDelegate, UICollectionViewDataSo
         cell.configureWith(sport: sportCategory)
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedCategory = sportCategories[indexPath.row]
+        let storyboard = UIStoryboard(name: "Event", bundle: nil)
+        let leagueVC = storyboard.instantiateViewController(identifier: "LeagueViewController") as! LeagueViewController
+        leagueVC.sportCategory = selectedCategory.strSport
+        delegate?.show(leagueVC, sender: self)
+    }
 }
 
 extension MatchEventHeaderView: UICollectionViewDelegateFlowLayout {
