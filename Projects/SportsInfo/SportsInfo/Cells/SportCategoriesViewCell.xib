@@ -18,13 +18,18 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8US-3Y-Oy4" customClass="RoundedView" customModule="SportsInfo" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="44" width="202" height="247"/>
+                        <rect key="frame" x="8" y="52" width="186" height="231"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rx7-8c-Tsn" customClass="CustomImageView" customModule="SportsInfo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="202" height="247"/>
+                                <rect key="frame" x="0.0" y="0.0" width="186" height="231"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXy-ze-CHH">
-                                <rect key="frame" x="16" y="179" width="170" height="20"/>
+                                <rect key="frame" x="16" y="163" width="154" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -50,10 +55,10 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="8US-3Y-Oy4" secondAttribute="top" id="CV0-z4-Xju"/>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="leading" secondItem="8US-3Y-Oy4" secondAttribute="leading" id="KJf-aC-ahU"/>
-                <constraint firstItem="8US-3Y-Oy4" firstAttribute="trailing" secondItem="ZTg-uK-7eu" secondAttribute="trailing" id="N8y-Ff-SvY"/>
-                <constraint firstItem="8US-3Y-Oy4" firstAttribute="bottom" secondItem="ZTg-uK-7eu" secondAttribute="bottom" id="ejJ-lF-bzf"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="8US-3Y-Oy4" secondAttribute="top" constant="-8" id="CV0-z4-Xju"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="leading" secondItem="8US-3Y-Oy4" secondAttribute="leading" constant="-8" id="KJf-aC-ahU"/>
+                <constraint firstItem="8US-3Y-Oy4" firstAttribute="trailing" secondItem="ZTg-uK-7eu" secondAttribute="trailing" constant="-8" id="N8y-Ff-SvY"/>
+                <constraint firstItem="8US-3Y-Oy4" firstAttribute="bottom" secondItem="ZTg-uK-7eu" secondAttribute="bottom" constant="-8" id="ejJ-lF-bzf"/>
             </constraints>
             <size key="customSize" width="202" height="291"/>
             <connections>

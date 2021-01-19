@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,76 +15,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9j-e5-C1n">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="abZ-ui-Epz">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QS0-Pw-5Eg">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="993"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover the Sports" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKn-HO-H7h">
-                                                <rect key="frame" x="16" y="16" width="382" height="29"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kCp-dA-OU2">
-                                                <rect key="frame" x="8" y="69" width="406" height="200"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="2g9-HC-SpQ"/>
-                                                </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fC0-0J-UxZ">
-                                                    <size key="itemSize" width="128" height="128"/>
-                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                </collectionViewFlowLayout>
-                                                <cells/>
-                                            </collectionView>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="abZ-ui-Epz">
-                                                <rect key="frame" x="0.0" y="293" width="414" height="700"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            </tableView>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstItem="kCp-dA-OU2" firstAttribute="leading" secondItem="QS0-Pw-5Eg" secondAttribute="leading" constant="8" id="0pI-5W-cdl"/>
-                                            <constraint firstItem="kCp-dA-OU2" firstAttribute="top" secondItem="DKn-HO-H7h" secondAttribute="bottom" constant="24" id="EjU-kU-Mxc"/>
-                                            <constraint firstItem="abZ-ui-Epz" firstAttribute="leading" secondItem="QS0-Pw-5Eg" secondAttribute="leading" id="Jto-g8-6JO"/>
-                                            <constraint firstAttribute="height" constant="993" id="PQV-6y-bmD"/>
-                                            <constraint firstAttribute="trailing" secondItem="DKn-HO-H7h" secondAttribute="trailing" constant="16" id="QTn-AR-rSV"/>
-                                            <constraint firstItem="abZ-ui-Epz" firstAttribute="top" secondItem="kCp-dA-OU2" secondAttribute="bottom" constant="24" id="WSM-2A-qCK"/>
-                                            <constraint firstAttribute="trailing" secondItem="abZ-ui-Epz" secondAttribute="trailing" id="crt-pG-Z1N"/>
-                                            <constraint firstAttribute="bottom" secondItem="abZ-ui-Epz" secondAttribute="bottom" id="doP-pc-YlI"/>
-                                            <constraint firstItem="DKn-HO-H7h" firstAttribute="top" secondItem="QS0-Pw-5Eg" secondAttribute="top" constant="16" id="gST-dn-gRJ"/>
-                                            <constraint firstItem="DKn-HO-H7h" firstAttribute="leading" secondItem="QS0-Pw-5Eg" secondAttribute="leading" constant="16" id="iwI-9C-OxS"/>
-                                            <constraint firstAttribute="trailing" secondItem="kCp-dA-OU2" secondAttribute="trailing" id="z6v-Gx-2ZN"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="QS0-Pw-5Eg" secondAttribute="trailing" id="OgV-Xz-Uei"/>
-                                    <constraint firstAttribute="bottom" secondItem="QS0-Pw-5Eg" secondAttribute="bottom" priority="250" id="YIx-8m-k5q"/>
-                                    <constraint firstItem="QS0-Pw-5Eg" firstAttribute="leading" secondItem="X9j-e5-C1n" secondAttribute="leading" id="Z7h-Gm-E5q"/>
-                                    <constraint firstItem="QS0-Pw-5Eg" firstAttribute="width" secondItem="X9j-e5-C1n" secondAttribute="width" id="Zqh-E1-W5Z"/>
-                                    <constraint firstItem="QS0-Pw-5Eg" firstAttribute="height" relation="greaterThanOrEqual" secondItem="X9j-e5-C1n" secondAttribute="height" id="hQr-f5-9UA"/>
-                                    <constraint firstItem="QS0-Pw-5Eg" firstAttribute="top" secondItem="X9j-e5-C1n" secondAttribute="top" id="uGN-bm-NNk"/>
-                                </constraints>
-                            </scrollView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9uQ-FX-Tgd"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.96862745098039216" green="0.97647058823529409" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="X9j-e5-C1n" firstAttribute="top" secondItem="9uQ-FX-Tgd" secondAttribute="top" id="IUK-PC-bmw"/>
-                            <constraint firstItem="9uQ-FX-Tgd" firstAttribute="bottom" secondItem="X9j-e5-C1n" secondAttribute="bottom" id="Pr3-hI-S2o"/>
-                            <constraint firstItem="X9j-e5-C1n" firstAttribute="leading" secondItem="9uQ-FX-Tgd" secondAttribute="leading" id="Slk-uW-Fl0"/>
-                            <constraint firstItem="9uQ-FX-Tgd" firstAttribute="trailing" secondItem="X9j-e5-C1n" secondAttribute="trailing" id="eH9-hz-FHI"/>
+                            <constraint firstItem="9uQ-FX-Tgd" firstAttribute="bottom" secondItem="abZ-ui-Epz" secondAttribute="bottom" id="Bi4-MJ-rNI"/>
+                            <constraint firstItem="abZ-ui-Epz" firstAttribute="top" secondItem="9uQ-FX-Tgd" secondAttribute="top" id="Eu1-or-Pgt"/>
+                            <constraint firstItem="9uQ-FX-Tgd" firstAttribute="trailing" secondItem="abZ-ui-Epz" secondAttribute="trailing" id="K4m-jM-TIw"/>
+                            <constraint firstItem="abZ-ui-Epz" firstAttribute="leading" secondItem="9uQ-FX-Tgd" secondAttribute="leading" id="aos-eD-2Gk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uc7-Pv-ahE"/>
                     <connections>
                         <outlet property="matchEventTableView" destination="abZ-ui-Epz" id="OHC-5N-Bos"/>
-                        <outlet property="sportCategoriesCollectionView" destination="kCp-dA-OU2" id="Nzp-dV-USx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u90-kt-Hag" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -132,8 +78,5 @@
     </scenes>
     <resources>
         <image name="homekit" catalog="system" width="128" height="106"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

@@ -7,11 +7,18 @@
 
 import UIKit
 
+@IBDesignable
 class CustomImageView: UIImageView {
     
+    @IBInspectable var cornerRadius: CGFloat = 0 {
+        didSet{
+            layer.cornerRadius = cornerRadius
+            layer.masksToBounds = cornerRadius > 0
+        }
+    }
 }
 
-extension CustomImageView {
+extension UIImageView {
     func downloadImage(imageUrl: String){
         if let url = URL(string: imageUrl) {
             let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in

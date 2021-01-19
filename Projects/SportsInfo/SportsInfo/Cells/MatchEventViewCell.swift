@@ -34,6 +34,5 @@ class MatchEventViewCell: UITableViewCell {
         matchAwayTeamName.text = event["strAwayTeam"] ?? ""
         matchAwayTeamScore.text = event["intAwayScore"] ?? ""
         matchDateLabel.text = (event["intRound"]  ?? "")! + ". Week"
-        matchStadium.text = event["strVenue"] ?? ""
     }
 }
