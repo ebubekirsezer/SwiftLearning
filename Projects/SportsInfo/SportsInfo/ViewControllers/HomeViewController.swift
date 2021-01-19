@@ -63,7 +63,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MatchEventViewCell", for: indexPath) as! MatchEventViewCell
         let event = matchEvents[indexPath.row]
         cell.configureWith(event: event)
+        cell.selectionStyle = .none
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let event = matchEvents[indexPath.row]
+        let storyboard = UIStoryboard(name: "Event", bundle: nil)
+        let eventDetailVC = storyboard.instantiateViewController(identifier: "EventDetailViewController") as! EventDetailViewController
+        eventDetailVC.matchEvent = event
+        show(eventDetailVC, sender: self)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
