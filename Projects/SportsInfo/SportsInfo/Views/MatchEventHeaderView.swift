@@ -25,7 +25,6 @@ class MatchEventHeaderView: UIView {
     var delegate: HomeViewController? {
         didSet{
             getAllSports()
-            sportCategoriesCollectionView.reloadData()
         }
     }
     

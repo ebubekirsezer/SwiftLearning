@@ -10,9 +10,9 @@ import UIKit
 @IBDesignable
 class RoundedView: UIView {
     @IBInspectable var shadowOffsetWidth: Int = 0
-    @IBInspectable var shadowOffsetHeight: Int = 0
+    @IBInspectable var shadowOffsetHeight: Int = 3
     @IBInspectable var shadowColor: UIColor? = .black
-    @IBInspectable var shadowOpacity: Float = 0.2
+    @IBInspectable var shadowOpacity: Float = 0.5
     @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet{
             layer.cornerRadius = cornerRadius
