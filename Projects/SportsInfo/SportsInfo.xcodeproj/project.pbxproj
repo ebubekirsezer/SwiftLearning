@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B808E8DC25B61EFA0068C66C /* MatchEventViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B808E8DA25B61EFA0068C66C /* MatchEventViewCell.swift */; };
+		B808E8DD25B61EFA0068C66C /* MatchEventViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B808E8DB25B61EFA0068C66C /* MatchEventViewCell.xib */; };
 		B8B593B725B5BA610087F416 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B593B625B5BA610087F416 /* AppDelegate.swift */; };
 		B8B593B925B5BA610087F416 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B593B825B5BA610087F416 /* SceneDelegate.swift */; };
 		B8B593BB25B5BA610087F416 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B593BA25B5BA610087F416 /* ViewController.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B808E8DA25B61EFA0068C66C /* MatchEventViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchEventViewCell.swift; sourceTree = "<group>"; };
+		B808E8DB25B61EFA0068C66C /* MatchEventViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchEventViewCell.xib; sourceTree = "<group>"; };
 		B8B593B325B5BA610087F416 /* SportsInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B593B625B5BA610087F416 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8B593B825B5BA610087F416 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +150,8 @@
 			children = (
 				B8B593E925B5CB510087F416 /* SportCategoriesViewCell.swift */,
 				B8B593EA25B5CB510087F416 /* SportCategoriesViewCell.xib */,
+				B808E8DA25B61EFA0068C66C /* MatchEventViewCell.swift */,
+				B808E8DB25B61EFA0068C66C /* MatchEventViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -217,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8B593C325B5BA680087F416 /* LaunchScreen.storyboard in Resources */,
+				B808E8DD25B61EFA0068C66C /* MatchEventViewCell.xib in Resources */,
 				B8B593EC25B5CB510087F416 /* SportCategoriesViewCell.xib in Resources */,
 				B8B593C025B5BA680087F416 /* Assets.xcassets in Resources */,
 				B8B593BE25B5BA610087F416 /* Main.storyboard in Resources */,
@@ -234,6 +241,7 @@
 				B8B593BB25B5BA610087F416 /* ViewController.swift in Sources */,
 				B8B593B725B5BA610087F416 /* AppDelegate.swift in Sources */,
 				B8B593E225B5C3540087F416 /* SportResponse.swift in Sources */,
+				B808E8DC25B61EFA0068C66C /* MatchEventViewCell.swift in Sources */,
 				B8B593D825B5C0A70087F416 /* SportWebService.swift in Sources */,
 				B8B593E525B5C55B0087F416 /* BaseViewController.swift in Sources */,
 				B8B593DB25B5C1100087F416 /* Constants.swift in Sources */,

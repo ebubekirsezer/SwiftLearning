@@ -15,22 +15,37 @@ class HomeViewController: BaseViewController {
             sportCategoriesCollectionView.dataSource = self
         }
     }
+    @IBOutlet private weak var matchEventTableView: UITableView! {
+        didSet{
+            matchEventTableView.delegate = self
+            matchEventTableView.dataSource = self
+        }
+    }
     
     private var sportCategories: [Sport] = []{
         didSet{
             sportCategoriesCollectionView.reloadData()
         }
     }
+    private var matchEvents: [[String:String?]] = [[:]] {
+        didSet{
+            matchEventTableView.reloadData()
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
         getAllSports()
+        getTurkeyEvents()
     }
     
     private func registerCells(){
         let categoryCell = UINib(nibName: "SportCategoriesViewCell", bundle: nil)
         sportCategoriesCollectionView.register(categoryCell, forCellWithReuseIdentifier: "SportCategoriesViewCell")
+        let matchEventCell = UINib(nibName: "MatchEventViewCell", bundle: nil)
+        matchEventTableView.register(matchEventCell, forCellReuseIdentifier: "MatchEventViewCell")
     }
     
     private func getAllSports(){
@@ -40,6 +55,17 @@ class HomeViewController: BaseViewController {
                 print(error)
             case .success(let sports):
                 self.sportCategories = sports
+            }
+        })
+    }
+    
+    private func getTurkeyEvents(){
+        webService?.getEventsOnTurkey(query: "eventspastleague.php?id=4339", completion: { (result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let matchEvent):
+                self.matchEvents = matchEvent.events
             }
         })
     }
@@ -64,4 +90,26 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         let columnSize: CGFloat = 2.5
         return CGSize(width: collectionView.bounds.width / columnSize , height: collectionView.bounds.height)
     }
+}
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return matchEvents.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MatchEventViewCell", for: indexPath) as! MatchEventViewCell
+        let event = matchEvents[indexPath.row]
+        cell.configureWith(event: event)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableView.bounds.height / 3
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Turkey Super League Latest Matches"
+    }
+    
 }

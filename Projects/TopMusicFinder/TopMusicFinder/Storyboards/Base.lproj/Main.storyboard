@@ -102,8 +102,8 @@
                                             <constraint firstItem="Trj-lD-MTu" firstAttribute="top" secondItem="wPP-HB-LDL" secondAttribute="bottom" constant="16" id="TFg-Li-u2c"/>
                                             <constraint firstItem="wPP-HB-LDL" firstAttribute="top" secondItem="IOA-zf-a91" secondAttribute="top" constant="16" id="WOz-Zq-hQe"/>
                                             <constraint firstAttribute="trailing" secondItem="Kho-k5-UZ9" secondAttribute="trailing" id="Xma-ey-gLF"/>
-                                            <constraint firstAttribute="height" constant="1120" id="Y28-Bd-6rX"/>
                                             <constraint firstAttribute="bottom" secondItem="Kho-k5-UZ9" secondAttribute="bottom" id="rj4-5f-ftJ"/>
+                                            <constraint firstAttribute="height" constant="1120" id="uoG-LS-nrk"/>
                                             <constraint firstItem="Trj-lD-MTu" firstAttribute="leading" secondItem="IOA-zf-a91" secondAttribute="leading" id="zhA-09-jVr"/>
                                         </constraints>
                                     </view>
