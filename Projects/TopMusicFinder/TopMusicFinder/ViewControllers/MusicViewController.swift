@@ -71,8 +71,8 @@ class MusicViewController: BaseViewController {
     private func registerCells(){
         let songViewCell = UINib(nibName: "SongViewCell", bundle: nil)
         allMusicsTableView.register(songViewCell, forCellReuseIdentifier: "SongViewCell")
-        let titleViewCell = UINib(nibName: "TitleViewCell", bundle: nil)
-        allMusicsTableView.register(titleViewCell, forCellReuseIdentifier: "TitleViewCell")
+//        let titleViewCell = UINib(nibName: "TitleViewCell", bundle: nil)
+//        allMusicsTableView.register(titleViewCell, forCellReuseIdentifier: "TitleViewCell")
     }
 }
 

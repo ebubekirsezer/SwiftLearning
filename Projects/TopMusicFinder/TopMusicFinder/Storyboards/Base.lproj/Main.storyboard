@@ -87,14 +87,22 @@
                                                     <constraint firstAttribute="height" constant="250" id="HhJ-xv-riV"/>
                                                 </constraints>
                                             </view>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kho-k5-UZ9">
+                                                <rect key="frame" x="0.0" y="323" width="414" height="797"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </tableView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="Kho-k5-UZ9" firstAttribute="leading" secondItem="IOA-zf-a91" secondAttribute="leading" id="CRM-MG-BoS"/>
                                             <constraint firstItem="wPP-HB-LDL" firstAttribute="leading" secondItem="IOA-zf-a91" secondAttribute="leading" constant="16" id="HGO-y6-FCb"/>
                                             <constraint firstAttribute="trailing" secondItem="Trj-lD-MTu" secondAttribute="trailing" id="Mzz-Yd-5l5"/>
                                             <constraint firstAttribute="trailing" secondItem="wPP-HB-LDL" secondAttribute="trailing" constant="16" id="Ox6-zh-HxB"/>
+                                            <constraint firstItem="Kho-k5-UZ9" firstAttribute="top" secondItem="Trj-lD-MTu" secondAttribute="bottom" constant="20" id="Pm1-yv-hZN"/>
                                             <constraint firstItem="Trj-lD-MTu" firstAttribute="top" secondItem="wPP-HB-LDL" secondAttribute="bottom" constant="16" id="TFg-Li-u2c"/>
                                             <constraint firstItem="wPP-HB-LDL" firstAttribute="top" secondItem="IOA-zf-a91" secondAttribute="top" constant="16" id="WOz-Zq-hQe"/>
+                                            <constraint firstAttribute="trailing" secondItem="Kho-k5-UZ9" secondAttribute="trailing" id="Xma-ey-gLF"/>
+                                            <constraint firstAttribute="bottom" secondItem="Kho-k5-UZ9" secondAttribute="bottom" id="rj4-5f-ftJ"/>
                                             <constraint firstAttribute="height" constant="1120" id="uoG-LS-nrk"/>
                                             <constraint firstItem="Trj-lD-MTu" firstAttribute="leading" secondItem="IOA-zf-a91" secondAttribute="leading" id="zhA-09-jVr"/>
                                         </constraints>
@@ -139,6 +147,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="allMusicsTableView" destination="Kho-k5-UZ9" id="cX4-6u-n2w"/>
                         <outlet property="galleryHeaderView" destination="Trj-lD-MTu" id="IGJ-cX-FT4"/>
                         <outlet property="musicActivityIndicator" destination="cp8-qc-7XW" id="Icm-XP-Bts"/>
                     </connections>

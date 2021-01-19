@@ -189,6 +189,36 @@
             </objects>
             <point key="canvasLocation" x="813" y="169"/>
         </scene>
+        <!--Team View Controller-->
+        <scene sceneID="xf8-9M-TGL">
+            <objects>
+                <viewController storyboardIdentifier="TeamViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qSz-NP-lMd" customClass="TeamViewController" customModule="SportsInfo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zbW-xu-6fB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iga-Nr-oLn">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vKo-pR-TFZ"/>
+                        <color key="backgroundColor" red="0.30980392159999998" green="0.16078431369999999" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vKo-pR-TFZ" firstAttribute="trailing" secondItem="iga-Nr-oLn" secondAttribute="trailing" id="CvM-77-g5C"/>
+                            <constraint firstItem="vKo-pR-TFZ" firstAttribute="leading" secondItem="iga-Nr-oLn" secondAttribute="leading" id="bYY-tY-vO8"/>
+                            <constraint firstItem="iga-Nr-oLn" firstAttribute="top" secondItem="vKo-pR-TFZ" secondAttribute="top" id="eUn-fN-1A7"/>
+                            <constraint firstItem="vKo-pR-TFZ" firstAttribute="bottom" secondItem="iga-Nr-oLn" secondAttribute="bottom" id="tjQ-9Y-fze"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="teamTableView" destination="iga-Nr-oLn" id="9LX-Vc-91j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0xS-iL-HmB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1678" y="169"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

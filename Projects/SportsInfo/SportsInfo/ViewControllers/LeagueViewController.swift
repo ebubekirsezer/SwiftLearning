@@ -65,4 +65,9 @@ extension LeagueViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.bounds.height / 5
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let league = leagues[indexPath.row]
+        print(league[Constants.EventInfo.eventLeague])
+    }
 }
