@@ -68,6 +68,10 @@ extension LeagueViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let league = leagues[indexPath.row]
-        print(league[Constants.EventInfo.eventLeague])
+        let storyboard = UIStoryboard(name: "Event", bundle: nil)
+        let teamVC = storyboard.instantiateViewController(identifier: "TeamViewController") as! TeamViewController
+        
+        teamVC.leagueName = league[Constants.EventInfo.eventLeague] ?? ""
+        show(teamVC, sender: self)
     }
 }

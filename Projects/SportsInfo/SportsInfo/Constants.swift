@@ -27,5 +27,10 @@ struct Constants {
         static let eventCountry = "strCountry"
         static let eventStatus = "strStatus"
         static let eventBadge = "strBadge"
+        static let teamBadge = "strTeamBadge"
+        static let teamJersey = "strTeamJersey"
+        static let teamName = "strTeam"
+        static let teamDescription = "strDescriptionEN"
+        static let teamStadium = "strStadium"
     }
 }
