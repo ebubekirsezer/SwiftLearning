@@ -15,6 +15,7 @@ class TeamViewController: BaseViewController {
             teamTableView.dataSource = self
         }
     }
+    @IBOutlet private weak var teamActivityIndicator: UIActivityIndicatorView!
     
     var leagueName: String?
     private var eventTeams: [[String:String?]] = [[:]] {
@@ -35,14 +36,17 @@ class TeamViewController: BaseViewController {
     }
     
     private func getTeam(){
+        teamActivityIndicator.startAnimating()
         if let name = leagueName{
             let newName = name.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil)
             webService?.getTeamsInLeague(query: "search_all_teams.php?l=\(newName)", completion: { (result) in
                 switch result{
                 case .failure(let error):
                     print(error)
+                    self.teamActivityIndicator.stopAnimating()
                 case .success(let teams):
                     self.eventTeams = teams.teams
+                    self.teamActivityIndicator.stopAnimating()
                 }
             })
         }

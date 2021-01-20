@@ -15,6 +15,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="eUZ-GQ-zhz">
+                                <rect key="frame" x="197" y="352.5" width="20" height="20"/>
+                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="abZ-ui-Epz">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -23,15 +26,18 @@
                         <viewLayoutGuide key="safeArea" id="9uQ-FX-Tgd"/>
                         <color key="backgroundColor" red="0.30980392156862746" green="0.16078431372549018" blue="0.38823529411764707" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="eUZ-GQ-zhz" firstAttribute="centerX" secondItem="9uQ-FX-Tgd" secondAttribute="centerX" id="Bdq-5C-OI4"/>
                             <constraint firstItem="9uQ-FX-Tgd" firstAttribute="bottom" secondItem="abZ-ui-Epz" secondAttribute="bottom" id="Bi4-MJ-rNI"/>
                             <constraint firstItem="abZ-ui-Epz" firstAttribute="top" secondItem="9uQ-FX-Tgd" secondAttribute="top" id="Eu1-or-Pgt"/>
                             <constraint firstItem="9uQ-FX-Tgd" firstAttribute="trailing" secondItem="abZ-ui-Epz" secondAttribute="trailing" id="K4m-jM-TIw"/>
+                            <constraint firstItem="eUZ-GQ-zhz" firstAttribute="centerY" secondItem="9uQ-FX-Tgd" secondAttribute="centerY" id="MhJ-LK-wSM"/>
                             <constraint firstItem="abZ-ui-Epz" firstAttribute="leading" secondItem="9uQ-FX-Tgd" secondAttribute="leading" id="aos-eD-2Gk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sports Info" id="uc7-Pv-ahE"/>
                     <connections>
                         <outlet property="matchEventTableView" destination="abZ-ui-Epz" id="OHC-5N-Bos"/>
+                        <outlet property="sportActivityIndicator" destination="eUZ-GQ-zhz" id="E46-xx-X5Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u90-kt-Hag" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -41,14 +47,46 @@
         <!--Sports Info-->
         <scene sceneID="l9C-NR-7MK">
             <objects>
-                <viewController id="PXY-kB-jm8" sceneMemberID="viewController">
+                <viewController id="PXY-kB-jm8" customClass="SearchViewController" customModule="SportsInfo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8wV-Mb-y0M">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="MmK-XA-0Ul">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search Teams or Players" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggf-kc-het">
+                                <rect key="frame" x="114" y="352" width="186.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="hby-lT-tIX"/>
                         <color key="backgroundColor" red="0.30980392159999998" green="0.16078431369999999" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ggf-kc-het" firstAttribute="centerY" secondItem="hby-lT-tIX" secondAttribute="centerY" id="Dmd-bF-kLF"/>
+                            <constraint firstItem="ggf-kc-het" firstAttribute="centerX" secondItem="hby-lT-tIX" secondAttribute="centerX" id="EKy-c4-UYY"/>
+                            <constraint firstItem="MmK-XA-0Ul" firstAttribute="top" secondItem="hby-lT-tIX" secondAttribute="top" id="WeI-1B-DRP"/>
+                            <constraint firstItem="hby-lT-tIX" firstAttribute="trailing" secondItem="MmK-XA-0Ul" secondAttribute="trailing" id="gOX-l1-cOb"/>
+                            <constraint firstItem="hby-lT-tIX" firstAttribute="leading" secondItem="MmK-XA-0Ul" secondAttribute="leading" id="xkO-EQ-M6e"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Sports Info" id="3aa-aQ-ItZ"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="5rI-Fx-ucJ"/>
+                    <navigationItem key="navigationItem" title="Sports Info" id="3aa-aQ-ItZ">
+                        <barButtonItem key="rightBarButtonItem" image="shuffle" catalog="system" id="4vV-tP-5rJ">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="filterPressed:" destination="PXY-kB-jm8" id="hSf-A3-Azh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="emptyTitle" destination="ggf-kc-het" id="zMh-F5-AMf"/>
+                        <outlet property="searchBar" destination="MmK-XA-0Ul" id="uxg-2o-vn4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aON-kD-qbk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -129,5 +167,6 @@
     <resources>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="shuffle" catalog="system" width="128" height="93"/>
     </resources>
 </document>

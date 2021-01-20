@@ -167,6 +167,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="fl4-V3-dft">
+                                <rect key="frame" x="197" y="443" width="20" height="20"/>
+                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B4n-z6-edn">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -176,12 +179,15 @@
                         <color key="backgroundColor" red="0.30980392159999998" green="0.16078431369999999" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5xp-Ix-JPg" firstAttribute="bottom" secondItem="B4n-z6-edn" secondAttribute="bottom" id="7Es-wJ-X2o"/>
+                            <constraint firstItem="fl4-V3-dft" firstAttribute="centerX" secondItem="5xp-Ix-JPg" secondAttribute="centerX" id="GDr-2N-OwF"/>
                             <constraint firstItem="5xp-Ix-JPg" firstAttribute="trailing" secondItem="B4n-z6-edn" secondAttribute="trailing" id="GIC-t8-eEK"/>
                             <constraint firstItem="B4n-z6-edn" firstAttribute="top" secondItem="5xp-Ix-JPg" secondAttribute="top" id="fzT-70-eFc"/>
+                            <constraint firstItem="fl4-V3-dft" firstAttribute="centerY" secondItem="5xp-Ix-JPg" secondAttribute="centerY" id="mac-sB-TsI"/>
                             <constraint firstItem="B4n-z6-edn" firstAttribute="leading" secondItem="5xp-Ix-JPg" secondAttribute="leading" id="uc8-sl-Bwh"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="leagueActivityIndicator" destination="fl4-V3-dft" id="YOk-7f-oQ1"/>
                         <outlet property="leagueTableView" destination="B4n-z6-edn" id="9lO-UT-ocJ"/>
                     </connections>
                 </viewController>
@@ -197,6 +203,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="LE3-KK-6yk">
+                                <rect key="frame" x="197" y="443" width="20" height="20"/>
+                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iga-Nr-oLn">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -206,12 +215,15 @@
                         <color key="backgroundColor" red="0.30980392159999998" green="0.16078431369999999" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vKo-pR-TFZ" firstAttribute="trailing" secondItem="iga-Nr-oLn" secondAttribute="trailing" id="CvM-77-g5C"/>
+                            <constraint firstItem="LE3-KK-6yk" firstAttribute="centerX" secondItem="vKo-pR-TFZ" secondAttribute="centerX" id="ZcG-25-FYB"/>
                             <constraint firstItem="vKo-pR-TFZ" firstAttribute="leading" secondItem="iga-Nr-oLn" secondAttribute="leading" id="bYY-tY-vO8"/>
                             <constraint firstItem="iga-Nr-oLn" firstAttribute="top" secondItem="vKo-pR-TFZ" secondAttribute="top" id="eUn-fN-1A7"/>
+                            <constraint firstItem="LE3-KK-6yk" firstAttribute="centerY" secondItem="vKo-pR-TFZ" secondAttribute="centerY" id="lZL-Zn-8DN"/>
                             <constraint firstItem="vKo-pR-TFZ" firstAttribute="bottom" secondItem="iga-Nr-oLn" secondAttribute="bottom" id="tjQ-9Y-fze"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="teamActivityIndicator" destination="LE3-KK-6yk" id="SJu-Qx-Yww"/>
                         <outlet property="teamTableView" destination="iga-Nr-oLn" id="9LX-Vc-91j"/>
                     </connections>
                 </viewController>
@@ -379,6 +391,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKg-FQ-JeB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2564" y="170"/>
+        </scene>
+        <!--Filter View Controller-->
+        <scene sceneID="Mby-CM-HXI">
+            <objects>
+                <viewController storyboardIdentifier="FilterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="299-WQ-eHz" customClass="FilterViewController" customModule="SportsInfo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RK0-1o-gNR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9S-wL-X2p">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Tug-yF-EWD">
+                                <rect key="frame" x="24" y="365.5" width="366" height="175"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="175" id="Pse-3u-aOV"/>
+                                </constraints>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FilterCell" id="2i4-Zi-8fs">
+                                        <rect key="frame" x="0.0" y="55.5" width="366" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2i4-Zi-8fs" id="ATL-x0-gnk">
+                                            <rect key="frame" x="0.0" y="0.0" width="366" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="13W-1Q-LzK"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Tug-yF-EWD" firstAttribute="centerY" secondItem="13W-1Q-LzK" secondAttribute="centerY" id="9my-QQ-Ivb"/>
+                            <constraint firstItem="h9S-wL-X2p" firstAttribute="top" secondItem="RK0-1o-gNR" secondAttribute="top" id="I9F-Jt-nOu"/>
+                            <constraint firstItem="13W-1Q-LzK" firstAttribute="trailing" secondItem="h9S-wL-X2p" secondAttribute="trailing" id="U0e-5U-ovG"/>
+                            <constraint firstItem="h9S-wL-X2p" firstAttribute="leading" secondItem="13W-1Q-LzK" secondAttribute="leading" id="Yhm-2g-yPe"/>
+                            <constraint firstItem="Tug-yF-EWD" firstAttribute="leading" secondItem="13W-1Q-LzK" secondAttribute="leading" constant="24" id="YoP-cg-hjH"/>
+                            <constraint firstItem="13W-1Q-LzK" firstAttribute="trailing" secondItem="Tug-yF-EWD" secondAttribute="trailing" constant="24" id="f8O-8u-J6w"/>
+                            <constraint firstAttribute="bottom" secondItem="h9S-wL-X2p" secondAttribute="bottom" id="wVp-4W-GEa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="filterTableView" destination="Tug-yF-EWD" id="tAT-aF-w9q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AuP-Jb-GIJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3441" y="169"/>
         </scene>
     </scenes>
     <resources>

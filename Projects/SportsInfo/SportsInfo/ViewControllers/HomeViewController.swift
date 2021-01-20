@@ -9,18 +9,13 @@ import UIKit
 
 class HomeViewController: BaseViewController {
     
-//    @IBOutlet private weak var sportCategoriesCollectionView: UICollectionView!{
-//        didSet{
-//            sportCategoriesCollectionView.delegate = self
-//            sportCategoriesCollectionView.dataSource = self
-//        }
-//    }
     @IBOutlet private weak var matchEventTableView: UITableView! {
         didSet{
             matchEventTableView.delegate = self
             matchEventTableView.dataSource = self
         }
     }
+    @IBOutlet private weak var sportActivityIndicator: UIActivityIndicatorView!
     
 
     private var matchEvents: [[String:String?]] = [[:]] {
@@ -33,7 +28,6 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
-        //getAllSports()
         getTurkeyEvents()
     }
     
@@ -43,12 +37,15 @@ class HomeViewController: BaseViewController {
     }
     
     private func getTurkeyEvents(){
+        sportActivityIndicator.startAnimating()
         webService?.getEventsOnTurkey(query: "eventspastleague.php?id=4339", completion: { (result) in
             switch result {
             case .failure(let error):
                 print(error)
+                self.sportActivityIndicator.stopAnimating()
             case .success(let matchEvent):
                 self.matchEvents = matchEvent.events
+                self.sportActivityIndicator.stopAnimating()
             }
         })
     }

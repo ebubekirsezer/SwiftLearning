@@ -15,6 +15,7 @@ class LeagueViewController: BaseViewController {
             leagueTableView.dataSource = self
         }
     }
+    @IBOutlet private weak var leagueActivityIndicator: UIActivityIndicatorView!
     
     var sportCategory: String?
     
@@ -31,13 +32,16 @@ class LeagueViewController: BaseViewController {
     }
     
     private func getLeagues(){
+        leagueActivityIndicator.startAnimating()
         if let category = sportCategory {
             webService?.getLeaguesBySportName(query: "search_all_leagues.php?s=\(category)", completion: { (result) in
                 switch result{
                 case .failure(let error):
                     print(error)
+                    self.leagueActivityIndicator.stopAnimating()
                 case .success(let leagues):
                     self.leagues = leagues.countrys
+                    self.leagueActivityIndicator.stopAnimating()
                 }
             })
         }
