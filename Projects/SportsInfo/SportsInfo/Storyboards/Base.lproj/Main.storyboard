@@ -62,6 +62,21 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xL0-mb-NVY">
+                                <rect key="frame" x="0.0" y="56" width="414" height="669"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" id="zSn-Pa-01z">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zSn-Pa-01z" id="4qc-nu-feG">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hby-lT-tIX"/>
                         <color key="backgroundColor" red="0.30980392159999998" green="0.16078431369999999" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -69,7 +84,11 @@
                             <constraint firstItem="ggf-kc-het" firstAttribute="centerY" secondItem="hby-lT-tIX" secondAttribute="centerY" id="Dmd-bF-kLF"/>
                             <constraint firstItem="ggf-kc-het" firstAttribute="centerX" secondItem="hby-lT-tIX" secondAttribute="centerX" id="EKy-c4-UYY"/>
                             <constraint firstItem="MmK-XA-0Ul" firstAttribute="top" secondItem="hby-lT-tIX" secondAttribute="top" id="WeI-1B-DRP"/>
+                            <constraint firstItem="xL0-mb-NVY" firstAttribute="leading" secondItem="hby-lT-tIX" secondAttribute="leading" id="Y3W-8k-M7p"/>
+                            <constraint firstItem="hby-lT-tIX" firstAttribute="bottom" secondItem="xL0-mb-NVY" secondAttribute="bottom" id="dns-Kr-i8U"/>
+                            <constraint firstItem="xL0-mb-NVY" firstAttribute="top" secondItem="MmK-XA-0Ul" secondAttribute="bottom" id="f14-Dp-s77"/>
                             <constraint firstItem="hby-lT-tIX" firstAttribute="trailing" secondItem="MmK-XA-0Ul" secondAttribute="trailing" id="gOX-l1-cOb"/>
+                            <constraint firstItem="hby-lT-tIX" firstAttribute="trailing" secondItem="xL0-mb-NVY" secondAttribute="trailing" id="vQz-RF-0gW"/>
                             <constraint firstItem="hby-lT-tIX" firstAttribute="leading" secondItem="MmK-XA-0Ul" secondAttribute="leading" id="xkO-EQ-M6e"/>
                         </constraints>
                     </view>
@@ -86,6 +105,7 @@
                     <connections>
                         <outlet property="emptyTitle" destination="ggf-kc-het" id="zMh-F5-AMf"/>
                         <outlet property="searchBar" destination="MmK-XA-0Ul" id="uxg-2o-vn4"/>
+                        <outlet property="searchTableView" destination="xL0-mb-NVY" id="WhD-Xe-gem"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aON-kD-qbk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

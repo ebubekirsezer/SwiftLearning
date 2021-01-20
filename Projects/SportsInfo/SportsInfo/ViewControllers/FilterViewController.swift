@@ -15,6 +15,8 @@ class FilterViewController: BaseViewController {
             filterTableView.dataSource = self
         }
     }
+    var delegate: SearchViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -38,15 +40,27 @@ extension FilterViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FilterCell", for: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FilterCell", for: indexPath)
         cell.textLabel?.text = filters[indexPath.row]
         cell.selectionStyle = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Filter Your Search"
+        return "Fılter Your Search"
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCategory = filters[indexPath.row]
+        if selectedCategory.lowercased().contains("player") {
+            self.dismiss(animated: true) {
+                self.delegate?.selectedCategory = .player
+            }
+        } else {
+            self.dismiss(animated: true) {
+                self.delegate?.selectedCategory = .team
+            }
+        }
+    }
     
 }

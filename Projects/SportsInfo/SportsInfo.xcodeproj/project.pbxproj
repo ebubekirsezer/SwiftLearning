@@ -42,6 +42,8 @@
 		B8BA711125B812F2005F4247 /* TeamDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA711025B812F2005F4247 /* TeamDetailViewController.swift */; };
 		B8BA711425B8364E005F4247 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA711325B8364E005F4247 /* SearchViewController.swift */; };
 		B8BA711725B83975005F4247 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA711625B83975005F4247 /* FilterViewController.swift */; };
+		B8BA711A25B84274005F4247 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA711925B84274005F4247 /* Player.swift */; };
+		B8BA711D25B846DB005F4247 /* FilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA711C25B846DB005F4247 /* FilterType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		B8BA711025B812F2005F4247 /* TeamDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailViewController.swift; sourceTree = "<group>"; };
 		B8BA711325B8364E005F4247 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		B8BA711625B83975005F4247 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		B8BA711925B84274005F4247 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		B8BA711C25B846DB005F4247 /* FilterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +176,7 @@
 				B8B593E125B5C3540087F416 /* SportResponse.swift */,
 				B8B593F825B5D6FA0087F416 /* MatchEvent.swift */,
 				B808E8EF25B6FB0A0068C66C /* Countries.swift */,
+				B8BA711925B84274005F4247 /* Player.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				B8B593DE25B5C29E0087F416 /* SportError.swift */,
+				B8BA711C25B846DB005F4247 /* FilterType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -293,6 +299,7 @@
 				B8B593E225B5C3540087F416 /* SportResponse.swift in Sources */,
 				B808E8F025B6FB0A0068C66C /* Countries.swift in Sources */,
 				B8A7352925B80A31003D049D /* TeamViewCell.swift in Sources */,
+				B8BA711D25B846DB005F4247 /* FilterType.swift in Sources */,
 				B808E8DC25B61EFA0068C66C /* MatchEventViewCell.swift in Sources */,
 				B8B593D825B5C0A70087F416 /* SportWebService.swift in Sources */,
 				B8B593E525B5C55B0087F416 /* BaseViewController.swift in Sources */,
@@ -311,6 +318,7 @@
 				B8B593D025B5BBF30087F416 /* HomeViewController.swift in Sources */,
 				B8B593F925B5D6FA0087F416 /* MatchEvent.swift in Sources */,
 				B808E8E625B6CEB80068C66C /* EventDetailViewController.swift in Sources */,
+				B8BA711A25B84274005F4247 /* Player.swift in Sources */,
 				B8B593F625B5CEC20087F416 /* CustomImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

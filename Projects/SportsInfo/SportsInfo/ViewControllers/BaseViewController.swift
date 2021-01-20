@@ -21,3 +21,14 @@ class BaseViewController: UIViewController {
         webService = appDelegate?.webService
     }
 }
+
+extension BaseViewController{
+    func initializeHideKeyboard(){
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc private func dismissKeyboard(){
+        view.endEditing(true)
+    }
+}
