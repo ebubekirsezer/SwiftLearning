@@ -95,7 +95,9 @@ extension GalleryHeaderView: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedCell = collectionView.cellForItem(at: indexPath) as! GalleryHeaderViewCell
         let media = gallery[indexPath.row]
+        delegate?.saveToCache(image: selectedCell.headerImage.image!)
         delegate?.goToMediaDetailViewController(media: media)
     }
     

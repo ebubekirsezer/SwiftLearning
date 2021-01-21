@@ -73,10 +73,9 @@ extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! BookViewCell
         if let selectedBook = books?[indexPath.row] {
-            let myImage = #imageLiteral(resourceName: "MABV")
-            cache.setObject(myImage, forKey: "CachedMediaImage")
-            //print(cache.object(forKey: "CachedMediaImage"))
+            saveToCache(image: cell.bookImage.image!)
             goToMediaDetailViewController(media: selectedBook)
         }
     }

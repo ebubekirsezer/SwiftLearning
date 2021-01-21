@@ -9,7 +9,7 @@ import UIKit
 
 class MusicViewCell: UITableViewCell {
 
-    @IBOutlet private weak var musicImage: UIImageView!
+    @IBOutlet weak var musicImage: UIImageView!
     @IBOutlet private weak var musicName: UILabel!
     @IBOutlet private weak var artistName: UILabel!
     

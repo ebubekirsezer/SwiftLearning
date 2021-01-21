@@ -64,9 +64,7 @@ extension UIImageView {
                 }
             }
             dataTask.resume()
-        }
-        
-        print(mediaImage)
+        }        
         return mediaImage
     }
 }

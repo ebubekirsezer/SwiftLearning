@@ -73,7 +73,9 @@ extension TopAppsViewCell: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! AppTableViewCell
         let selectedMedia = appFeeds[indexPath.section].results[indexPath.row]
+        appViewControllerDelegate?.saveToCache(image: cell.appImage.image!)
         appViewControllerDelegate?.goToMediaDetailViewController(media: selectedMedia)
     }
     

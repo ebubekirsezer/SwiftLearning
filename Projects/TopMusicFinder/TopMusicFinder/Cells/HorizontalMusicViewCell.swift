@@ -10,8 +10,8 @@ import UIKit
 class HorizontalMusicViewCell: UICollectionViewCell {
 
     @IBOutlet weak var songImage: UIImageView!
-    @IBOutlet weak var songName: UILabel!
-    @IBOutlet weak var artistName: UILabel!
+    @IBOutlet private weak var songName: UILabel!
+    @IBOutlet private weak var artistName: UILabel!
     
     
     override func awakeFromNib() {

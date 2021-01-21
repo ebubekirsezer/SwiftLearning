@@ -80,7 +80,9 @@ extension MovieViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! MediaViewCell
         if let selectedMedia = movies?[indexPath.row]{
+            saveToCache(image: cell.mediaImage.image!)
             goToMediaDetailViewController(media: selectedMedia)
         }
     }

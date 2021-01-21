@@ -9,7 +9,7 @@ import UIKit
 
 class BookViewCell: UICollectionViewCell {
 
-    @IBOutlet private weak var bookImage: UIImageView!
+    @IBOutlet weak var bookImage: UIImageView!
     @IBOutlet private weak var bookName: UILabel!
     @IBOutlet private weak var bookAuthorName: UILabel!
     
@@ -17,10 +17,10 @@ class BookViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
+    
     func configureWith(book: Media){
         bookImage.downloadImage(imageUrl: book.artworkUrl100 ?? Constants.defaultImage)
         bookName.text = book.name
         bookAuthorName.text = book.artistName
     }
-
 }

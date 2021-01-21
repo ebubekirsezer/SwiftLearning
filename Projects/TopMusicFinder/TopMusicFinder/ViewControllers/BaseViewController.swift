@@ -17,8 +17,7 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let appDelegate = UIApplication.shared.delegate as? AppDelegate
-        appWebService = appDelegate?.appWebService
+        appWebService = AppWebService.service
     }
 }
 
@@ -55,5 +54,11 @@ extension BaseViewController {
     
     @objc private func dismissKeyboard(){
         view.endEditing(true)
+    }
+}
+
+extension BaseViewController {
+    func saveToCache(image: UIImage){
+        BaseViewController.cache.setObject(image, forKey: "CachedMediaImage")
     }
 }

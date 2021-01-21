@@ -9,7 +9,7 @@ import UIKit
 
 class MediaViewCell: UITableViewCell {
 
-    @IBOutlet private weak var mediaImage: UIImageView!
+    @IBOutlet weak var mediaImage: UIImageView!
     @IBOutlet private weak var mediaName: UILabel!
     @IBOutlet private weak var mediaArtistName: UILabel!
     

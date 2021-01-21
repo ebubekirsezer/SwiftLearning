@@ -9,7 +9,7 @@ import UIKit
 
 class AppTableViewCell: UITableViewCell {
 
-    @IBOutlet private weak var appImage: RoundedImageView!
+    @IBOutlet weak var appImage: RoundedImageView!
     @IBOutlet private weak var appName: UILabel!
     @IBOutlet private weak var appDeveloperName: UILabel!
     

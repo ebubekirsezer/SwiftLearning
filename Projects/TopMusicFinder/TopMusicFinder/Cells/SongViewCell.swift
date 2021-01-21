@@ -59,7 +59,9 @@ extension SongViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! HorizontalMusicViewCell
         let selectedMedia = listOfMusics[indexPath.row]
+        homeViewControllerDelegate?.saveToCache(image: cell.songImage.image!)
         homeViewControllerDelegate?.goToMediaDetailViewController(media: selectedMedia)        
     }
 }
