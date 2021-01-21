@@ -11,14 +11,16 @@ import Firebase
 
 class MusicViewController: BaseViewController {
     
+    @IBOutlet private weak var galleryHeaderView: GalleryHeaderView!
+    @IBOutlet private weak var musicActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var musicViewHeight: NSLayoutConstraint!
     @IBOutlet private weak var allMusicsTableView: UITableView! {
         didSet{
             allMusicsTableView.delegate = self
             allMusicsTableView.dataSource = self
         }
     }
-    @IBOutlet weak var galleryHeaderView: GalleryHeaderView!
-    @IBOutlet private weak var musicActivityIndicator: UIActivityIndicatorView!
+   
     
     private var musicsByCountries = [MediaFeed]() {
         didSet{
@@ -50,7 +52,7 @@ class MusicViewController: BaseViewController {
         musicActivityIndicator.startAnimating()
         fetchMusics(countryCode: Constants.CountryCodes.turkey)
         fetchMusics(countryCode: Constants.CountryCodes.unitedStates)
-        fetchMusics(countryCode: Constants.CountryCodes.france)
+        //fetchMusics(countryCode: Constants.CountryCodes.france)
         musicActivityIndicator.hidesWhenStopped = true
     }
     
@@ -90,6 +92,12 @@ extension MusicViewController: UITableViewDelegate, UITableViewDataSource {
         let musicFeed = musicsByCountries[indexPath.section]
         cell.configureWith(musicFeed: musicFeed)
         
+        
+        let tableViewRowHeight = self.tableView(tableView, heightForRowAt: indexPath)
+        let tableViewHeaderHeight = self.tableView(tableView, heightForHeaderInSection: indexPath.section)
+        
+        musicViewHeight.constant = ((tableViewRowHeight + tableViewHeaderHeight) * CGFloat(musicsByCountries.count)) + galleryHeaderView.bounds.height + 32
+        
         return cell
     }
     
@@ -105,6 +113,6 @@ extension MusicViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.bounds.height / 4
+        return 250
     }
 }

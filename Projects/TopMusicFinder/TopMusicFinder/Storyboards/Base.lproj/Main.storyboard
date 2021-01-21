@@ -150,6 +150,7 @@
                         <outlet property="allMusicsTableView" destination="Kho-k5-UZ9" id="cX4-6u-n2w"/>
                         <outlet property="galleryHeaderView" destination="Trj-lD-MTu" id="IGJ-cX-FT4"/>
                         <outlet property="musicActivityIndicator" destination="cp8-qc-7XW" id="Icm-XP-Bts"/>
+                        <outlet property="musicViewHeight" destination="uoG-LS-nrk" id="wee-mt-Wbn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6dS-Q1-zjx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
