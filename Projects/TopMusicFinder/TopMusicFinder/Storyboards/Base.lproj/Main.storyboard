@@ -103,7 +103,7 @@
                                             <constraint firstItem="wPP-HB-LDL" firstAttribute="top" secondItem="IOA-zf-a91" secondAttribute="top" constant="16" id="WOz-Zq-hQe"/>
                                             <constraint firstAttribute="trailing" secondItem="Kho-k5-UZ9" secondAttribute="trailing" id="Xma-ey-gLF"/>
                                             <constraint firstAttribute="bottom" secondItem="Kho-k5-UZ9" secondAttribute="bottom" id="rj4-5f-ftJ"/>
-                                            <constraint firstAttribute="height" constant="1120" id="uoG-LS-nrk"/>
+                                            <constraint firstAttribute="height" priority="10" constant="1120" id="uoG-LS-nrk"/>
                                             <constraint firstItem="Trj-lD-MTu" firstAttribute="leading" secondItem="IOA-zf-a91" secondAttribute="leading" id="zhA-09-jVr"/>
                                         </constraints>
                                     </view>
@@ -229,6 +229,13 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
+                                <label key="backgroundView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deneme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x4G-y3-APv">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <cells/>
                             </collectionView>
                         </subviews>

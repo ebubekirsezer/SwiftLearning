@@ -17,6 +17,17 @@ class FilterViewController: BaseViewController {
     }
     var delegate: SearchViewController?
     
+    func initiliazeWith(completion: (_ filterType: FilterType) -> Void) {
+
+    }
+    
+    
+    //closure
+    var filterTypeHandler: (_ filter: FilterType) -> Void = { filter in
+        print(filter)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -28,6 +39,7 @@ class FilterViewController: BaseViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch: UITouch? = touches.first
+        
         if touch?.view != filterTableView {
             self.dismiss(animated: true, completion: nil)
         }
@@ -54,11 +66,11 @@ extension FilterViewController: UITableViewDelegate, UITableViewDataSource {
         let selectedCategory = filters[indexPath.row]
         if selectedCategory.lowercased().contains("player") {
             self.dismiss(animated: true) {
-                self.delegate?.selectedCategory = .player
+                self.filterTypeHandler(.player)
             }
         } else {
             self.dismiss(animated: true) {
-                self.delegate?.selectedCategory = .team
+                self.filterTypeHandler(.team)
             }
         }
     }

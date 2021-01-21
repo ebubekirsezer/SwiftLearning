@@ -44,7 +44,7 @@ class AllMusicsViewController: BaseViewController {
     private func fetchMusics(countryCode: String){
         musicActivityIndicator.startAnimating()
         musicActivityIndicator.hidesWhenStopped = true
-        appWebService?.getTopBy(countryCode: countryCode, mediaType: Constants.MediaType.iTunesMusics, feedType: Constants.FeedType.topSongs, itemCount: 15, completion: { (result) in
+        appWebService?.getTopBy(countryCode: countryCode, mediaType: Constants.MediaType.iTunesMusics, feedType: Constants.FeedType.topSongs, itemCount: 2, completion: { (result) in
             switch result {
             case .failure(let error):
                 print(error)

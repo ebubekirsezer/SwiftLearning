@@ -11,7 +11,8 @@ import UIKit
 class BaseViewController: UIViewController {
     
     var appWebService: AppWebService?
-    let cache = NSCache<NSString, UIImage>()
+    //Look again
+    static let cache = NSCache<NSString, UIImage>()
     
     
     override func viewDidLoad() {

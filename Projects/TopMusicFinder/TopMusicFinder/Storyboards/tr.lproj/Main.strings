@@ -1,4 +1,3 @@
-
 /* Class = "UINavigationItem"; title = "Apps"; ObjectID = "9Ld-Js-6bT"; */
 "9Ld-Js-6bT.title" = "Uygulamalar";
 
@@ -8,20 +7,11 @@
 /* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "BDU-1e-dX0"; */
 "BDU-1e-dX0.title" = "Çıkış";
 
-/* Class = "UITabBarItem"; title = "Apps"; ObjectID = "Kdp-ke-bdO"; */
-"Kdp-ke-bdO.title" = "Uygulama";
-
-/* Class = "UINavigationItem"; title = "TopMusicFinder "; ObjectID = "RZk-zo-NNm"; */
-"RZk-zo-NNm.title" = "TopMusicFinder ";
-
-/* Class = "UINavigationItem"; title = "Movies"; ObjectID = "RdY-z5-HTz"; */
-"RdY-z5-HTz.title" = "Filmler";
-
-/* Class = "UITabBarItem"; title = "Movies"; ObjectID = "TBZ-Zj-9vg"; */
-"TBZ-Zj-9vg.title" = "Film";
-
 /* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "kDh-N9-Lm1"; */
 "kDh-N9-Lm1.title" = "Çıkış";
+
+/* Class = "UITabBarItem"; title = "Apps"; ObjectID = "Kdp-ke-bdO"; */
+"Kdp-ke-bdO.title" = "Uygulama";
 
 /* Class = "UITabBarItem"; title = "Books"; ObjectID = "kM4-l1-W36"; */
 "kM4-l1-W36.title" = "Kitap";
@@ -32,5 +22,18 @@
 /* Class = "UITabBarItem"; title = "Categories"; ObjectID = "o8T-G0-OEY"; */
 "o8T-G0-OEY.title" = "Kategori";
 
+/* Class = "UINavigationItem"; title = "Movies"; ObjectID = "RdY-z5-HTz"; */
+"RdY-z5-HTz.title" = "Filmler";
+
+/* Class = "UINavigationItem"; title = "TopMusicFinder "; ObjectID = "RZk-zo-NNm"; */
+"RZk-zo-NNm.title" = "TopMusicFinder ";
+
+/* Class = "UITabBarItem"; title = "Movies"; ObjectID = "TBZ-Zj-9vg"; */
+"TBZ-Zj-9vg.title" = "Film";
+
 /* Class = "UILabel"; text = "Top Movies"; ObjectID = "wPP-HB-LDL"; */
 "wPP-HB-LDL.text" = "En iyi Filmler";
+
+/* Class = "UILabel"; text = "Deneme"; ObjectID = "x4G-y3-APv"; */
+"x4G-y3-APv.text" = "Deneme 2";
+

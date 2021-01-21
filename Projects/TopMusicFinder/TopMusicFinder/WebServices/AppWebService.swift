@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct AppWebService {
+
+
+class AppWebService {
+    
+    static let service = AppWebService()
     
     func getTopBy(countryCode: String = Constants.CountryCodes.unitedStates, mediaType: String, feedType: String, itemCount: Int, completion: @escaping(Result<MediaFeed, MediaError>) -> Void){
         guard let BASE_URL = URL(string: "https://rss.itunes.apple.com/api/v1/\(countryCode)/\(mediaType)/\(feedType)/all/\(itemCount)/explicit.json") else { fatalError() }

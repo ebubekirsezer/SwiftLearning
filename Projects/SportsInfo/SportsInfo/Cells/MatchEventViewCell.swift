@@ -18,7 +18,6 @@ class MatchEventViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        cardView.makeCardView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -33,4 +33,5 @@ struct Constants {
         static let teamDescription = "strDescriptionEN"
         static let teamStadium = "strStadium"
     }
+    //Object Mapping, codable
 }

@@ -21,7 +21,9 @@ class SearchViewController: BaseViewController {
         }
     }
     @IBOutlet private weak var emptyTitle: UILabel!
-    var selectedCategory: FilterType?
+    //protocol
+    private var filterViewController: FilterViewController = FilterViewController()
+    private var selectedCategory: FilterType?
     private var searchResults: [[String:String?]] = [[:]]{
         didSet{
             searchTableView.reloadData()
@@ -36,7 +38,7 @@ class SearchViewController: BaseViewController {
     @IBAction private func filterPressed(_ sender: UIBarButtonItem) {
         let storyboard = UIStoryboard(name: "Event", bundle: nil)
         let filterVC = storyboard.instantiateViewController(identifier: "FilterViewController") as! FilterViewController
-        filterVC.delegate = self
+        filterViewController = filterVC
         filterVC.modalPresentationStyle = .overFullScreen
         filterVC.modalTransitionStyle = .crossDissolve
         self.present(filterVC, animated: false, completion: nil)
@@ -51,6 +53,7 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         let searchString = searchText.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil)
         emptyTitle.isHidden = true
+        
         switch selectedCategory {
         case .player:
             webService?.searchPlayerBy(query: "searchplayers.php?p=\(searchString)", completion: { (result) in

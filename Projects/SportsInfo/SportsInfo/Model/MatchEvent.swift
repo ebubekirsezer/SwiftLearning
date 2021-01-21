@@ -10,3 +10,4 @@ import Foundation
 struct MatchEvent: Decodable {
     let events: [[String: String?]]
 }
+
