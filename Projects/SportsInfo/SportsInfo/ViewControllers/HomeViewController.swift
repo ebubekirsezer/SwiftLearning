@@ -17,13 +17,11 @@ class HomeViewController: BaseViewController {
     }
     @IBOutlet private weak var sportActivityIndicator: UIActivityIndicatorView!
     
-
-    private var matchEvents: [[String:String?]] = [[:]] {
+    private var events: [Event] = []{
         didSet{
             matchEventTableView.reloadData()
         }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +42,7 @@ class HomeViewController: BaseViewController {
                 print(error)
                 self.sportActivityIndicator.stopAnimating()
             case .success(let matchEvent):
-                self.matchEvents = matchEvent.events
+                self.events = matchEvent.events
                 self.sportActivityIndicator.stopAnimating()
             }
         })
@@ -53,22 +51,22 @@ class HomeViewController: BaseViewController {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return matchEvents.count
+        return events.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MatchEventViewCell", for: indexPath) as! MatchEventViewCell
-        let event = matchEvents[indexPath.row]
+        let event = events[indexPath.row]
         cell.configureWith(event: event)
         cell.selectionStyle = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let event = matchEvents[indexPath.row]
+        let event = events[indexPath.row]
         let storyboard = UIStoryboard(name: "Event", bundle: nil)
         let eventDetailVC = storyboard.instantiateViewController(identifier: "EventDetailViewController") as! EventDetailViewController
-        eventDetailVC.matchEvent = event
+        eventDetailVC.event = event
         show(eventDetailVC, sender: self)
     }
     

@@ -27,6 +27,7 @@ class LeagueViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "League"
         getLeagues()
         registerCell()
     }

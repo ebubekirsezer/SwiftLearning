@@ -19,6 +19,8 @@ class SportCategoriesViewCell: UICollectionViewCell {
     
     func configureWith(sport: Sport){
         sportCategoryImage.downloadImage(imageUrl: sport.strSportThumb)
-        sportCategoryName.text = sport.strSport
+        if sport.strSport != "Soccer"{
+            sportCategoryName.text = sport.strSport
+        }
     }
 }

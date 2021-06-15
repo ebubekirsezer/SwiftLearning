@@ -323,7 +323,7 @@
         <!--Apps-->
         <scene sceneID="FyN-7z-K92">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pxa-Sb-nMM" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pxa-Sb-nMM" customClass="HomeNavigationBarController" customModule="TopMusicFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Apps" image="apps.iphone" catalog="system" id="Kdp-ke-bdO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="mJo-b3-IfW">

@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -43,74 +44,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u90-kt-Hag" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1693" y="-151"/>
-        </scene>
-        <!--Sports Info-->
-        <scene sceneID="l9C-NR-7MK">
-            <objects>
-                <viewController id="PXY-kB-jm8" customClass="SearchViewController" customModule="SportsInfo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8wV-Mb-y0M">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="MmK-XA-0Ul">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search Teams or Players" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggf-kc-het">
-                                <rect key="frame" x="114" y="352" width="186.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xL0-mb-NVY">
-                                <rect key="frame" x="0.0" y="56" width="414" height="669"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" id="zSn-Pa-01z">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zSn-Pa-01z" id="4qc-nu-feG">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="hby-lT-tIX"/>
-                        <color key="backgroundColor" red="0.30980392159999998" green="0.16078431369999999" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="ggf-kc-het" firstAttribute="centerY" secondItem="hby-lT-tIX" secondAttribute="centerY" id="Dmd-bF-kLF"/>
-                            <constraint firstItem="ggf-kc-het" firstAttribute="centerX" secondItem="hby-lT-tIX" secondAttribute="centerX" id="EKy-c4-UYY"/>
-                            <constraint firstItem="MmK-XA-0Ul" firstAttribute="top" secondItem="hby-lT-tIX" secondAttribute="top" id="WeI-1B-DRP"/>
-                            <constraint firstItem="xL0-mb-NVY" firstAttribute="leading" secondItem="hby-lT-tIX" secondAttribute="leading" id="Y3W-8k-M7p"/>
-                            <constraint firstItem="hby-lT-tIX" firstAttribute="bottom" secondItem="xL0-mb-NVY" secondAttribute="bottom" id="dns-Kr-i8U"/>
-                            <constraint firstItem="xL0-mb-NVY" firstAttribute="top" secondItem="MmK-XA-0Ul" secondAttribute="bottom" id="f14-Dp-s77"/>
-                            <constraint firstItem="hby-lT-tIX" firstAttribute="trailing" secondItem="MmK-XA-0Ul" secondAttribute="trailing" id="gOX-l1-cOb"/>
-                            <constraint firstItem="hby-lT-tIX" firstAttribute="trailing" secondItem="xL0-mb-NVY" secondAttribute="trailing" id="vQz-RF-0gW"/>
-                            <constraint firstItem="hby-lT-tIX" firstAttribute="leading" secondItem="MmK-XA-0Ul" secondAttribute="leading" id="xkO-EQ-M6e"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="5rI-Fx-ucJ"/>
-                    <navigationItem key="navigationItem" title="Sports Info" id="3aa-aQ-ItZ">
-                        <barButtonItem key="rightBarButtonItem" image="shuffle" catalog="system" id="4vV-tP-5rJ">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="filterPressed:" destination="PXY-kB-jm8" id="hSf-A3-Azh"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="emptyTitle" destination="ggf-kc-het" id="zMh-F5-AMf"/>
-                        <outlet property="searchBar" destination="MmK-XA-0Ul" id="uxg-2o-vn4"/>
-                        <outlet property="searchTableView" destination="xL0-mb-NVY" id="WhD-Xe-gem"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aON-kD-qbk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1693" y="588"/>
         </scene>
         <!--Home-->
         <scene sceneID="7pT-m9-nRm">
@@ -176,17 +109,60 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="PXY-kB-jm8" kind="relationship" relationship="rootViewController" id="VHl-2Q-n8r"/>
+                        <segue destination="CSC-y3-gUC" kind="relationship" relationship="rootViewController" id="4ke-tC-pot"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gow-9j-BxS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="894" y="588"/>
         </scene>
+        <!--Search View Controller-->
+        <scene sceneID="ZNz-em-Was">
+            <objects>
+                <viewController storyboardIdentifier="SearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CSC-y3-gUC" customClass="SearchViewController" customModule="SportsInfo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pme-Y5-H8U">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o2b-l2-602">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyCell" id="qQr-Yg-qKZ">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qQr-Yg-qKZ" id="ocT-5u-khJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="d3f-VC-Yis"/>
+                        <color key="backgroundColor" red="0.30980392159999998" green="0.16078431369999999" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="o2b-l2-602" firstAttribute="top" secondItem="d3f-VC-Yis" secondAttribute="top" id="C8p-hK-IBO"/>
+                            <constraint firstItem="d3f-VC-Yis" firstAttribute="bottom" secondItem="o2b-l2-602" secondAttribute="bottom" id="V11-cr-k8y"/>
+                            <constraint firstItem="d3f-VC-Yis" firstAttribute="trailing" secondItem="o2b-l2-602" secondAttribute="trailing" id="e2O-kx-s3i"/>
+                            <constraint firstItem="o2b-l2-602" firstAttribute="leading" secondItem="d3f-VC-Yis" secondAttribute="leading" id="hqm-L1-wkU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="kCz-3V-mwY"/>
+                    <connections>
+                        <outlet property="searchTableView" destination="o2b-l2-602" id="LW2-ZA-ljj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xzo-aN-bC3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1739" y="588"/>
+        </scene>
     </scenes>
     <resources>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="shuffle" catalog="system" width="128" height="93"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

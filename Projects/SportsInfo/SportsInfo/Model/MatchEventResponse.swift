@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MatchEvent: Decodable {
-    let events: [[String: String?]]
+struct MatchEventResponse: Decodable {
+    let events: [Event]
 }
 

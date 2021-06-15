@@ -17,14 +17,13 @@ class FilterViewController: BaseViewController {
     }
     var delegate: SearchViewController?
     
+    var onCompletion: ((_ filter: FilterType) -> ())?
+    
     func initiliazeWith(completion: (_ filterType: FilterType) -> Void) {
-
     }
-    
-    
     //closure
     var filterTypeHandler: (_ filter: FilterType) -> Void = { filter in
-        print(filter)
+        
     }
     
     
@@ -65,12 +64,17 @@ extension FilterViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCategory = filters[indexPath.row]
         if selectedCategory.lowercased().contains("player") {
+            onCompletion?(.player)
             self.dismiss(animated: true) {
+                //self.delegate?.selectedCategory = .player
                 self.filterTypeHandler(.player)
+                self.initiliazeWith(completion: self.filterTypeHandler)
             }
         } else {
             self.dismiss(animated: true) {
+                //self.delegate?.selectedCategory = .team
                 self.filterTypeHandler(.team)
+                self.initiliazeWith(completion: self.filterTypeHandler)
             }
         }
     }

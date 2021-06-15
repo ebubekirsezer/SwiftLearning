@@ -23,8 +23,8 @@ class TeamViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
         
-    func configureWith(team: [String:String?]) {
-        teamImage.downloadImage(imageUrl: (team[Constants.EventInfo.teamBadge] ?? "") ?? "")
-        teamName.text = team[Constants.EventInfo.teamName] ?? ""
+    func configureWith(team: Team) {
+        teamImage.downloadImage(imageUrl: team.strTeamBadge ?? "")
+        teamName.text = team.strTeam
     }
 }

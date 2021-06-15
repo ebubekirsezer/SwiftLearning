@@ -22,7 +22,7 @@ class EventDetailViewController: BaseViewController {
     @IBOutlet private weak var eventCountry: UILabel!
     @IBOutlet private weak var eventStatus: UILabel!
     
-    var matchEvent: [String:String?] = [:]
+    var event: Event?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,17 +30,18 @@ class EventDetailViewController: BaseViewController {
     }
     
     private func updateUI(){
+        navigationItem.title = "Event"
         roundedView.roundCorners([.topLeft, .topRight], radius: 20)
-        eventImage.downloadImage(imageUrl: (matchEvent[Constants.EventInfo.eventImage] ?? "") ?? "")
-        eventHomeTeamName.text = matchEvent[Constants.EventInfo.eventHomeTeam] ?? ""
-        eventAwayTeamName.text = matchEvent[Constants.EventInfo.eventAwayTeam] ?? ""
-        eventHomeTeamScore.text = matchEvent[Constants.EventInfo.eventHomeScore] ?? ""
-        eventAwayTeamScore.text = matchEvent[Constants.EventInfo.eventAwayScore] ?? ""
-        eventLeague.text = "League: " + ((matchEvent[Constants.EventInfo.eventLeague] ?? "")!)
-        eventType.text = "Type: " + ((matchEvent[Constants.EventInfo.eventType] ?? "")!)
-        eventDate.text = "Date: " + ((matchEvent[Constants.EventInfo.eventDate] ?? "")!)
-        eventStadium.text = "Stadium: " + ((matchEvent[Constants.EventInfo.eventStadium] ?? "")!)
-        eventCountry.text = "Country: " + ((matchEvent[Constants.EventInfo.eventCountry] ?? "")!)
-        eventStatus.text = "Status: " + ((matchEvent[Constants.EventInfo.eventStatus] ?? "")!)
+        eventImage.downloadImage(imageUrl: event?.strThumb ?? "")
+        eventHomeTeamName.text = event?.strHomeTeam
+        eventAwayTeamName.text = event?.strAwayTeam
+        eventHomeTeamScore.text = event?.intHomeScore
+        eventAwayTeamScore.text = event?.intAwayScore
+        eventLeague.text = "League: \(event?.strLeague)"
+        eventType.text = "Type: \(event?.strSport)"
+        eventDate.text = "Date: \(event?.dateEvent)"
+        eventStadium.text = "Stadium: \(event?.strVenue)"
+        eventCountry.text = "Country: \(event?.strCountry)"
+        eventStatus.text = "Status: \(event?.strStatus)" 
     }
 }

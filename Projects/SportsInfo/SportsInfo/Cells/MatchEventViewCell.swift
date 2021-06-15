@@ -25,11 +25,11 @@ class MatchEventViewCell: UITableViewCell {
     }
     
 
-    func configureWith(event: [String : String?]) {
-        matchHomeTeamName.text = event[Constants.EventInfo.eventHomeTeam] ?? ""
-        matchHomeTeamScore.text = event[Constants.EventInfo.eventHomeScore] ?? ""
-        matchAwayTeamName.text = event[Constants.EventInfo.eventAwayTeam] ?? ""
-        matchAwayTeamScore.text = event[Constants.EventInfo.eventAwayScore] ?? ""
-        matchDateLabel.text = (event[Constants.EventInfo.eventRound]  ?? "")! + ". Week"
+    func configureWith(event: Event) {
+        matchHomeTeamName.text = event.strHomeTeam
+        matchHomeTeamScore.text = event.intHomeScore
+        matchAwayTeamName.text = event.strAwayTeam
+        matchAwayTeamScore.text = event.intAwayScore
+        matchDateLabel.text = "\(event.intRound!). Week"
     }
 }

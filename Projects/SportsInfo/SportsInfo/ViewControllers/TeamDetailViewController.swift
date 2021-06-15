@@ -19,7 +19,7 @@ class TeamDetailViewController: BaseViewController {
     @IBOutlet private weak var teamJersey: UIImageView!
     @IBOutlet weak var teamJerseyStackView: UIStackView!
     
-    var team: [String:String?]?
+    var team: Team?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,13 +28,13 @@ class TeamDetailViewController: BaseViewController {
     
     private func updateUI(){
         if let eventTeam = team {
-            teamImage.downloadImage(imageUrl: (eventTeam[Constants.EventInfo.teamBadge] ?? "") ?? "")
-            teamName.text = eventTeam[Constants.EventInfo.teamName] ?? ""
-            teamLeague.text = "League: " + ((eventTeam[Constants.EventInfo.eventLeague] ?? "") ?? "")
-            teamStadium.text = "Stadium: "  + ((eventTeam[Constants.EventInfo.teamStadium] ?? "") ?? "")
-            teamCountry.text = "Country: " + ((eventTeam[Constants.EventInfo.eventCountry] ?? "") ?? "")
-            teamDescription.text = "Description: " + ((eventTeam[Constants.EventInfo.teamDescription] ?? "") ?? "")
-            teamJersey.downloadImage(imageUrl: (eventTeam[Constants.EventInfo.teamJersey] ?? "") ?? "")
+            teamImage.downloadImage(imageUrl: eventTeam.strTeamBadge ?? "")
+            teamName.text = eventTeam.strTeam
+            teamLeague.text = "League: " + (eventTeam.strLeague ?? "")
+            teamStadium.text = "Stadium: "  + (eventTeam.strStadium ?? "")
+            teamCountry.text = "Country: " + (eventTeam.strCountry ?? "")
+            teamDescription.text = "Description: " + (eventTeam.strDescriptionEN ?? "")
+            teamJersey.downloadImage(imageUrl: eventTeam.strDescriptionEN ?? "")
         }
     }
 }

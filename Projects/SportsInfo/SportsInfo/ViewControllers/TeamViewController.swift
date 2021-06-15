@@ -18,7 +18,7 @@ class TeamViewController: BaseViewController {
     @IBOutlet private weak var teamActivityIndicator: UIActivityIndicatorView!
     
     var leagueName: String?
-    private var eventTeams: [[String:String?]] = [[:]] {
+    private var teams: [Team] = [] {
         didSet{
             teamTableView.reloadData()
         }
@@ -45,7 +45,7 @@ class TeamViewController: BaseViewController {
                     print(error)
                     self.teamActivityIndicator.stopAnimating()
                 case .success(let teams):
-                    self.eventTeams = teams.teams
+                    self.teams = teams.teams
                     self.teamActivityIndicator.stopAnimating()
                 }
             })
@@ -55,13 +55,13 @@ class TeamViewController: BaseViewController {
 
 extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return eventTeams.count
+        return teams.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TeamViewCell", for: indexPath) as! TeamViewCell
         
-        let selectedTeam = eventTeams[indexPath.row]
+        let selectedTeam = teams[indexPath.row]
         cell.configureWith(team: selectedTeam)
         cell.selectionStyle = .none
         return cell
@@ -72,7 +72,7 @@ extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedTeam = eventTeams[indexPath.row]
+        let selectedTeam = teams[indexPath.row]
         let storyboard = UIStoryboard(name: "Event", bundle: nil)
         let teamDetailVC = storyboard.instantiateViewController(identifier: "TeamDetailViewController") as! TeamDetailViewController
         teamDetailVC.team = selectedTeam

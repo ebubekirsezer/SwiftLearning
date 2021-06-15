@@ -50,6 +50,7 @@
 		B8AE655D25B30AC50091CABC /* GalleryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8AE655C25B30AC50091CABC /* GalleryHeaderView.xib */; };
 		B8B5939A25B56CC10087F416 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8B5939C25B56CC10087F416 /* Detail.storyboard */; };
 		B8B593A225B56D0B0087F416 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8B593A425B56D0B0087F416 /* Login.storyboard */; };
+		B8BA712025B98D6D005F4247 /* HomeNavigationBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA711F25B98D6D005F4247 /* HomeNavigationBarController.swift */; };
 		B8C25A6625B0E01E00E49E79 /* BookViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C25A6425B0E01E00E49E79 /* BookViewCell.swift */; };
 		B8C25A6725B0E01E00E49E79 /* BookViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8C25A6525B0E01E00E49E79 /* BookViewCell.xib */; };
 		B8C25A6A25B0E6FE00E49E79 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C25A6925B0E6FE00E49E79 /* MovieViewController.swift */; };
@@ -116,6 +117,7 @@
 		B8B593A325B56D0B0087F416 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		B8B593A625B56D160087F416 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Login.strings; sourceTree = "<group>"; };
 		B8B593A825B56D480087F416 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Login.strings; sourceTree = "<group>"; };
+		B8BA711F25B98D6D005F4247 /* HomeNavigationBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationBarController.swift; sourceTree = "<group>"; };
 		B8C25A6425B0E01E00E49E79 /* BookViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewCell.swift; sourceTree = "<group>"; };
 		B8C25A6525B0E01E00E49E79 /* BookViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookViewCell.xib; sourceTree = "<group>"; };
 		B8C25A6925B0E6FE00E49E79 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				B8D166CF25B3784C00844D13 /* LoginViewController.swift */,
 				B8D166D625B384EE00844D13 /* RegisterViewController.swift */,
 				B817E3E125B4337C00478691 /* SplashViewController.swift */,
+				B8BA711F25B98D6D005F4247 /* HomeNavigationBarController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				B85DB0FC25AD894500D8AA28 /* SceneDelegate.swift in Sources */,
 				B83AB03225AED8D500A5215C /* SongViewCell.swift in Sources */,
 				B876B69425B07A1B001712BE /* MediaFeed.swift in Sources */,
+				B8BA712025B98D6D005F4247 /* HomeNavigationBarController.swift in Sources */,
 				B8AE652825B1D2C00091CABC /* CategoryViewController.swift in Sources */,
 				B8C25A6A25B0E6FE00E49E79 /* MovieViewController.swift in Sources */,
 				B83AB02B25ADBA2900A5215C /* RoundedImageView.swift in Sources */,
