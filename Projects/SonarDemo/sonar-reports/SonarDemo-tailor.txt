@@ -1,0 +1,38 @@
+Analyzing 5 files:
+..S..
+
+********** ./SonarDemo/AppDelegate.swift **********
+/Users/ebubekirsezer/Desktop/Projects/SonarDemo/SonarDemo/AppDelegate.swift:15:101: warning: [max-line-length] Line is over maximum character limit (145/100)
+/Users/ebubekirsezer/Desktop/Projects/SonarDemo/SonarDemo/AppDelegate.swift:22:101: warning: [max-line-length] Line is over maximum character limit (179/100)
+/Users/ebubekirsezer/Desktop/Projects/SonarDemo/SonarDemo/AppDelegate.swift:25:101: warning: [max-line-length] Line is over maximum character limit (108/100)
+/Users/ebubekirsezer/Desktop/Projects/SonarDemo/SonarDemo/AppDelegate.swift:28:91: warning: [min-name-length] Type name is less than minimum character limit (3/4)
+/Users/ebubekirsezer/Desktop/Projects/SonarDemo/SonarDemo/AppDelegate.swift:28:101: warning: [max-line-length] Line is over maximum character limit (112/100)
+/Users/ebubekirsezer/Desktop/Projects/SonarDemo/SonarDemo/AppDelegate.swift:30:101: warning: [max-line-length] Line is over maximum character limit (157/100)
+/Users/ebubekirsezer/Desktop/Projects/SonarDemo/SonarDemo/AppDelegate.swift:31:101: warning: [max-line-length] Line is over maximum character limit (120/100)
+/Users/ebubekirsezer/Desktop/Projects/SonarDemo/SonarDemo/AppDelegate.swift:36: warning: [terminating-newline] File should terminate with exactly one newline character ('\n')
+
+********** ./SonarDemo/SceneDelegate.swift **********
+/Users/ebubekirsezer/Desktop/Projects/SonarDemo/SonarDemo/SceneDelegate.swift:15:101: warning: [max-line-length] Line is over maximum character limit (127/100)
+/Users/ebubekirsezer/Desktop/Projects/SonarDemo/SonarDemo/SceneDelegate.swift:16:101: warning: [max-line-length] Line is over maximum character limit (122/100)
+/Users/ebubekirsezer/Desktop/Projects/SonarDemo/SonarDemo/SceneDelegate.swift:17:101: warning: [max-line-length] Line is over maximum character limit (116/100)
+/Users/ebubekirsezer/Desktop/Projects/SonarDemo/SonarDemo/SceneDelegate.swift:18:101: warning: [max-line-length] Line is over maximum character limit (147/100)
+/Users/ebubekirsezer/Desktop/Projects/SonarDemo/SonarDemo/SceneDelegate.swift:19:23: warning: [redundant-parentheses] Initializer expression should not be enclosed within parentheses
+/Users/ebubekirsezer/Desktop/Projects/SonarDemo/SonarDemo/SceneDelegate.swift:24:101: warning: [max-line-length] Line is over maximum character limit (103/100)
+/Users/ebubekirsezer/Desktop/Projects/SonarDemo/SonarDemo/SceneDelegate.swift:25:101: warning: [max-line-length] Line is over maximum character limit (116/100)
+/Users/ebubekirsezer/Desktop/Projects/SonarDemo/SonarDemo/SceneDelegate.swift:26:101: warning: [max-line-length] Line is over maximum character limit (140/100)
+/Users/ebubekirsezer/Desktop/Projects/SonarDemo/SonarDemo/SceneDelegate.swift:31:101: warning: [max-line-length] Line is over maximum character limit (114/100)
+/Users/ebubekirsezer/Desktop/Projects/SonarDemo/SonarDemo/SceneDelegate.swift:46:101: warning: [max-line-length] Line is over maximum character limit (116/100)
+/Users/ebubekirsezer/Desktop/Projects/SonarDemo/SonarDemo/SceneDelegate.swift:52: warning: [terminating-newline] File should terminate with exactly one newline character ('\n')
+
+********** ./SonarDemo/ViewController.swift **********
+/Users/ebubekirsezer/Desktop/Projects/SonarDemo/SonarDemo/ViewController.swift:19: warning: [terminating-newline] File should terminate with exactly one newline character ('\n')
+
+********** ./SonarDemoTests/SonarDemoTests.swift **********
+/Users/ebubekirsezer/Desktop/Projects/SonarDemo/SonarDemoTests/SonarDemoTests.swift:14:101: warning: [max-line-length] Line is over maximum character limit (109/100)
+/Users/ebubekirsezer/Desktop/Projects/SonarDemo/SonarDemoTests/SonarDemoTests.swift:18:101: warning: [max-line-length] Line is over maximum character limit (111/100)
+
+********** ./SonarDemoUITests/SonarDemoUITests.swift **********
+./SonarDemoUITests/SonarDemoUITests.swift could not be parsed successfully, skipping...
+
+Analyzed 4 files, skipped 1 file, and detected 22 violations (0 errors, 22 warnings).
+

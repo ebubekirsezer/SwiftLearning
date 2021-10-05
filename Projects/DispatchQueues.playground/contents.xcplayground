@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='DispatchQueues'/>
+        <page name='Dispatching Tasks to Concurrent Queues'/>
+        <page name='Preventing the Proliferation of Threads'/>
+        <page name='Data Races'/>
+        <page name='Fetching Values'/>
+        <page name='Fetching Values 2'/>
+    </pages>
+</playground>

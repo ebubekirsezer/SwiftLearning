@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "WizloService",
+        "repositoryURL": "/Users/ebubekirsezer/Desktop/Projects/WizloService",
+        "state": {
+          "branch": null,
+          "revision": "554b7ba0fe1cd6056e7c315838c0bea642af75d8",
+          "version": "1.0.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

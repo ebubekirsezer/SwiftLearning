@@ -1,0 +1,708 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		171A68AA56733C9B6C7D2630 /* Pods_SonarDemo_SonarDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FD34985B22B1061FAD2F353 /* Pods_SonarDemo_SonarDemoUITests.framework */; };
+		6E7C391FC5FD3BBB55BEBD1A /* Pods_SonarDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C21A39EAF86360B4EAC61805 /* Pods_SonarDemoTests.framework */; };
+		CF20DED326E79DE300705195 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF20DED226E79DE300705195 /* AppDelegate.swift */; };
+		CF20DED526E79DE300705195 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF20DED426E79DE300705195 /* SceneDelegate.swift */; };
+		CF20DED726E79DE300705195 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF20DED626E79DE300705195 /* ViewController.swift */; };
+		CF20DEDA26E79DE300705195 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF20DED826E79DE300705195 /* Main.storyboard */; };
+		CF20DEDC26E79DE500705195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF20DEDB26E79DE500705195 /* Assets.xcassets */; };
+		CF20DEDF26E79DE500705195 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF20DEDD26E79DE500705195 /* LaunchScreen.storyboard */; };
+		CF20DEEA26E79DE500705195 /* SonarDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF20DEE926E79DE500705195 /* SonarDemoTests.swift */; };
+		CF20DEF526E79DE500705195 /* SonarDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF20DEF426E79DE500705195 /* SonarDemoUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CF20DEE626E79DE500705195 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF20DEC726E79DE200705195 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF20DECE26E79DE300705195;
+			remoteInfo = SonarDemo;
+		};
+		CF20DEF126E79DE500705195 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF20DEC726E79DE200705195 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF20DECE26E79DE300705195;
+			remoteInfo = SonarDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0FD34985B22B1061FAD2F353 /* Pods_SonarDemo_SonarDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SonarDemo_SonarDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A190DE06E72781E7835FFF3 /* Pods-SonarDemo-SonarDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SonarDemo-SonarDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-SonarDemo-SonarDemoUITests/Pods-SonarDemo-SonarDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5DF69DA277AA0BBA67BEB743 /* Pods_SonarDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SonarDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67F952295CE127E7D8A8426A /* Pods-SonarDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SonarDemoTests.release.xcconfig"; path = "Target Support Files/Pods-SonarDemoTests/Pods-SonarDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		77C7C515572425AA8C1333D8 /* Pods-SonarDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SonarDemo.debug.xcconfig"; path = "Target Support Files/Pods-SonarDemo/Pods-SonarDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		9CBEA7AA118B395B6E4E4E6F /* Pods-SonarDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SonarDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-SonarDemoTests/Pods-SonarDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C21A39EAF86360B4EAC61805 /* Pods_SonarDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SonarDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C501A810F76F67779853B5BB /* Pods-SonarDemo-SonarDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SonarDemo-SonarDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-SonarDemo-SonarDemoUITests/Pods-SonarDemo-SonarDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CF20DECF26E79DE300705195 /* SonarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SonarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF20DED226E79DE300705195 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CF20DED426E79DE300705195 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CF20DED626E79DE300705195 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CF20DED926E79DE300705195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CF20DEDB26E79DE500705195 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF20DEDE26E79DE500705195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CF20DEE026E79DE500705195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF20DEE526E79DE500705195 /* SonarDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SonarDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF20DEE926E79DE500705195 /* SonarDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SonarDemoTests.swift; sourceTree = "<group>"; };
+		CF20DEEB26E79DE500705195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF20DEF026E79DE500705195 /* SonarDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SonarDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF20DEF426E79DE500705195 /* SonarDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SonarDemoUITests.swift; sourceTree = "<group>"; };
+		CF20DEF626E79DE500705195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E89AAE1F035B172ABD3AA52C /* Pods-SonarDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SonarDemo.release.xcconfig"; path = "Target Support Files/Pods-SonarDemo/Pods-SonarDemo.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF20DECC26E79DE300705195 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF20DEE226E79DE500705195 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E7C391FC5FD3BBB55BEBD1A /* Pods_SonarDemoTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF20DEED26E79DE500705195 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				171A68AA56733C9B6C7D2630 /* Pods_SonarDemo_SonarDemoUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3329CB6FA902E44163DAB96C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5DF69DA277AA0BBA67BEB743 /* Pods_SonarDemo.framework */,
+				0FD34985B22B1061FAD2F353 /* Pods_SonarDemo_SonarDemoUITests.framework */,
+				C21A39EAF86360B4EAC61805 /* Pods_SonarDemoTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF20DEC626E79DE200705195 = {
+			isa = PBXGroup;
+			children = (
+				CF20DED126E79DE300705195 /* SonarDemo */,
+				CF20DEE826E79DE500705195 /* SonarDemoTests */,
+				CF20DEF326E79DE500705195 /* SonarDemoUITests */,
+				CF20DED026E79DE300705195 /* Products */,
+				EF90BD7EA7B588DF03E96EAA /* Pods */,
+				3329CB6FA902E44163DAB96C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CF20DED026E79DE300705195 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF20DECF26E79DE300705195 /* SonarDemo.app */,
+				CF20DEE526E79DE500705195 /* SonarDemoTests.xctest */,
+				CF20DEF026E79DE500705195 /* SonarDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF20DED126E79DE300705195 /* SonarDemo */ = {
+			isa = PBXGroup;
+			children = (
+				CF20DED226E79DE300705195 /* AppDelegate.swift */,
+				CF20DED426E79DE300705195 /* SceneDelegate.swift */,
+				CF20DED626E79DE300705195 /* ViewController.swift */,
+				CF20DED826E79DE300705195 /* Main.storyboard */,
+				CF20DEDB26E79DE500705195 /* Assets.xcassets */,
+				CF20DEDD26E79DE500705195 /* LaunchScreen.storyboard */,
+				CF20DEE026E79DE500705195 /* Info.plist */,
+			);
+			path = SonarDemo;
+			sourceTree = "<group>";
+		};
+		CF20DEE826E79DE500705195 /* SonarDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF20DEE926E79DE500705195 /* SonarDemoTests.swift */,
+				CF20DEEB26E79DE500705195 /* Info.plist */,
+			);
+			path = SonarDemoTests;
+			sourceTree = "<group>";
+		};
+		CF20DEF326E79DE500705195 /* SonarDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CF20DEF426E79DE500705195 /* SonarDemoUITests.swift */,
+				CF20DEF626E79DE500705195 /* Info.plist */,
+			);
+			path = SonarDemoUITests;
+			sourceTree = "<group>";
+		};
+		EF90BD7EA7B588DF03E96EAA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				77C7C515572425AA8C1333D8 /* Pods-SonarDemo.debug.xcconfig */,
+				E89AAE1F035B172ABD3AA52C /* Pods-SonarDemo.release.xcconfig */,
+				C501A810F76F67779853B5BB /* Pods-SonarDemo-SonarDemoUITests.debug.xcconfig */,
+				1A190DE06E72781E7835FFF3 /* Pods-SonarDemo-SonarDemoUITests.release.xcconfig */,
+				9CBEA7AA118B395B6E4E4E6F /* Pods-SonarDemoTests.debug.xcconfig */,
+				67F952295CE127E7D8A8426A /* Pods-SonarDemoTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CF20DECE26E79DE300705195 /* SonarDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF20DEF926E79DE500705195 /* Build configuration list for PBXNativeTarget "SonarDemo" */;
+			buildPhases = (
+				71104595CCDE498931DA740B /* [CP] Check Pods Manifest.lock */,
+				CF20DECB26E79DE300705195 /* Sources */,
+				CF20DECC26E79DE300705195 /* Frameworks */,
+				CF20DECD26E79DE300705195 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SonarDemo;
+			productName = SonarDemo;
+			productReference = CF20DECF26E79DE300705195 /* SonarDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CF20DEE426E79DE500705195 /* SonarDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF20DEFC26E79DE500705195 /* Build configuration list for PBXNativeTarget "SonarDemoTests" */;
+			buildPhases = (
+				234B8FAED961D9EDF6ACDE84 /* [CP] Check Pods Manifest.lock */,
+				CF20DEE126E79DE500705195 /* Sources */,
+				CF20DEE226E79DE500705195 /* Frameworks */,
+				CF20DEE326E79DE500705195 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF20DEE726E79DE500705195 /* PBXTargetDependency */,
+			);
+			name = SonarDemoTests;
+			productName = SonarDemoTests;
+			productReference = CF20DEE526E79DE500705195 /* SonarDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CF20DEEF26E79DE500705195 /* SonarDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF20DEFF26E79DE500705195 /* Build configuration list for PBXNativeTarget "SonarDemoUITests" */;
+			buildPhases = (
+				CE7C2E6BC95C2C79890CD822 /* [CP] Check Pods Manifest.lock */,
+				CF20DEEC26E79DE500705195 /* Sources */,
+				CF20DEED26E79DE500705195 /* Frameworks */,
+				CF20DEEE26E79DE500705195 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF20DEF226E79DE500705195 /* PBXTargetDependency */,
+			);
+			name = SonarDemoUITests;
+			productName = SonarDemoUITests;
+			productReference = CF20DEF026E79DE500705195 /* SonarDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF20DEC726E79DE200705195 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					CF20DECE26E79DE300705195 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					CF20DEE426E79DE500705195 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = CF20DECE26E79DE300705195;
+					};
+					CF20DEEF26E79DE500705195 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = CF20DECE26E79DE300705195;
+					};
+				};
+			};
+			buildConfigurationList = CF20DECA26E79DE200705195 /* Build configuration list for PBXProject "SonarDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF20DEC626E79DE200705195;
+			productRefGroup = CF20DED026E79DE300705195 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF20DECE26E79DE300705195 /* SonarDemo */,
+				CF20DEE426E79DE500705195 /* SonarDemoTests */,
+				CF20DEEF26E79DE500705195 /* SonarDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CF20DECD26E79DE300705195 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF20DEDF26E79DE500705195 /* LaunchScreen.storyboard in Resources */,
+				CF20DEDC26E79DE500705195 /* Assets.xcassets in Resources */,
+				CF20DEDA26E79DE300705195 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF20DEE326E79DE500705195 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF20DEEE26E79DE500705195 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		234B8FAED961D9EDF6ACDE84 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SonarDemoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71104595CCDE498931DA740B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SonarDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE7C2E6BC95C2C79890CD822 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SonarDemo-SonarDemoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CF20DECB26E79DE300705195 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF20DED726E79DE300705195 /* ViewController.swift in Sources */,
+				CF20DED326E79DE300705195 /* AppDelegate.swift in Sources */,
+				CF20DED526E79DE300705195 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF20DEE126E79DE500705195 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF20DEEA26E79DE500705195 /* SonarDemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF20DEEC26E79DE500705195 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF20DEF526E79DE500705195 /* SonarDemoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CF20DEE726E79DE500705195 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF20DECE26E79DE300705195 /* SonarDemo */;
+			targetProxy = CF20DEE626E79DE500705195 /* PBXContainerItemProxy */;
+		};
+		CF20DEF226E79DE500705195 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF20DECE26E79DE300705195 /* SonarDemo */;
+			targetProxy = CF20DEF126E79DE500705195 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CF20DED826E79DE300705195 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF20DED926E79DE300705195 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CF20DEDD26E79DE500705195 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF20DEDE26E79DE500705195 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CF20DEF726E79DE500705195 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CF20DEF826E79DE500705195 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CF20DEFA26E79DE500705195 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77C7C515572425AA8C1333D8 /* Pods-SonarDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SonarDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ebubekirsezer.SonarDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CF20DEFB26E79DE500705195 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E89AAE1F035B172ABD3AA52C /* Pods-SonarDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SonarDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ebubekirsezer.SonarDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CF20DEFD26E79DE500705195 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CBEA7AA118B395B6E4E4E6F /* Pods-SonarDemoTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SonarDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ebubekirsezer.SonarDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SonarDemo.app/SonarDemo";
+			};
+			name = Debug;
+		};
+		CF20DEFE26E79DE500705195 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67F952295CE127E7D8A8426A /* Pods-SonarDemoTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SonarDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ebubekirsezer.SonarDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SonarDemo.app/SonarDemo";
+			};
+			name = Release;
+		};
+		CF20DF0026E79DE500705195 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C501A810F76F67779853B5BB /* Pods-SonarDemo-SonarDemoUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SonarDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ebubekirsezer.SonarDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SonarDemo;
+			};
+			name = Debug;
+		};
+		CF20DF0126E79DE500705195 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A190DE06E72781E7835FFF3 /* Pods-SonarDemo-SonarDemoUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SonarDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ebubekirsezer.SonarDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SonarDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CF20DECA26E79DE200705195 /* Build configuration list for PBXProject "SonarDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF20DEF726E79DE500705195 /* Debug */,
+				CF20DEF826E79DE500705195 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF20DEF926E79DE500705195 /* Build configuration list for PBXNativeTarget "SonarDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF20DEFA26E79DE500705195 /* Debug */,
+				CF20DEFB26E79DE500705195 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF20DEFC26E79DE500705195 /* Build configuration list for PBXNativeTarget "SonarDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF20DEFD26E79DE500705195 /* Debug */,
+				CF20DEFE26E79DE500705195 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF20DEFF26E79DE500705195 /* Build configuration list for PBXNativeTarget "SonarDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF20DF0026E79DE500705195 /* Debug */,
+				CF20DF0126E79DE500705195 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CF20DEC726E79DE200705195 /* Project object */;
+}

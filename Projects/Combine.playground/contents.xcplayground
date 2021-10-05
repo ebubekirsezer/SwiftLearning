@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios'>
+    <pages>
+        <page name='Chapter 2_2'/>
+        <page name='Chapter 2_3'/>
+        <page name='Chapter 2_4'/>
+        <page name='Chapter 2_5'/>
+        <page name='Chapter 2_6'/>
+        <page name='Challenge 2'/>
+        <page name='Chapter 3_1'/>
+        <page name='Chapter 3_2'/>
+        <page name='Chapter 3_3'/>
+        <page name='Challenge 3'/>
+        <page name='Chapter 4_1'/>
+        <page name='Chapter 4_2'/>
+        <page name='Chapter 4_3'/>
+        <page name='Chapter 4_4'/>
+        <page name='Chapter 4_5'/>
+        <page name='Challenge 4'/>
+    </pages>
+</playground>

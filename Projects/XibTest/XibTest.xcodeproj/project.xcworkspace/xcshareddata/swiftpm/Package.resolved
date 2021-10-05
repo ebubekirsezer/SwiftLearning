@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Basket",
+        "repositoryURL": "/Users/esezer/Desktop/Github_Projects/Basket/",
+        "state": {
+          "branch": null,
+          "revision": "98a1c59b406630c282f68b4101921cc4d001a648",
+          "version": "1.0.28"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
